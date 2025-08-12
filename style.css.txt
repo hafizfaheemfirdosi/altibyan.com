@@ -1,0 +1,65 @@
+<!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,ur,ar,tr,fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form handling for new blog articles
+        document.querySelector('#addBlogModal .btn-warning').addEventListener('click', function() {
+            const title = document.getElementById('articleTitle').value;
+            if (title) {
+                alert('Blog article "' + title + '" has been submitted! (This is a demo - in a real app, this would save to a database)');
+                var myModal = bootstrap.Modal.getInstance(document.getElementById('addBlogModal'));
+                myModal.hide();
+                
+                // Clear form
+                document.getElementById('articleTitle').value = '';
+                document.getElementById('articleImage').value = '';
+                document.getElementById('articleContent').value = '';
+                document.getElementById('articleTags').value = '';
+            } else {
+                alert('Please enter a title for your article');
+            }
+        });
+        
+        // Contact form handling
+        document.querySelector('footer form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+        
+        // Hide Google Translate branding
+        setTimeout(function() {
+            var el = document.querySelector('.goog-te-combo');
+            if (el) {
+                el.style.backgroundColor = 'var(--light-bg)';
+                el.style.color = 'white';
+                el.style.border = '1px solid var(--gold)';
+                el.style.borderRadius = '5px';
+                el.style.padding = '5px';
+            }
+        }, 1000);
+    </script>
