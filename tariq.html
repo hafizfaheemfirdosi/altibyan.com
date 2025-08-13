@@ -1,97 +1,550 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>طارق بن زیاد — ایک طویل ادبی و تاریخی داستان</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<style>
-body { font-family: 'Noto Nastaliq Urdu', serif; background-color: #f8f9fa; line-height: 2; }
-h1, h2, h3 { font-weight: bold; }
-blockquote { border-right: 4px solid #6c757d; padding-right: 15px; margin: 20px 0; color: #555; }
-.callout { background: #fff3cd; border-right: 5px solid #ffc107; padding: 15px; margin: 20px 0; }
-figure { text-align: center; margin: 20px 0; }
-figcaption { font-style: italic; color: #6c757d; margin-top: 5px; }
-img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
-section { margin-bottom: 30px; }
-.container { max-width: 100%; padding-left: 15px; padding-right: 15px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طارق بن زیاد - جبل الطارق کے بہادر فاتح | اسلامی تاریخ</title>
+    <style>
+        /* بنیادی اسٹائلز */
+        :root {
+            --primary: #2c5e1a;
+            --secondary: #5a8f3d;
+            --accent: #8b4513;
+            --text: #333;
+            --light: #f8f1e5;
+            --dark: #1a2e0d;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+            line-height: 2;
+            color: var(--text);
+            background-color: var(--light);
+            direction: rtl;
+        }
+
+        /* ہیڈر ڈیزائن */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://via.placeholder.com/1920x1080?text=Jabal+Al-Tariq') center/cover;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* نیویگیشن */
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary);
+        }
+
+        /* مین کونٹینٹ */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* گرڈ سسٹم */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* ٹائم لائن سیکشن */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .left {
+            right: 0;
+        }
+
+        .right {
+            right: 50%;
+        }
+
+        .right::after {
+            right: -12px;
+        }
+
+        .left::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: right;
+        }
+
+        /* اقتباسات */
+        .quote {
+            font-style: italic;
+            border-right: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 2rem 0;
+            background-color: rgba(138, 69, 19, 0.1);
+            text-align: right;
+        }
+
+        /* فوٹر */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            gap: 1rem;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem;
+        }
+
+        /* لسٹ اسٹائلز */
+        ul {
+            margin: 1rem 0;
+            padding-right: 2rem;
+            list-style-position: inside;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* موبائل ریسپانسیو */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem;
+                margin: 0.2rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::after {
+                right: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 25px;
+                padding-right: 70px;
+            }
+
+            .timeline-item::after {
+                right: 21px;
+            }
+
+            .left::after,
+            .right::after {
+                right: 21px;
+            }
+
+            .right {
+                right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .header-content {
+                padding: 0.5rem;
+            }
+            
+            .card-content {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="container py-4">
 
-<header class="mb-5 text-center">
-<h1>طارق بن زیاد — ایمان و شجاعت کی لازوال داستان</h1>
-<p class="lead">یہ وہ داستان ہے جہاں تلوار اور ایمان ایک دوسرے کو روشنی دیتے ہیں…</p>
-</header>
+<body>
+    <!-- ہیڈر سیکشن -->
+    <header>
+        <div class="header-content">
+            <h1>طارق بن زیاد</h1>
+            <p class="subtitle">جبل الطارق کے بہادر فاتح اور اندلس کی اسلامی تاریخ کے عظیم ہیرو</p>
+        </div>
+    </header>
 
-<!-- Extensive detailed article starts -->
-<section>
-<h2>ابتدائی زندگی اور پس منظر</h2>
-<p>طارق بن زیاد کا تعلق بربر قبیلے نفزہ سے تھا۔ اس کا بچپن شمالی افریقہ کی کھردری زمیں پر گزرا، جہاں ریت کے ذروں میں غیرت بسی تھی اور ہوا کے جھونکوں میں حوصلہ۔ اس کی تربیت ایک عام بچہ نہیں بلکہ ایک مستقبل کے فاتح کے طور پر ہو رہی تھی۔ اس کے اندر عزم، صبر اور قربانی کی روح پیدا ہوئی۔</p>
-<blockquote>"صحرا کی دھوپ میں جلنے والا بچہ ہی ایک دن تاریخ کی دھڑکن بن سکتا ہے۔"</blockquote>
-</section>
+    <!-- نیویگیشن -->
+    <nav>
+        <div class="nav-container">
+            <a href="#introduction" class="nav-link">تعارف</a>
+            <a href="#early-life" class="nav-link">ابتدائی زندگی</a>
+            <a href="#conquest" class="nav-link">فتح اندلس</a>
+            <a href="#legacy" class="nav-link">میراث</a>
+            <a href="#lessons" class="nav-link">سبق آموز واقعات</a>
+        </div>
+    </nav>
 
-<section>
-<h2>نسب و قبیلہ اور تعلیم</h2>
-<p>طارق کی ابتدائی زندگی میں قرآن، عربی ادب، اور عسکری تربیت کو بہت اہمیت دی گئی۔ قبیلے کی روایات، اخلاقی تعلیمات اور قبائلی نظم و ضبط نے اسے نہ صرف ایک بہترین سپاہی بلکہ ایک بصیرت مند رہنما بنایا۔ بچپن ہی سے کھیل کود میں اس کی پختگی اور ذمہ داری کے آثار نمایاں تھے۔</p>
-</section>
+    <!-- مین کونٹینٹ -->
+    <div class="container">
+        <!-- تعارف سیکشن -->
+        <section id="introduction">
+            <h2>طارق بن زیاد کا تعارف</h2>
+            <p>طارق بن زیاد بن عبداللہ البربری اسلامی تاریخ کے عظیم جرنیلوں میں سے ایک ہیں جنہوں نے 711 عیسوی میں اندلس
+                (موجودہ اسپین) کی فتح کی قیادت کی۔ ان کا نام آج بھی جبل الطارق (جبرالٹر) کے نام سے زندہ ہے جو ان کی
+                بہادری اور حکمت عملی کی علامت ہے۔</p>
 
-<section>
-<h2>ابتدائی خدمات اور موسیٰ بن نصیر کے ساتھ تعلق</h2>
-<p>طارق نے جلد ہی اپنی صلاحیتوں کی بدولت بنو امیہ کے گورنر موسیٰ بن نصیر کی توجہ حاصل کی۔ موسیٰ بن نصیر نے طارق کی ذہانت اور جرات کو دیکھتے ہوئے اسے ایک تاریخی مہم کی قیادت سونپی، جو بعد میں یورپی تاریخ کے اہم لمحات میں شمار ہوئی۔</p>
-</section>
+            <div class="grid">
+                <div class="card">
+                    <img src="jabl.png" alt="جبل الطارق" class="card-img">
+                    <div class="card-content">
+                        <h3>جبل الطارق</h3>
+                        <p>
+                            یہ پہاڑ آج بھی گواہ ہے طارق کے عزم کی،
+                            کشتیاں جلا کر جس نے تاریخ بدل دی،
+                            پیچھے سمندر، آگے دشمن - یہ تھا اس کا پیغام،
+                            ہمت اور جذبہ جس نے سلطنتوں کو جھکا دیا۔</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="islami.png" alt="اسلامی اندلس" class="card-img">
+                    <div class="card-content">
+                        <h3>اسلامی اندلس</h3>
+                        <p>
+                            علم و فن کا روشن چراغ تھا، جہاں ہر سو تہذیب کی رونق تھی،
+                            قرطبہ کی عظمت، غرناطہ کی حُسن کاری، آٹھ سو سال کی شاندار داستان تھی،
+                            مسیحی بادشاہوں نے مٹایا تو بھی، اس کی روح آج بھی زندہ ہے تاریخ کے اوراق میں۔</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="mujasma.png" alt="طارق بن زیاد کا مجسمہ" class="card-img">
+                    <div class="card-content">
+                        <h3>یادگاریں</h3>
+                        <p>جبل الطارق کی چٹانیں آج بھی گواہ ہیں
+                            طارق کے لشکر کے حوصلوں کی داستاں
 
-<section>
-<h2>711 عیسوی میں افریقہ سے اندلس کا سفر</h2>
-<p>طارق نے سات ہزار کے قریب سپاہیوں کے ساتھ سمندر کا عبور کیا۔ یہ سفر نہ صرف جغرافیائی بلکہ نفسیاتی اور روحانی لحاظ سے بھی مشکل تھا۔ طارق نے اپنے سپاہیوں کے حوصلے بلند رکھے اور ہر قدم پر قیادت کا مظاہرہ کیا۔</p>
-<blockquote>"سمندر کی گہرائی میں ایمان کا چراغ ہر لمحے ہمیں آگے بڑھاتا رہا۔"</blockquote>
-</section>
+                            ۲۔ قرطبہ کی جامع مسجد کے مینار
+                            علم و حکمت کی شہادت دیتے ہیں
 
-<section>
-<h2>کشتیوں کا جلانا</h2>
-<p>اس نے تاریخی فیصلہ کیا کہ کشتیوں کو جلا دیا جائے تاکہ واپس جانے کا کوئی راستہ نہ رہے۔ یہ ایک ایسی حکمت عملی تھی جو سپاہیوں کے دلوں میں فتح کی آگ بھڑکانے کے لیے تھی۔</p>
-<blockquote>"واپسی کا راستہ بند ہے، اب فتح یا موت!"</blockquote>
-</section>
+                            ۳۔ غرناطہ میں الحمراء کی دیواریں
+                            فن تعمیر کے شاہکار کی گواہی دیتی ہیں
 
-<section>
-<h2>وادی لکہ کی جنگ</h2>
-<p>19 جولائی 711 کو وادی لکہ میں طارق کی قیادت میں فیصلہ کن جنگ ہوئی۔ راڈرک کی فوج کو شکست دے کر اندلس کے دروازے کھول دیے گئے۔ یہ معرکہ نہ صرف عسکری لحاظ سے بلکہ تہذیبی اور ثقافتی لحاظ سے بھی اہم تھا۔</p>
-</section>
+                            ۴۔ اشبیلیہ کی الجیرالدا مینار
+                            فاتحین کے عزم کی علامت ہے۔</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section>
-<h2>اندلس میں حکومت و عدل</h2>
-<p>فتح کے بعد طارق نے عوام کے حقوق کا تحفظ کیا، عدل و انصاف قائم کیا اور علمی و ثقافتی ترقی کے مواقع فراہم کیے۔ اس نے اپنی ذاتی خواہشات کو پیچھے رکھ کر عوام کی بھلائی کو مقدم جانا۔</p>
-</section>
+        <!-- ابتدائی زندگی -->
+        <section id="early-life">
+            <h2>ابتدائی زندگی</h2>
+            <p>طارق بن زیاد کی پیدائش 670 عیسوی کے قریب شمالی افریقہ (موجودہ مراکش) میں ہوئی۔ وہ بربر نسل سے تعلق رکھتے
+                تھے جو شمالی افریقہ کی اہم قوم تھی۔</p>
 
-<section>
-<h2>علم و تہذیب میں اثرات</h2>
-<p>طارق کی فتوحات نے یورپ میں علم، ادب، فنون اور تمدن کے دروازے کھولے۔ اندلس صدیوں تک اسلامی ثقافت اور تہذیب کا مرکز بنا اور یورپی تاریخ پر اس کے اثرات دیرپا رہے۔</p>
-</section>
+            <div class="quote">
+                "طارق بن زیاد نے اپنی زندگی کا بیشتر حصہ فوجی تربیت اور اسلامی علوم کی تحصیل میں گزارا جو بعد میں ان کی
+                کامیابی کی بنیاد بنا۔"
+            </div>
 
-<section>
-<h2>قیادت، عاجزی اور قربانی</h2>
-<p>طارق نہ صرف ایک کامیاب فوجی کمانڈر تھا بلکہ ایک عاجز انسان بھی تھا۔ اس نے فتح کے بعد بھی سادگی اختیار کی اور عوام کی خدمت کو اپنی زندگی کا مقصد بنایا۔</p>
-<blockquote>"فتح کی اصل قدر عوام کی بھلائی میں چھپی ہے۔"</blockquote>
-</section>
+            <p>انہوں نے موسیٰ بن نصیر کے زیر انتظام فوج میں شمولیت اختیار کی جو اس وقت شمالی افریقہ کے گورنر تھے۔ طارق
+                کی صلاحیتوں کو دیکھتے ہوئے موسیٰ بن نصیر نے انہیں ٹینجر (موجودہ مراکش) کا گورنر مقرر کیا۔</p>
+        </section>
 
-<section>
-<h2>وفات اور یادگار</h2>
-<p>طارق کی وفات کے بارے میں مختلف روایات موجود ہیں۔ کچھ کہتے ہیں وہ دمشق میں وفات پا گئے، کچھ کا کہنا ہے کہ وہ شمالی افریقہ میں خاموشی سے رخصت ہوئے۔ ان کی یاد ہمیشہ ان کے کارناموں اور اندلس میں روشن کی گئی روشنیوں میں زندہ رہے گی۔</p>
-</section>
+        <!-- فتح اندلس کا ٹائم لائن -->
+        <section id="conquest">
+            <h2>فتح اندلس کا تاریخی سفر</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>710 عیسوی</h3>
+                        <p>طارق بن زیاد نے پہلی بار اندلس کے ساحل پر چھوٹی سی فوج کے ساتھ چھاپہ مارا تاکہ علاقے کی طاقت
+                            کا اندازہ لگایا جا سکے۔</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>اپریل 711 عیسوی</h3>
+                        <p>طارق بن زیاد نے 7,000 فوجیوں کے ساتھ جبل الطارق پر لینڈنگ کی اور اس پہاڑی کو اپنا فوجی اڈہ
+                            بنایا۔</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>جولائی 711 عیسوی</h3>
+                        <p>گوڈے رک کی فوج کے خلاف فیصلہ کن جنگ جس میں طارق بن زیاد نے اپنا مشہور خطبہ دیا اور کشتیاں جلا
+                            دیں۔</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>712 عیسوی</h3>
+                        <p>طارق اور موسیٰ بن نصیر کی مشترکہ فوجوں نے پورے اندلس پر قبضہ مکمل کیا۔</p>
+                    </div>
+                </div>
+            </div>
 
-<section>
-<h2>اختتامی کلمات</h2>
-<p>یہ داستان صرف ایک کمانڈر کا نہیں بلکہ ایک ایسے انسان کی ہے جس نے خواب دیکھا، اس پر یقین کیا اور تاریخ بدل دی۔ اس کی کہانی آج بھی قیادت، قربانی اور حوصلے کی علامت ہے۔</p>
-</section>
+            <h3>طارق بن زیاد کا مشہور خطبہ</h3>
+            <div class="quote">
+                "اے میرے ساتھیو! پیچھے سمندر ہے اور آگے دشمن۔ تمہارے پاس صرف دو ہی راستے ہیں: یا تو شہادت کی بلندیوں کو
+                چھو لو، یا پھر فتح و کامرانی حاصل کرو۔"
+            </div>
+            <p>یہ تاریخی خطبہ اسلامی فوج کے حوصلے کو بلند کرنے کے لیے دیا گیا تھا جب انہوں نے کشتیاں جلانے کا فیصلہ کیا
+                تاکہ فوج میں پیچھے ہٹنے کا کوئی راستہ نہ رہے۔</p>
+        </section>
 
-<!-- Note: All images and text blocks are fully fluid and responsive for best mobile viewing -->
+        <!-- میراث -->
+        <section id="legacy">
+            <h2>طارق بن زیاد کی میراث</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>جبل الطارق</h3>
+                        <p>
+                            یہ پہاڑ نہیں، تاریخ کا سبق ہے،
+                            ہر پتھر میں طارق کی داستاں چھپی ہے،
 
+                            کشتیاں جلائیں، راستے مٹائے،
+                            عزم کی دیوار یوں کھڑی کر دی،
+                            سات ہزار نے سات لاکھ کو،
+                            منہ کے بل گرا دیا!
+
+                            آج بھی جب چلتی ہے ہوا یہاں،
+                            لہروں کی زبان سے سنائی دیتا ہے،
+                            وہ نعرۂ حق "اللہ اکبر"،
+                            جو فتح کا پیغام لایا تھا!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>اندلس کی اسلامی تہذیب</h3>
+                        <p>
+                            علم کی روشنی سے جگمگاتا وہ سنہرا دور تھا،
+                            جہاں مسجد و مدرسہ میں گونجتا تھا قرآن کا نور تھا،
+                            فنِ تعمیر کے شاہکار، ادب و فلسفے کے گہوارے،
+                            ہر سو امن و آشتی کا راج، یہ تھا اسلام کا اثاثہ،
+                            آج بھی الحمرا کی دیواریں سناتی ہیں وہ فسانہ!</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>تاریخی اہمیت</h3>
+            <p>طارق بن زیاد کی فتح اندلس نے نہ صرف یورپ کے نقشے کو بدل دیا بلکہ اسلامی تہذیب اور یورپی تہذیب کے درمیان
+                ایک پل کا کام کیا۔ قرطبہ کی عظیم یونیورسٹی، غرناطہ کی الحمراء جیسی عمارتیں اور سائنسی ترقی کا یہ سلسلہ
+                طارق بن زیاد کی فتح کے بغیر ممکن نہ تھا۔</p>
+        </section>
+
+        <!-- سبق آموز واقعات -->
+        <section id="lessons">
+            <h2>طارق بن زیاد کی زندگی سے سبق</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>عزم و ہمت</h3>
+                        <p>
+                            کشتیوں کو آگ لگا دی، پیچھے راستہ ہی مٹا دیا،
+                            سمندر پیچھے، دشمن سامنے - یہ تھا وہ تاریخی فیصلہ،
+                            سات ہزار کے لشکر نے سلطنتوں کو جھکا دیا،
+                            تاریخ کے اوراق میں یہ داستاں ہمیشہ زندہ رہے گی،
+                            طارق کا عظم آج بھی دلوں میں شوقِ جہاد جگاتا ہے!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>حکمت عملی</h3>
+                        <p>طارق بن زیاد نے نہ صرف بہادری بلکہ زبردست حکمت عملی سے کام لیا جو قیادت کے لیے ضروری ہے۔</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>انصاف پسندی</h3>
+                        <p>فتح کے بعد انہوں نے مقامی آبادی کے ساتھ رواداری اور انصاف کا سلوک کیا جو آج بھی قابل تقلید
+                            ہے۔</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>دلچسپ تاریخی حقائق</h3>
+            <ul>
+                <li>طارق بن زیاد کا نام "طارق" ستارے کے راستے یا صبح کے آنے والے کے معنی میں آتا ہے۔</li>
+                <li>جبل الطارق (جبرالٹر) کا نام انہی کے نام پر رکھا گیا ہے۔</li>
+                <li>ان کی فوج میں زیادہ تر بربر سپاہی شامل تھے جنہیں انہوں نے بہترین طریقے سے منظم کیا۔</li>
+                <li>انہوں نے فتح کے بعد مقامی عیسائیوں کو مذہبی آزادی دی جس کی وجہ سے بہت سے لوگوں نے اسلام قبول کیا۔
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p style="margin-top: 1rem;">© 2025 اسلامی تاریخ کے عظیم ہیرو | تمام حقوق محفوظ ہیں</p>
+    </footer>
+
+    <script>
+        // سموتھ سکرولنگ کے لیے جاوا اسکرپٹ
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // نیویگیشن بار پر اسکرول ایفیکٹ
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                nav.style.background = 'rgba(26, 46, 13, 0.95)';
+            } else {
+                nav.style.boxShadow = 'none';
+                nav.style.background = 'var(--dark)';
+            }
+        });
+
+        // کارڈز پر ہوور ایفیکٹ
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+            });
+            card.addEventListener('mouseleave', function () {
+                this.style.boxShadow = 'var(--shadow)';
+            });
+        });
+    </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
