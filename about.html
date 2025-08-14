@@ -1,135 +1,521 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>About Us - Al-Tibyan Quran Academy</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
-
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        /* Same styles as in the main page */
         :root {
-            --gold: #D4AF37;
-            --dark-gold: #B8860B;
+            --yellow: #FFD700; /* Gold yellow */
+            --dark-yellow: #FFC000;
             --black: #000000;
             --dark-bg: #121212;
-            --light-bg: #1E1E1E;
+            --text-color: #ffffff;
         }
         
         body {
-            font-family: 'Times New Roman', serif;
-            background-color: var(--dark-bg);
-            color: white;
-            font-size: 12px;
-           direction: rtl;
-           line-height: 1.2;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--black);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .navbar {
             background-color: var(--black);
-            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 1px solid var(--yellow);
+            transition: all 0.3s ease;
+            padding: 10px 0;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+            padding: 5px 0;
         }
         
         .navbar-brand {
-            color: var(--gold) !important;
+            color: var(--yellow) !important;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--yellow);
+            color: var(--yellow);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 215, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
         
         .nav-link {
-            color: white !important;
-            margin: 0 10px;
+            color: #ccc !important;
+            margin: 5px 0;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s;
+            padding: 8px 15px !important;
         }
         
-        .nav-link:hover {
-            color: var(--gold) !important;
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 15px;
+            background-color: var(--yellow);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--yellow) !important;
+        }
+        
+        .nav-link:hover:before, .nav-link.active:before {
+            width: calc(100% - 30px);
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(about1.png.jpg);
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('islamic-pattern.png');
             background-size: cover;
-            background-position: center;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 80px 0;
             text-align: center;
-            color: white;
             margin-bottom: 30px;
+            border-bottom: 1px solid var(--yellow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -5%;
+            width: 110%;
+            height: 60px;
+            background: var(--black);
+            transform: rotate(-3deg);
+            z-index: 1;
         }
         
         .hero-title {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: bold;
-            color: var(--gold);
-            text-shadow: 2px 2px 4px var(--black);
+            color: var(--yellow);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s both;
+            padding: 0 15px;
         }
         
-        .policy-container {
-            background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: 5px;
-            border: 1px solid var(--gold);
-            margin-bottom: 30px;
-        }
-        
-        .policy-title {
-            color: var(--gold);
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .policy-section {
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #aaa;
             margin-bottom: 25px;
+            animation: fadeInUp 1s both 0.3s;
+            padding: 0 15px;
         }
         
-        .policy-section h4 {
-            color: var(--gold);
-            margin-top: 20px;
+        .section-title {
+            color: var(--yellow);
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s;
+            font-size: 1.8rem;
+        }
+        
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--yellow);
+            transition: width 0.5s;
+        }
+        
+        .section-title:hover:after {
+            width: 90px;
+        }
+        
+        .card {
+            border: 1px solid var(--yellow);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.4s;
+            margin-bottom: 20px;
+            background: var(--dark-bg);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+            border-color: white;
+        }
+        
+        .card-title {
+            color: var(--yellow);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .card-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--yellow);
+            transition: width 0.3s;
+        }
+        
+        .card:hover .card-title:after {
+            width: 60px;
+        }
+        
+        .team-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--yellow);
+            margin: 0 auto 15px;
+            transition: all 0.4s;
+            filter: grayscale(20%);
+        }
+        
+        .card:hover .team-img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+            border-color: white;
+            box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+        }
+        
+        .achievement-box {
+            text-align: center;
+            padding: 15px;
+            background: var(--dark-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            margin-bottom: 15px;
+            border: 1px solid var(--yellow);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .achievement-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .achievement-box:hover {
+            transform: translateY(-3px) !important;
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        .achievement-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--yellow);
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+        
+        .achievement-box:hover .achievement-number {
+            transform: scale(1.1);
         }
         
         footer {
-            background-color: var(--black);
+            background: var(--black);
+            color: var(--text-color);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-top: 1px solid var(--yellow);
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -5%;
+            width: 110%;
+            height: 60px;
+            background: var(--black);
+            transform: rotate(3deg);
+            z-index: -1;
+        }
+        
+        .footer-title {
+            color: var(--yellow);
+            font-weight: bold;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--yellow);
+            transition: width 0.3s;
+        }
+        
+        .footer-title:hover:after {
+            width: 60px;
+        }
+        
+        .social-icon {
+            color: var(--yellow);
+            font-size: 1.2rem;
+            margin-right: 10px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .social-icon:hover {
             color: white;
-            padding: 50px 0 20px;
-            margin-top: 50px;
-            border-top: 2px solid var(--gold);
+            transform: translateY(-3px) scale(1.2);
+        }
+        
+        .btn-warning {
+            background-color: var(--yellow);
+            color: var(--black);
+            border-color: var(--dark-yellow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s;
+            padding: 8px 20px;
+            font-size: 1rem;
+        }
+        
+        .btn-warning:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-yellow);
+            transition: all 0.4s;
+            z-index: -1;
+        }
+        
+        .btn-warning:hover {
+            color: var(--black);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn-warning:hover:before {
+            left: 0;
+        }
+        
+        .text-muted {
+            color: #aaa !important;
+            font-size: 0.9rem;
+        }
+        
+        /* Testimonial Section */
+        .testimonial-section {
+            padding: 50px 0;
+            background: linear-gradient(135deg, rgba(18,18,18,0.9) 0%, rgba(0,0,0,0.95) 100%);
+            position: relative;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+        
+        .testimonial-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('islamic-pattern.png') center/cover;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        
+        .testimonial-card {
+            background: var(--dark-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            border-left: 5px solid var(--yellow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 20px rgba(255,215,0,0.2);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            position: relative;
+            padding-left: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .testimonial-text:before {
+            content: '\201C';
+            position: absolute;
+            left: -5px;
+            top: -15px;
+            font-size: 3rem;
+            color: rgba(255,215,0,0.2);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .testimonial-author img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--yellow);
+            margin-right: 10px;
+        }
+        
+        .author-info h5 {
+            margin-bottom: 0;
+            color: var(--yellow);
+            font-size: 1rem;
+        }
+        
+        .author-info p {
+            color: #aaa;
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .team-img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .achievement-number {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial-card {
+                padding: 15px;
+            }
+            
+            footer:before, .hero-section:after {
+                height: 40px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero-section {
+                padding: 100px 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Al-Tibyan Quran Academy</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mosque"></i> Al-Tibyan
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#articles"><i class="fas fa-book"></i> Articles</a>
+                        <a class="nav-link" href="index.html#articles">Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                        <a class="nav-link active" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact"><i class="fas fa-phone"></i> Contact</a>
+                        <a class="nav-link" href="index.html#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -139,88 +525,262 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="hero-title">About Al-Tibyan Quran Academy</h1>
-            <p class="hero-subtitle">Our Mission, Vision, and Values</p>
+            <h1 class="hero-title animate__animated animate__fadeInDown">About Our Academy</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">Teaching Quran and Islamic knowledge with sincerity</p>
+            <a href="#main-content" class="btn btn-warning animate__animated animate__fadeInUp animate__delay-1s">Learn More</a>
         </div>
     </section>
 
-    <!-- About Content -->
-    <div class="container">
-        <div class="policy-container">
-            <h2 class="policy-title">Our Story</h2>
-            <div class="policy-section">
-                <p>Al-Tibyan Quran Academy was founded in 2021 by Hafiz Faheem Firdosi with the vision of providing authentic Islamic education to Muslims around the world. What began as a small local Quran teaching center has now grown into a comprehensive online platform serving thousands of students globally.</p>
-                
-                <p>The name "Al-Tibyan" is derived from the Quran (Surah Al-Imran, 3:138) meaning "The Explanation" - reflecting our commitment to making the Quran and Islamic teachings clear and accessible to all.</p>
+    <!-- Main Content -->
+    <div class="container" id="main-content">
+        <h2 class="section-title">Our Story</h2>
+        <p class="text-center mb-5 px-3">Al-Tibyan Quran Academy was founded in 2021 to provide authentic Islamic education to students worldwide. We specialize in Quran teaching with proper Tajweed and Islamic studies.</p>
+        
+        <h2 class="section-title">Our Mission</h2>
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-quran text-yellow me-2"></i> Quran Teaching
+                        </h5>
+                        <p class="card-text">We teach Quran with proper Tajweed and Tafsir to students of all ages, preserving the authentic recitation methods.</p>
+                    </div>
+                </div>
             </div>
-            
-            <h2 class="policy-title">Our Mission</h2>
-            <div class="policy-section">
-                <p>Our mission is to provide high-quality, authentic Islamic education that is accessible to Muslims worldwide. We aim to:</p>
-                <ul>
-                    <li>Teach the Quran with proper Tajweed and understanding</li>
-                    <li>Spread authentic knowledge of the Sunnah</li>
-                    <li>Clarify Islamic rulings according to the Quran and authentic Hadith</li>
-                    <li>Develop love for Allah and His Messenger (ﷺ) in the hearts of students</li>
-                    <li>Provide Islamic guidance for contemporary issues</li>
-                </ul>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-graduation-cap text-yellow me-2"></i> Islamic Education
+                        </h5>
+                        <p class="card-text">Providing authentic Islamic knowledge based on Quran and Sunnah according to the understanding of the Sahaba.</p>
+                    </div>
+                </div>
             </div>
-            
-            <h2 class="policy-title">Our Methodology</h2>
-            <div class="policy-section">
-                <p>We follow the traditional Islamic methodology of learning while utilizing modern technology to make education accessible:</p>
-                <ul>
-                    <li>All teachings are based on the Quran and authentic Sunnah</li>
-                    <li>We follow the understanding of the righteous predecessors (Salaf us-Salih)</li>
-                    <li>Our instructors are qualified scholars and certified Huffaz</li>
-                    <li>We maintain high academic standards with personalized attention</li>
-                </ul>
+        </div>
+        
+        <h2 class="section-title">Our Team</h2>
+        <div class="row mb-5">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="faheem1.png.jpg" class="team-img" alt="Hafiz Faheem">
+                        <h5 class="card-title mt-3">Hafiz Faheem</h5>
+                        <p class="text-muted">Founder & Quran Teacher</p>
+                    </div>
+                </div>
             </div>
-            
-            <h2 class="policy-title">Our Team</h2>
-            <div class="policy-section">
-                <p>Al-Tibyan Quran Academy is proud to have a team of dedicated and qualified Islamic scholars, Huffaz, and teachers who are committed to spreading authentic Islamic knowledge.</p>
-                
-                <h4>Hafiz Faheem Firdosi - Founder & Director</h4>
-                <p>A Hafiz-ul-Quran and Islamic scholar with over 5 years of teaching experience. He completed his Hifz from Jamia Islamia dar rul ulom taqwiytul islam odanwala  and has studied under several renowned scholars.</p>
-                
-                <h4>Mufti Hafiz Ameen - Head of Fatwa Department</h4>
-                <p>Graduated from Darul Uloom sargodha with specialization in Islamic Jurisprudence. Provides guidance on contemporary issues.</p>
-                
-                <h4>Ustadha Aisha Ameen - Female Education Coordinator</h4>
-                <p>Specializes in teaching female students with proper Hijab guidelines and decorum.</p>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="mufti-ameen.jpg" class="team-img" alt="Mufti Ameen">
+                        <h5 class="card-title mt-3">Mufti Ameen</h5>
+                        <p class="text-muted">Islamic Scholar</p>
+                    </div>
+                </div>
             </div>
-            
-            <h2 class="policy-title">Our Achievements</h2>
-            <div class="policy-section">
-                <ul>
-                    <li>Over 31 students who have completed Hifz program</li                    <li>Regular Islamic seminars and workshops</li>
-                    <li>Published articles and research papers on Islamic topics</li>
-                    <li>Successful online education platform serving students in All countries </li>
-                </ul>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="aisha-ameen.jpg" class="team-img" alt="Ustadha Aisha">
+                        <h5 class="card-title mt-3">Ustadha Aisha</h5>
+                        <p class="text-muted">Female Teacher</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Our Achievements</h2>
+        <div class="row mb-5">
+            <div class="col-6 col-md-3 mb-4">
+                <div class="achievement-box">
+                    <div class="achievement-number">6+</div>
+                    <p>Huffaz Graduated</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4">
+                <div class="achievement-box">
+                    <div class="achievement-number">50+</div>
+                    <p>Students</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4">
+                <div class="achievement-box">
+                    <div class="achievement-number">5+</div>
+                    <p>Countries</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 mb-4">
+                <div class="achievement-box">
+                    <div class="achievement-number">10+</div>
+                    <p>Courses</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Students Say</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">Al-Tibyan Academy has transformed my Quran recitation. The teachers are knowledgeable and patient, making learning enjoyable.</p>
+                        <div class="testimonial-author">
+                            <img src="student1.jpg" alt="Student">
+                            <div class="author-info">
+                                <h5>Ahmed Khan</h5>
+                                <p>Online Student, UK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">My daughter has improved tremendously in her Tajweed since joining. The female teachers are excellent role models.</p>
+                        <div class="testimonial-author">
+                            <img src="student2.jpg" alt="Student">
+                            <div class="author-info">
+                                <h5>Fatima Ahmed</h5>
+                                <p>Parent, Canada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">As a beginner in Arabic, I was nervous, but the structured approach made learning easy. Highly recommend this academy!</p>
+                        <div class="testimonial-author">
+                            <img src="student3.jpg" alt="Student">
+                            <div class="author-info">
+                                <h5>Yusuf Smith</h5>
+                                <p>New Muslim, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h4 class="footer-title">Al-Tibyan Quran Academy</h4>
-                    <p>Dedicated to providing authentic Islamic knowledge and Quranic education to Muslims worldwide.</p>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Al-Tibyan</h5>
+                    <p>Teaching Quran and authentic Islamic knowledge since 2021.</p>
+                    <div>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-6 text-end">
-                    <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
-                    <a href="terms.html" class="text-white">Terms & Conditions</a>
-                    <p class="mt-3">&copy; 2023 Al-Tibyan Quran Academy. All Rights Reserved.</p>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About</a></li>
+                        <li><a href="privacy.html" class="text-white">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-white">Terms</a></li>
+                    </ul>
                 </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-title">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> 0302-7935834</li>
+                        <li><i class="fas fa-envelope me-2"></i> hafizfaheemfirdosi@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Lahore, Pakistan</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Al-Tibyan Quran Academy</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation with throttling
+        function checkVisibility() {
+            const elements = document.querySelectorAll('.section-title, .card, .achievement-box, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Throttle function for scroll events
+        function throttle(func, limit) {
+            let lastFunc;
+            let lastRan;
+            return function() {
+                const context = this;
+                const args = arguments;
+                if (!lastRan) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                } else {
+                    clearTimeout(lastFunc);
+                    lastFunc = setTimeout(function() {
+                        if ((Date.now() - lastRan) >= limit) {
+                            func.apply(context, args);
+                            lastRan = Date.now();
+                        }
+                    }, limit - (Date.now() - lastRan));
+                }
+            }
+        }
+
+        // Initial check
+        checkVisibility();
+
+        // Check on scroll with throttling
+        window.addEventListener('scroll', throttle(checkVisibility, 100));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
