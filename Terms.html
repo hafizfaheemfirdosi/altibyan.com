@@ -262,6 +262,64 @@
             animation: float 4s ease-in-out infinite;
         }
 
+        /* Confirmation Message */
+        .confirmation-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--dark-bg);
+            border: 2px solid var(--yellow);
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .confirmation-message.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .confirmation-message i {
+            font-size: 3rem;
+            color: var(--yellow);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .confirmation-message h3 {
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+        .confirmation-message p {
+            margin-bottom: 20px;
+        }
+        .confirmation-message .btn {
+            margin-top: 15px;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .hero-title {
@@ -269,6 +327,9 @@
             }
             .term-card {
                 margin-bottom: 2rem;
+            }
+            .confirmation-message {
+                padding: 20px;
             }
         }
     </style>
@@ -300,7 +361,7 @@
         <div class="container py-5">
             <div class="floating">
                 <h1 class="hero-title mb-4">Terms & Conditions</h1>
-                <p class="lead text-light mb-0">Last Updated: July 2023</p>
+                <p class="lead text-white mb-0">Last Updated: July 2023</p>
             </div>
         </div>
     </section>
@@ -319,15 +380,15 @@
                             </h2>
                         </div>
                         <div class="card-body p-4">
-                            <p class="fs-5">By enrolling in our courses, you agree to:</p>
+                            <p class="fs-5 text-white">By enrolling in our courses, you agree to:</p>
                             <ul class="term-list ps-0">
-                                <li class="fs-5">Provide accurate registration information</li>
-                                <li class="fs-5">Maintain respectful behavior in classes</li>
-                                <li class="fs-5">Adhere to scheduled class times</li>
+                                <li class="fs-5 text-white">Provide accurate registration information</li>
+                                <li class="fs-5 text-white">Maintain respectful behavior in classes</li>
+                                <li class="fs-5 text-white">Adhere to scheduled class times</li>
                             </ul>
                             <div class="highlight-note mt-4 p-4 rounded">
                                 <i class="fas fa-info-circle text-yellow me-2 fs-4"></i>
-                                <span class="fs-5">Late arrivals may miss important lesson content.</span>
+                                <span class="fs-5 text-white">Late arrivals may miss important lesson content.</span>
                             </div>
                         </div>
                     </article>
@@ -345,14 +406,14 @@
                                     <div class="payment-method p-4 h-100 rounded">
                                         <i class="fas fa-credit-card text-yellow mb-3 fs-1"></i>
                                         <h5 class="text-yellow fs-4">Monthly Payments</h5>
-                                        <p class="fs-5">Due on the 1st of each month</p>
+                                        <p class="fs-5 text-white">Due on the 1st of each month</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="payment-method p-4 h-100 rounded">
                                         <i class="fas fa-calendar-alt text-yellow mb-3 fs-1"></i>
                                         <h5 class="text-yellow fs-4">Late Fees</h5>
-                                        <p class="fs-5">10% after 7 days overdue</p>
+                                        <p class="fs-5 text-white">10% after 7 days overdue</p>
                                     </div>
                                 </div>
                             </div>
@@ -374,7 +435,7 @@
                                     </div>
                                     <div class="rule-content">
                                         <h5 class="text-yellow fs-5">Notice Required</h5>
-                                        <p class="fs-5">24 hours notice for cancellations</p>
+                                        <p class="fs-5 text-white">24 hours notice for cancellations</p>
                                     </div>
                                 </div>
                                 <div class="rule-item d-flex">
@@ -383,7 +444,7 @@
                                     </div>
                                     <div class="rule-content">
                                         <h5 class="text-yellow fs-5">No Shows</h5>
-                                        <p class="fs-5">3 no-shows may result in suspension</p>
+                                        <p class="fs-5 text-white">3 no-shows may result in suspension</p>
                                     </div>
                                 </div>
                             </div>
@@ -406,13 +467,13 @@
                                     <span class="badge bg-yellow text-dark mb-3">Quizzes</span>
                                 </div>
                             </div>
-                            <p class="fs-5 mt-3">All materials are for personal use only. Redistribution is prohibited.</p>
+                            <p class="fs-5 text-white mt-3">All materials are for personal use only. Redistribution is prohibited.</p>
                         </div>
                     </article>
 
                     <div class="acceptance-box text-center p-5 mt-5 rounded">
                         <h4 class="text-yellow mb-4 fs-3">By using our services, you agree to these terms</h4>
-                        <button class="btn btn-yellow btn-lg px-5 py-3">
+                        <button id="understandBtn" class="btn btn-yellow btn-lg px-5 py-3">
                             <i class="fas fa-handshake me-2"></i>I Understand
                         </button>
                     </div>
@@ -421,18 +482,27 @@
         </div>
     </main>
 
+    <!-- Confirmation Message -->
+    <div class="confirmation-message">
+        <i class="fas fa-check-circle"></i>
+        <h3>Thank You!</h3>
+        <p>Your acceptance has been recorded. You may now proceed to use our services.</p>
+        <button class="btn btn-yellow" id="closeConfirmation">Done</button>
+    </div>
+    <div class="overlay"></div>
+
     <!-- Footer -->
     <footer class="bg-black text-white py-5 border-top-yellow">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
                     <h5 class="text-yellow mb-4 fs-4"><i class="fas fa-mosque me-2"></i>Al-Tibyan</h5>
-                    <p class="fs-5">Teaching Quran with Tajweed since 2021.</p>
+                    <p class="fs-5 text-white">Teaching Quran with Tajweed since 2021.</p>
                     <div class="social-links mt-4 d-flex gap-3">
-                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/923027935834" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon d-flex align-items-center justify-content-center"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -447,15 +517,15 @@
                 <div class="col-lg-4">
                     <h5 class="text-yellow mb-4 fs-4">Contact Us</h5>
                     <ul class="contact-info list-unstyled">
-                        <li class="mb-3 fs-5 d-flex align-items-start"><i class="fas fa-phone-alt text-yellow me-2 mt-1"></i>0302-7935834</li>
-                        <li class="mb-3 fs-5 d-flex align-items-start"><i class="fas fa-envelope text-yellow me-2 mt-1"></i>contact@altibyan.edu</li>
-                        <li class="fs-5 d-flex align-items-start"><i class="fas fa-map-marker-alt text-yellow me-2 mt-1"></i>Lahore, Pakistan</li>
+                        <li class="mb-3 fs-5 text-white d-flex align-items-start"><i class="fas fa-phone-alt text-yellow me-2 mt-1"></i>0302-7935834</li>
+                        <li class="mb-3 fs-5 text-white d-flex align-items-start"><i class="fas fa-envelope text-yellow me-2 mt-1"></i>contact@altibyan.edu</li>
+                        <li class="fs-5 text-white d-flex align-items-start"><i class="fas fa-map-marker-alt text-yellow me-2 mt-1"></i>Lahore, Pakistan</li>
                     </ul>
                 </div>
             </div>
             <hr class="border-yellow my-5">
             <div class="text-center">
-                <p class="mb-0 fs-5">&copy; 2023 Al-Tibyan Quran Academy. All Rights Reserved.</p>
+                <p class="mb-0 fs-5 text-white">&copy; 2023 Al-Tibyan Quran Academy. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -504,6 +574,27 @@
                         }
                     });
                 });
+            });
+
+            // Show confirmation message
+            const understandBtn = document.getElementById('understandBtn');
+            const confirmationMessage = document.querySelector('.confirmation-message');
+            const overlay = document.querySelector('.overlay');
+            const closeConfirmation = document.getElementById('closeConfirmation');
+
+            understandBtn.addEventListener('click', function() {
+                confirmationMessage.classList.add('show');
+                overlay.classList.add('show');
+            });
+
+            closeConfirmation.addEventListener('click', function() {
+                confirmationMessage.classList.remove('show');
+                overlay.classList.remove('show');
+            });
+
+            overlay.addEventListener('click', function() {
+                confirmationMessage.classList.remove('show');
+                overlay.classList.remove('show');
             });
 
             window.addEventListener('scroll', animateOnScroll);
