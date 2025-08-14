@@ -18,6 +18,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         :root {
             --gold: #D4AF37;
@@ -25,32 +31,62 @@
             --black: #000000;
             --dark-bg: #121212;
             --light-bg: #1E1E1E;
+            --card-bg: #252525;
         }
         
         body {
             font-family: 'Times New Roman', serif;
             background-color: var(--dark-bg);
             color: white;
+            scroll-behavior: smooth;
         }
         
         .navbar {
             background-color: var(--black);
             border-bottom: 2px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
         }
         
         .navbar-brand {
             color: var(--gold) !important;
             font-weight: bold;
             font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
         }
         
         .nav-link {
             color: white !important;
             margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
         }
         
         .nav-link:hover {
             color: var(--gold) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
         }
         
         .hero-section {
@@ -64,6 +100,18 @@
             text-align: center;
             color: white;
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(212,175,55,0.1) 100%);
         }
         
         .hero-title {
@@ -71,43 +119,91 @@
             font-weight: bold;
             color: var(--gold);
             text-shadow: 2px 2px 4px var(--black);
+            animation: fadeInDown 1s ease;
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 20px;
+            animation: fadeInUp 1s ease 0.3s both;
         }
         
         .article-card {
-            background-color: var(--light-bg);
-            border: 1px solid var(--gold);
-            border-radius: 5px;
-            margin-bottom: 20px;
-            transition: transform 0.3s;
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            height: 100%;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        .article-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .article-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover .card-img-top {
+            transform: scale(1.1);
         }
         
         .card-title {
             color: var(--gold);
             font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .article-card:hover .card-title {
+            color: #fff;
         }
         
         .card-text {
             color: #ccc;
+            font-size: 0.95rem;
         }
         
         .read-more {
             color: var(--gold);
             text-decoration: none;
             font-weight: bold;
+            position: relative;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: -2px;
+            left: 0;
+            transition: width 0.3s ease;
         }
         
         .read-more:hover {
-            text-decoration: underline;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .read-more:hover::after {
+            width: 100%;
         }
         
         .section-title {
@@ -116,6 +212,21 @@
             padding-bottom: 10px;
             margin-bottom: 30px;
             text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
         }
         
         footer {
@@ -124,32 +235,68 @@
             padding: 50px 0 20px;
             margin-top: 50px;
             border-top: 2px solid var(--gold);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
         .footer-title {
             color: var(--gold);
             font-weight: bold;
             margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: var(--gold);
+            bottom: -5px;
+            left: 0;
         }
         
         .social-icon {
             color: var(--gold);
             font-size: 1.5rem;
             margin-right: 15px;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
         
         .social-icon:hover {
             color: white;
+            transform: translateY(-3px) scale(1.1);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
         }
         
         .contact-info {
             margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info:hover {
+            transform: translateX(5px);
         }
         
         .contact-info i {
             color: var(--gold);
             margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info:hover i {
+            color: white;
         }
         
         .translate-container {
@@ -171,10 +318,13 @@
             justify-content: center;
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
         
         .translate-btn:hover {
             background-color: var(--dark-gold);
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
         }
         
         .goog-te-banner-frame {
@@ -193,6 +343,113 @@
             padding: 5px;
         }
         
+        /* Pagination Styles */
+        .pagination .page-item .page-link {
+            background-color: var(--light-bg);
+            color: white;
+            border: 1px solid var(--gold);
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination .page-item.active .page-link {
+            background-color: var(--gold);
+            color: var(--black);
+            border-color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .pagination .page-item:not(.active) .page-link:hover {
+            background-color: var(--card-bg);
+            color: var(--gold);
+        }
+        
+        /* Coming Soon Overlay */
+        .coming-soon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover .coming-soon {
+            opacity: 1;
+        }
+        
+        .coming-soon-text {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        
+        /* Loading Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Scroll Reveal Animation */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Article Page Transition */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark-bg);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        
+        .page-transition.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .page-transition .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -205,61 +462,65 @@
             .navbar-brand {
                 font-size: 1.2rem;
             }
+            
+            .article-card {
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
         }
         
-        /* Additional pages styling */
-        .policy-container {
-            background-color: var(--light-bg);
-            padding: 30px;
-            border-radius: 5px;
-            border: 1px solid var(--gold);
-            margin-bottom: 30px;
-        }
-        
-        .policy-title {
-            color: var(--gold);
-            border-bottom: 1px solid var(--gold);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .policy-section {
-            margin-bottom: 25px;
-        }
-        
-        .policy-section h4 {
-            color: var(--gold);
-            margin-top: 20px;
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .card-title {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Page Transition Overlay -->
+    <div class="page-transition">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Al-Tibyan Quran Academy</a>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-mosque me-2"></i>Al-Tibyan Quran Academy
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link active" href="#home"><i class="fas fa-home me-1"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#articles"><i class="fas fa-book"></i> Articles</a>
+                        <a class="nav-link" href="#articles"><i class="fas fa-book me-1"></i> Articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                        <a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1"></i> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                        <a class="nav-link" href="privacy.html"><i class="fas fa-shield-alt me-1"></i> Privacy Policy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="terms.html"><i class="fas fa-file-contract"></i> Terms</a>
+                        <a class="nav-link" href="terms.html"><i class="fas fa-file-contract me-1"></i> Terms</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact"><i class="fas fa-phone"></i> Contact</a>
+                        <a class="nav-link" href="#contact"><i class="fas fa-phone me-1"></i> Contact</a>
                     </li>
                 </ul>
             </div>
@@ -269,67 +530,33 @@
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="container">
-            <h1 class="hero-title">Islamic Knowledge Repository</h1>
-            <p class="hero-subtitle">Daily Articles on Quran, Hadith, and Islamic History</p>
-            <a href="#articles" class="btn btn-outline-warning btn-lg">Read Articles</a>
+            <h1 class="hero-title animate_animated animate_fadeInDown">Islamic Knowledge Repository</h1>
+            <p class="hero-subtitle animate_animated animate_fadeInUp">Daily Articles on Quran, Hadith, and Islamic History</p>
+            <a href="#articles" class="btn btn-outline-warning btn-lg mt-3 animate_animated animatefadeInUp animate_delay-1s">
+                <i class="fas fa-book-open me-2"></i>Read Articles
+            </a>
         </div>
     </section>
 
     <!-- Main Content -->
     <div class="container" id="articles">
-        <h2 class="section-title">Latest Articles</h2>
+        <h2 class="section-title animate_animated animate_fadeIn">Latest Articles</h2>
         
-        <div class="row">
-            <!-- Article 1 -->
-            <div class="col-md-4">
-                <div class="article-card card h-55">
-                    <img src="tariq.png.jpg" class="card-img-top" alt="Quran">
-                    <div class="card-body">
-                        <h5 class="card-title">The Emotional Legacy of Tariq ibn Ziyad</h5>
-                        <p class="card-text">A Story of Courage, Sacrifice, and Unwavering Resolve.</p>
-                        <a href="tariq.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-primary">Posted on: August 5, 2025</small>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Article 2 -->
-            <div class="col-md-4">
-                <div class="article-card card h-51">
-                    <img src="slah.png.jpg" class="card-img-top" alt="Mosque">
-                    <div class="card-body">
-                        <h5 class="card-title">Salahuddin Ayyubi: The Warrior With a Tear-Stained Sword</h5>
-                        <p class="card-text">A soul who carried the weight of empires but never forgot the tears of a single mother.</p>
-                        <a href="salah.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-primary">Posted on: August 5, 2025</small>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Article 3 -->
-            <div class="col-md-4">
-                <div class="article-card card h-100">
-                    <img src="khali.ra.png.jpg" class="card-img-top" alt="Prayer">
-                    <div class="card-body">
-                        <h5 class="card-title">Khalid bin Waleed (RA) - The Sword of Allah |</h5>
-                        <p class="card-text">How the five daily prayers purify the soul and strengthen our connection with Allah.</p>
-                        <a href="khalid.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-primary">Posted on: August 6, 2025</small>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="articles-container">
+            <!-- Articles will be loaded here dynamically -->
         </div>
         
+        <!-- Pagination -->
+        <nav aria-label="Page navigation" class="mt-5">
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination will be generated here -->
+            </ul>
+        </nav>
+        
         <!-- Add New Blog Button -->
-        <div class="text-center mt-5">
-            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addBlogModal">
-                <i class="fas fa-plus-circle"></i> Add New Blog Article
+        <div class="text-center mt-5 mb-5">
+            <button class="btn btn-warning btn-lg pulse-animation" data-bs-toggle="modal" data-bs-target="#addBlogModal">
+                <i class="fas fa-plus-circle me-2"></i> Add New Blog Article
             </button>
         </div>
     </div>
@@ -339,13 +566,16 @@
         <h2 class="section-title">About Us</h2>
         <div class="row">
             <div class="col-md-6">
-                <img src="about1.png" class="img-fluid rounded w-5" alt="About Us">
+                <img src="about1.png" class="img-fluid rounded shadow-lg" alt="About Us" style="border: 2px solid var(--gold);">
             </div>
             <div class="col-md-6">
-                <h3 class="text-gold">Al-Tibyan Quran Academy</h3>
-                <p>We are dedicated to spreading authentic Islamic knowledge through articles, lectures, and Quranic education. Our mission is to provide easy access to Islamic learning for Muslims around the world.</p>
-                <p>Founded by Hafiz Faheem Firdosi, our academy focuses on teaching the Quran with proper Tajweed, explaining Hadith, and clarifying Islamic rulings according to the Quran and Sunnah.</p>
-                <a href="about.html" class="btn btn-outline-warning mt-3">Read More About Us</a>
+                <h3 class="text-gold mb-4">Al-Tibyan Quran Academy</h3>
+                <p class="lead">We are dedicated to spreading authentic Islamic knowledge through articles, lectures, and Quranic education.</p>
+                <p>Our mission is to provide easy access to Islamic learning for Muslims around the world. Founded by Hafiz Faheem Firdosi, our academy focuses on teaching the Quran with proper Tajweed, explaining Hadith, and clarifying Islamic rulings according to the Quran and Sunnah.</p>
+                <p>With over 100 articles on various Islamic topics, we aim to be a comprehensive resource for Muslims seeking knowledge.</p>
+                <a href="about.html" class="btn btn-outline-warning mt-3">
+                    <i class="fas fa-info-circle me-2"></i>Read More About Us
+                </a>
             </div>
         </div>
     </div>
@@ -354,33 +584,34 @@
     <footer id="contact">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Al-Tibyan Quran Academy</h4>
                     <p>Dedicated to providing authentic Islamic knowledge and Quranic education to Muslims worldwide.</p>
                     <div class="mt-4">
-                        <h5 class="text-gold">Follow Us</h5>
-                        <a href="https://wa.me/923027935834" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <h5 class="text-gold mb-3">Follow Us</h5>
+                        <a href="https://wa.me/923027935834" class="social-icon" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/19WpELWt1e/" class="social-icon" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#home" class="text-white" style="text-decoration: none;">Home</a></li>
-                        <li><a href="#articles" class="text-white" style="text-decoration: none;">Articles</a></li>
-                        <li><a href="about.html" class="text-white" style="text-decoration: none;">About Us</a></li>
-                        <li><a href="privacy.html" class="text-white" style="text-decoration: none;">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-white" style="text-decoration: none;">Terms & Conditions</a></li>
-                        <li><a href="#contact" class="text-white" style="text-decoration: none;">Contact</a></li>
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>Home</a></li>
+                        <li class="mb-2"><a href="#articles" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>Articles</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>About Us</a></li>
+                        <li class="mb-2"><a href="privacy.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>Privacy Policy</a></li>
+                        <li class="mb-2"><a href="terms.html" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>Terms & Conditions</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none"><i class="fas fa-chevron-right me-2 text-gold"></i>Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-md-4">
                     <h4 class="footer-title">Contact Us</h4>
-                    <form>
+                    <form id="contactForm">
                         <div class="mb-3">
                             <input type="text" class="form-control bg-light text-dark" placeholder="Your Name" required>
                         </div>
@@ -390,18 +621,20 @@
                         <div class="mb-3">
                             <textarea class="form-control bg-light text-dark" rows="2" placeholder="Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-warning btn-sm">Send Message</button>
+                        <button type="submit" class="btn btn-warning btn-sm">
+                            <i class="fas fa-paper-plane me-1"></i> Send Message
+                        </button>
                     </form>
                     
-                    <div class="mt-3">
+                    <div class="mt-4">
                         <div class="contact-info">
                             <i class="fas fa-map-marker-alt"></i> <span>Lahore, Pakistan</span>
                         </div>
                         <div class="contact-info">
-                            <i class="fas fa-phone"></i> <a href="tel:03027935834" style="color: var(--gold);">0302-7935834</a>
+                            <i class="fas fa-phone"></i> <a href="tel:03027935834" class="text-decoration-none" style="color: var(--gold);">0302-7935834</a>
                         </div>
                         <div class="contact-info">
-                            <i class="fas fa-envelope"></i> <a href="mailto:hafizfaheemfirdosi@gmail.com" style="color: var(--gold);">hafizfaheemfirdosi@gmail.com</a>
+                            <i class="fas fa-envelope"></i> <a href="mailto:hafizfaheemfirdosi@gmail.com" class="text-decoration-none" style="color: var(--gold);">hafizfaheemfirdosi@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -424,7 +657,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="blogForm">
                         <div class="mb-3">
                             <label for="articleTitle" class="form-label">Article Title</label>
                             <input type="text" class="form-control bg-light text-dark" id="articleTitle" required>
@@ -444,11 +677,23 @@
                             <label for="articleTags" class="form-label">Tags (comma separated)</label>
                             <input type="text" class="form-control bg-light text-dark" id="articleTags" placeholder="Quran, Hadith, Fiqh">
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="articleCategory" class="form-label">Category</label>
+                            <select class="form-select bg-light text-dark" id="articleCategory">
+                                <option value="Quran">Quran</option>
+                                <option value="Hadith">Hadith</option>
+                                <option value="History">Islamic History</option>
+                                <option value="Fiqh">Fiqh</option>
+                                <option value="Biography">Biography</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer border-top border-gold">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-warning">Publish Article</button>
+                    <button type="button" class="btn btn-warning" id="publishArticle">Publish Article</button>
                 </div>
             </div>
         </div>
@@ -459,8 +704,16 @@
         <div id="google_translate_element"></div>
     </div>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-warning btn-floating btn-lg back-to-top" id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Google Translate API -->
     <script type="text/javascript">
@@ -476,6 +729,270 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Article data (would normally come from a database)
+        const articles = [
+            {
+                id: 1,
+                title: "The Emotional Legacy of Tariq ibn Ziyad",
+                description: "A Story of Courage, Sacrifice, and Unwavering Resolve.",
+                image: "tariq.png.jpg",
+                link: "tariq.html",
+                date: "August 5, 2025"
+            },
+            {
+                id: 2,
+                title: "Salahuddin Ayyubi: The Warrior With a Tear-Stained Sword",
+                description: "A soul who carried the weight of empires but never forgot the tears of a single mother.",
+                image: "slah.png.jpg",
+                link: "salah.html",
+                date: "August 5, 2025"
+            },
+            {
+                id: 3,
+                title: "Khalid bin Waleed (RA) - The Sword of Allah",
+                description: "How the five daily prayers purify the soul and strengthen our connection with Allah.",
+                image: "khali.ra.png.jpg",
+                link: "khalid.html",
+                date: "August 6, 2025"
+            },
+            {
+                id: 4,
+                title: "The Golden Age of Islamic Civilization",
+                description: "Exploring the scientific and cultural achievements during Islam's golden era.",
+                image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 5,
+                title: "The Miracles of the Quran",
+                description: "Scientific and linguistic miracles that prove the divine origin of the Quran.",
+                image: "https://images.unsplash.com/photo-1561768039-5a3e8a4a6f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 6,
+                title: "The Mercy of Prophet Muhammad (PBUH)",
+                description: "Examples of the Prophet's mercy towards all of creation.",
+                image: "https://images.unsplash.com/photo-1542816417-0983671d6d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 7,
+                title: "The Concept of Tawheed in Islam",
+                description: "Understanding the oneness of Allah and its implications in a Muslim's life.",
+                image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 8,
+                title: "The Art of Tajweed",
+                description: "Mastering the proper recitation of the Holy Quran with correct pronunciation.",
+                image: "https://images.unsplash.com/photo-1561768039-5a3e8a4a6f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 9,
+                title: "The Last Sermon of Prophet Muhammad (PBUH)",
+                description: "Analyzing the timeless message from the Prophet's farewell pilgrimage.",
+                image: "https://images.unsplash.com/photo-1542816417-0983671d6d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 10,
+                title: "The Four Rightly Guided Caliphs",
+                description: "Examining the lives and contributions of Abu Bakr, Umar, Uthman, and Ali (RA).",
+                image: "https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 11,
+                title: "The Science in the Quran",
+                description: "Modern scientific discoveries that were mentioned in the Quran 1400 years ago.",
+                image: "https://images.unsplash.com/photo-1561768039-5a3e8a4a6f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            },
+            {
+                id: 12,
+                title: "The Night Journey and Ascension (Isra and Mi'raj)",
+                description: "Understanding this miraculous journey of the Prophet Muhammad (PBUH).",
+                image: "https://images.unsplash.com/photo-1542816417-0983671d6d1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                link: "#",
+                date: "Coming Soon"
+            }
+        ];
+        
+        // Pagination variables
+        const itemsPerPage = 6;
+        let currentPage = 1;
+        
+        // Display articles for current page
+        function displayArticles(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedArticles = articles.slice(startIndex, endIndex);
+            
+            const articlesContainer = document.getElementById('articles-container');
+            articlesContainer.innerHTML = '';
+            
+            paginatedArticles.forEach(article => {
+                const isComingSoon = article.link === "#";
+                
+                const articleHTML = `
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="${Math.random() * 300}">
+                        <div class="article-card card h-100">
+                            <img src="${article.image}" class="card-img-top" alt="${article.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${article.title}</h5>
+                                <p class="card-text">${article.description}</p>
+                                ${isComingSoon ? '' : `<a href="${article.link}" class="read-more">Read More <i class="fas fa-arrow-right ms-1"></i></a>`}
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Posted on: ${article.date}</small>
+                            </div>
+                            ${isComingSoon ? `
+                            <div class="coming-soon">
+                                <div class="coming-soon-text">
+                                    <i class="fas fa-hourglass-half fa-2x mb-3"></i><br>
+                                    Article Coming Soon
+                                </div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+                
+                articlesContainer.innerHTML += articleHTML;
+            });
+            
+            // Add click event for article links to show transition
+            document.querySelectorAll('.read-more').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    showPageTransition(href);
+                });
+            });
+        }
+        
+        // Create pagination
+        function setupPagination() {
+            const totalPages = Math.ceil(articles.length / itemsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            // Previous button
+            pagination.innerHTML += `
+                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                    <a class="page-link" href="#" aria-label="Previous" id="prev-page">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            `;
+            
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `
+                    <li class="page-item ${i === currentPage ? 'active' : ''}">
+                        <a class="page-link" href="#" data-page="${i}">${i}</a>
+                    </li>
+                `;
+            }
+            
+            // Next button
+            pagination.innerHTML += `
+                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                    <a class="page-link" href="#" aria-label="Next" id="next-page">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            `;
+            
+            // Add event listeners
+            document.querySelectorAll('.page-link[data-page]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPage = parseInt(this.getAttribute('data-page'));
+                    displayArticles(currentPage);
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            document.getElementById('prev-page').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayArticles(currentPage);
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            
+            document.getElementById('next-page').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayArticles(currentPage);
+                    setupPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+        
+        // Page transition effect
+        function showPageTransition(href) {
+            const transition = document.querySelector('.page-transition');
+            transition.classList.add('active');
+            
+            setTimeout(() => {
+                window.location.href = href;
+            }, 1000);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            displayArticles(currentPage);
+            setupPagination();
+            
+            // Scroll reveal for articles
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.article-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -487,29 +1004,89 @@
             });
         });
         
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+                backToTopButton.classList.add('animate_animated', 'animate_fadeIn');
+                backToTopButton.classList.remove('animate__fadeOut');
+            } else {
+                backToTopButton.classList.add('animate__fadeOut');
+                backToTopButton.classList.remove('animate__fadeIn');
+                setTimeout(() => {
+                    backToTopButton.style.display = 'none';
+                }, 500);
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
         // Form handling for new blog articles
-        document.querySelector('#addBlogModal .btn-warning').addEventListener('click', function() {
+        document.getElementById('publishArticle').addEventListener('click', function() {
             const title = document.getElementById('articleTitle').value;
             if (title) {
-                alert('Blog article "' + title + '" has been submitted! (This is a demo - in a real app, this would save to a database)');
+                // Show success message with animation
+                const successAlert = document.createElement('div');
+                successAlert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 animate_animated animate_fadeInDown';
+                successAlert.style.zIndex = '1100';
+                successAlert.role = 'alert';
+                successAlert.innerHTML = `
+                    <strong>Success!</strong> Blog article "${title}" has been submitted!
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                document.body.appendChild(successAlert);
+                
+                // Close modal
                 var myModal = bootstrap.Modal.getInstance(document.getElementById('addBlogModal'));
                 myModal.hide();
                 
                 // Clear form
-                document.getElementById('articleTitle').value = '';
-                document.getElementById('articleImage').value = '';
-                document.getElementById('articleContent').value = '';
-                document.getElementById('articleTags').value = '';
+                document.getElementById('blogForm').reset();
+                
+                // Remove alert after 5 seconds
+                setTimeout(() => {
+                    successAlert.classList.add('animate__fadeOutUp');
+                    setTimeout(() => {
+                        successAlert.remove();
+                    }, 500);
+                }, 5000);
             } else {
                 alert('Please enter a title for your article');
             }
         });
         
         // Contact form handling
-        document.querySelector('footer form').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! We will contact you soon.');
+            
+            // Show success message with animation
+            const successAlert = document.createElement('div');
+            successAlert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3 animate_animated animate_fadeInDown';
+            successAlert.style.zIndex = '1100';
+            successAlert.role = 'alert';
+            successAlert.innerHTML = `
+                <strong>Thank you!</strong> Your message has been sent. We will contact you soon.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            document.body.appendChild(successAlert);
+            
             this.reset();
+            
+            // Remove alert after 5 seconds
+            setTimeout(() => {
+                successAlert.classList.add('animate__fadeOutUp');
+                setTimeout(() => {
+                    successAlert.remove();
+                }, 500);
+            }, 5000);
         });
         
         // Hide Google Translate branding
