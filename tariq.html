@@ -4,576 +4,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طارق بن زیاد - جبل الطارق کے بہادر فاتح | اسلامی تاریخ</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="طارق بن زیاد، جبل الطارق کے بہادر فاتح، جنہوں نے 711 عیسوی میں اندلس کی فتح کی۔ ان کی زندگی، حکمت عملی اور تاریخی میراث کے بارے میں جانیں۔">
-    <meta name="keywords" content="طارق بن زیاد, جبل الطارق, اندلس, اسلامی تاریخ, فتح اندلس, اسلامی جرنیل, تاریخی ہیرو, مسلمانوں کی فتح">
-    <meta name="author" content="Islamic History">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="طارق بن زیاد - جبل الطارق کے بہادر فاتح | اسلامی تاریخ">
-    <meta property="og:description" content="طارق بن زیاد کی زندگی، فتح اندلس اور اسلامی تاریخ کے بارے میں معلومات۔">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hafizfaheemfirdosi.github.io/altibyan.com/tariq.html">
-    <meta property="og:image" content="https://hafizfaheemfirdosi.github.io/altibyan.com/tariq.png">
+    <title>طارق بن زیاد - ایک مکمل زندگی کی داستان | اسلامی تاریخ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        /* آپ کا موجودہ CSS یہاں رہے گا */
-    </style>
-</head>
-
-    <style>
-        /* بنیادی اسٹائلز */
         :root {
-            --primary: #2c5e1a;
-            --secondary: #5a8f3d;
-            --accent: #8b4513;
-            --text: #333;
-            --light: #f8f1e5;
-            --dark: #1a2e0d;
-            --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --primary-color: #2c5e1a;
+            --secondary-color: #8b4513;
+            --gold-color: #FFD700;
+            --light-bg: #f8f1e5;
+            --dark-bg: #1a2e0d;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-
-
-
-
         
         body {
-            font-family: 'Alvi Nastaleeq'; 'Urdu Typesetting', serif;
+            font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', 'Noto Nastaliq Urdu', serif;
             line-height: 2;
-            color: var(--text);
-            background-color: var(--light);
+            color: #333;
+            background-color: var(--light-bg);
             direction: rtl;
+            overflow-x: hidden;
+            padding-top: 0;
         }
 
-        /* ہیڈر ڈیزائن */
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url(background.png) center/cover;
-            color: rgb(249, 140, 8);
-            padding: 2rem 1rem;
-            text-align: center;
-            position: relative;
-            min-height: 300px;
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1561768039-5a3e8a4a6f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .header-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
-
-        /* نیویگیشن */
-        nav {
-            background-color: var(--dark);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
+            text-align: center;
             color: white;
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .nav-link:hover {
-            background-color: var(--primary);
-        }
-
-        /* مین کونٹینٹ */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        /* گرڈ سسٹم */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
+            position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
         }
-
-        .card:hover {
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(255,215,0,0.2) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .hero-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid var(--gold-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            color: var(--gold-color);
+            background: transparent;
+            animation: fadeIn 1s ease 0.6s both;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hero-btn:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: white;
             transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         }
 
-        .card-img {
+        /* Main Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gold-color);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 2.2;
+        }
+        
+        /* Card Style Sections */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .quote {
+            font-style: italic;
+            border-right: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background-color: rgba(139, 69, 19, 0.1);
+            position: relative;
+            font-size: 1.2rem;
+            line-height: 2.3;
+            border-radius: 10px;
+        }
+        
+        .quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.3;
+        }
+        
+        .quote::after {
+            content: '\201D';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            position: absolute;
+            bottom: -40px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        /* Timeline Effect */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50px;
+            width: 3px;
+            height: 100%;
+            background: var(--gold-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-right: 80px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 42px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--gold-color);
+            z-index: 1;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+        
+        .gallery-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--card-shadow);
         }
-
-        .card-content {
-            padding: 1.5rem;
-            flex-grow: 1;
+        
+        .gallery-img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 2;
         }
-
-        /* ٹائم لائن سیکشن */
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--secondary);
-            top: 0;
-            bottom: 0;
-            right: 50%;
-            margin-right: -2px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--primary);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-
-        .left {
-            right: 0;
-        }
-
-        .right {
-            right: 50%;
-        }
-
-        .right::after {
-            right: -12px;
-        }
-
-        .left::after {
-            left: -12px;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            text-align: right;
-        }
-
-        /* اقتباسات */
-        .quote {
-            font-style: italic;
-            border-right: 4px solid var(--accent);
-            padding: 1rem;
-            margin: 2rem 0;
-            background-color: rgba(138, 69, 19, 0.1);
-            text-align: right;
-        }
-
-        /* فوٹر */
+        
+        /* Footer */
         footer {
-            background-color: var(--dark);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f2009 100%);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+            position: relative;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
         }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-            gap: 1rem;
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-color), transparent);
         }
-
-        .footer-link {
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        .footer-title {
+            color: var(--gold-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
             color: white;
-            text-decoration: none;
-            padding: 0.5rem;
+            background: rgba(255, 215, 0, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.2rem;
         }
-
-        /* لسٹ اسٹائلز */
-        ul {
-            margin: 1rem 0;
-            padding-right: 2rem;
-            list-style-position: inside;
+        
+        .social-icon:hover {
+            background: var(--gold-color);
+            color: var(--dark-bg);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
         }
-
-        li {
-            margin-bottom: 0.5rem;
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: none;
+            outline: none;
         }
-
-        /* موبائل ریسپانسیو */
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+        
         @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+                min-height: 500px;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
             h1 {
                 font-size: 2rem;
             }
-
-            .subtitle {
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            p {
+                font-size: 1rem;
+                line-height: 2;
+            }
+            
+            .quote {
                 font-size: 1.1rem;
+                padding: 1rem;
             }
-
-            .nav-link {
-                padding: 0.5rem;
-                margin: 0.2rem;
-                font-size: 0.9rem;
+            
+            .timeline::before {
+                right: 30px;
             }
-
-            .timeline::after {
-                right: 31px;
-            }
-
+            
             .timeline-item {
-                width: 100%;
-                padding-left: 25px;
-                padding-right: 70px;
+                padding-right: 60px;
             }
-
-            .timeline-item::after {
-                right: 21px;
+            
+            .timeline-item::before {
+                right: 22px;
             }
-
-            .left::after,
-            .right::after {
-                right: 21px;
+            
+            .content-card {
+                padding: 20px;
             }
-
-            .right {
-                right: 0;
+            
+            footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+                padding: 3rem 1rem;
             }
         }
-
-        @media (max-width: 480px) {
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 70vh;
+                min-height: 400px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
             h1 {
                 font-size: 1.8rem;
             }
             
-            .header-content {
-                padding: 0.5rem;
+            h2 {
+                font-size: 1.4rem;
             }
             
-            .card-content {
-                padding: 1rem;
+            .quote {
+                font-size: 1rem;
+                padding: 0.8rem;
             }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        @keyframes shadowPulse {
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        }
+        
+        .shadow-animate {
+            animation: shadowPulse 5s infinite ease-in-out;
+        }
+        
+        /* Particles Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
         }
     </style>
 </head>
 
 <body>
-    <!-- ہیڈر سیکشن -->
-    <header>
-        <div class="header-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="particles" id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">طارق بن زیاد</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">اندلس فتح کرنے والے عظیم مسلمان سپہ سالار کی مکمل داستان</p>
+            <a href="#article-start" class="hero-btn animate__animated animate__fadeIn">مزید پڑھیں <i class="fas fa-arrow-down ms-2"></i></a>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element" style="top:20%; right:15%; animation-delay:0s;">
+            <i class="fas fa-mosque" style="font-size:3rem; color:rgba(255,215,0,0.6);"></i>
+        </div>
+        <div class="floating-element" style="top:60%; right:80%; animation-delay:2s;">
+            <i class="fas fa-sword" style="font-size:2.5rem; color:rgba(255,215,0,0.5);"></i>
+        </div>
+        <div class="floating-element" style="top:70%; right:20%; animation-delay:4s;">
+            <i class="fas fa-quran" style="font-size:3rem; color:rgba(255,215,0,0.4);"></i>
+        </div>
+    </section>
+
+    <!-- Main Article Content -->
+    <div class="article-container" id="article-start">
+        <div class="content-card shadow-animate" data-aos="fade-up">
             <h1>طارق بن زیاد</h1>
-            <p class="subtitle">جبل الطارق کے بہادر فاتح اور اندلس کی اسلامی تاریخ کے عظیم ہیرو</p>
+            <p>یہ وہ نام ہے جو تاریخ کے اوراق پر ہمیشہ زندہ رہے گا۔ ایک ایسا سپہ سالار جس نے اپنی زندگی کی ہر دھڑکن کو قربانی اور بہادری کے لئے وقف کر دیا۔ اس کی داستان صرف فتح نہیں بلکہ انسانی جذبے، خوف، درد اور ایمان کی عکاس ہے۔</p>
         </div>
-    </header>
 
-    <!-- نیویگیشن -->
-    <nav>
-        <div class="nav-container">
-            <a href="#introduction" class="nav-link">تعارف</a>
-            <a href="#early-life" class="nav-link">ابتدائی زندگی</a>
-            <a href="#conquest" class="nav-link">فتح اندلس</a>
-            <a href="#legacy" class="nav-link">میراث</a>
-            <a href="#lessons" class="nav-link">سبق آموز واقعات</a>
+        <div class="timeline">
+            <div class="content-card" data-aos="fade-up" data-aos-delay="100">
+                <h2>بچپن</h2>
+                <p>طارق بن زیاد کا بچپن شمالی افریقہ کے قبیلائی ماحول میں گزرا۔ وہ ایک عام بربر بچے کی طرح کھیل کود میں مصروف رہتا، لیکن اس کی آنکھوں میں کچھ الگ چمک تھی۔ چھوٹے قدم، چھوٹے خواب اور بڑے عزم کی بنیادیں یہاں پڑیں۔</p>
+                <p>اس دوران اس نے پہلی بار مشکلات کو محسوس کیا: غربت، قبیلائی جنگیں اور زندگی کی سختیاں۔ مگر اس کے دل میں ہمیشہ ہمت اور حوصلے کی روشنی جلتی رہی۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "کامیابی کے بیج بچپن میں بوتے ہیں، اور طارق نے اپنے بیج عزم، حوصلہ اور ایمان کے ساتھ بوئے۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="200">
+                <h2>موسیٰ بن نصیر کے پاس</h2>
+                <p>طارق بن زیاد ابتدائی طور پر شمالی افریقہ کے ایک بربر قبیلے سے تعلق رکھتے تھے۔ وہ پہلے مسلمانوں کے خلاف لڑتے رہے مگر بعد میں اسلام قبول کر لیا۔ موسیٰ بن نصیر نے ان کی بہادری اور صلاحیتوں کو پہچان لیا۔ طارق نے چھوٹی جنگی مہمات میں اپنی جنگی مہارت کا مظاہرہ کیا۔ ان کی وفاداری اور قیادتی صلاحیتوں نے موسیٰ بن نصیر بہت متاثر کیا۔ موسیٰ بن نصیر نے انہیں طنجہ کا گورنر مقرر کیا۔ طارق بن زیاد نے اس ذمہ داری کو بہترین طریقے سے نبھایا۔ ان کی کارکردگی نے موسیٰ بن نصیر کا اعتماد مزید بڑھایا۔ جب اندلس کی فتح کا موقع آیا تو موسیٰ بن نصیر نے طارق بن زیاد کو ہی منتخب کیا۔ یوں طارق بن زیاد تاریخ کے عظیم ترین کمانڈرز میں سے ایک بن گئے۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="300">
+                <h2>اندلس کی پکار</h2>
+                <p>اس زمانے میں بحرِ روم کے اُس پار اندلس (اسپین) کی زمین فتنوں اور ظلم کا شکار تھی۔ وہاں کے عیسائی بادشاہ روڈرک کی حکومت عوام کے لیے قہر بنی ہوئی تھی۔ مقامی آبادی خاص طور پر یہودی، گوتھک حکومت کے مظالم سے پریشان تھے۔ یہ بڑا ظالم اور متعصب بادشاہ تھا۔ اس کے ظلم اور جبر سے تنگ آ کر اندلس کے ایک مسیحی حاکم، جولین نے مسلمانوں سے مدد مانگی۔ موسیٰ بن نصیر نے یہ کچھ تحقیقات کرنے کے بعد یہ مہم سر کرنے کا فیصلہ کیا، اور اس مہم کے لیے اس نے اپنے سب سے بہترین کمانڈر — طارق بن زیاد — کا انتخاب کیا۔</p>
+                <p>یہ وقت تھا جب اس نے پہلی بار فیصلہ کن لڑائیوں کا سامنا کیا۔ خوف، اضطراب اور پیچھے ہٹنے کا خطرہ ہمیشہ موجود تھا، لیکن طارق نے کبھی ہمت نہیں ہاری۔ ہر قدم، ہر منصوبہ، ہر حملہ اس کے دل کی ہمت کا عکاس تھا۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="400">
+                <h2>پہلی جنگ اور فتح</h2>
+                <p>طارق بن زیاد کی پہلی بڑی فوجی مہم اندلس کی زمین پر ہوئی۔ چھوٹے لشکر کے ساتھ اس نے دشمن کی طاقت کا مقابلہ کیا اور اپنی فوج کو حوصلہ دیا۔</p>
+                <p>تاریخ کے اس لمحے میں، اس نے کشتیاں جلائیں تاکہ فوج کے لئے پیچھے ہٹنے کا کوئی راستہ نہ رہے۔ یہ ایک ایسا فیصلہ تھا جس نے نہ صرف فتح کی راہیں کھولیں بلکہ مسلمانوں کے دلوں میں ہمت اور عزم کی نئی روشنی بھری۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "اے میرے ساتھیو! پیچھے سمندر ہے اور آگے دشمن! اب تمہارے پاس صرف دو ہی راستے ہیں: یا تو فتح حاصل کرو، یا شہادت پا لو۔ تمہارے لیے تیسرا کوئی راستہ نہیں!"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="500">
+                <h2>اندلس کی فتح</h2>
+                <p>اندلس کی فتح کا سفر 711 عیسوی میں شروع ہوا جب طارق بن زیاد نے اپنی چھوٹی سی فوج کے ساتھ جبل الطارق پار کیا۔ یہ ہی وہ تاریخی لمحہ تھا جس نے پورے یورپ کی تاریخ کو بدل کے رکھ دیا۔ طارق بن زیاد نے صرف سات ہزار سپاہیوں کے ساتھ اندلس کی فتح کا بیڑا اٹھایا تھا، جبکہ ان کے مقابلے میں ویزی گوتھ بادشاہ روڈرک کی فوج کئی گنا بڑی تھی۔</p>
+                <p>19 جولائی 711 عیسوی کو گوادیلے کے مقام پر فیصلہ کن جنگ ہوئی۔ طارق بن زیاد نے اپنی جنگی حکمت عملی سے روڈرک کو شکست فاش دی۔ روڈرک جنگ کے میدان سے بھاگ نکلا اور کبھی واپس نہ آیا۔ اس فتح کے بعد مسلمانوں نے تیزی سے اندلس کے بڑے شہروں پر قبضہ کر لیا۔ طلیطلہ، قرطبہ، غرناطہ اور اشبیلیہ جیسے اہم شہر فتح ہوئے۔</p>
+                <p>فتح کے بعد اس نے مقامی لوگوں کے ساتھ انصاف کیا اور رواداری کا مظاہرہ کیا۔ اس کا مقصد صرف زمین کا قبضہ نہیں بلکہ ایک ایسی تہذیب قائم کرنا تھا جو علم اور امن کی علامت ہو۔</p>
+                <p>موسیٰ بن نصیر جب مزید فوج لے کر اندلس پہنچے تو انہوں نے باقی ماندہ علاقوں کو فتح کیا۔ دونوں جرنیلوں نے مل کر تقریباً پورے جزیرہ نما آئبیریا کو فتح کر لیا۔ لیکن یہ کامیابی ان کے لیے مشکلات کا باعث بنی۔ جب وہ دمشق واپس بلائے گئے۔ اندلس کی فتح صرف ایک تاریخی مہم نہیں تھی، بلکہ یہ ایک تہذیبی انقلاب کا عظیم لمحہ تھا۔کہ کیسے مسلمانوں نے اس خطے میں ایک نئی تہذیب کی بنیاد رکھی، جس نے صدیوں تک پورے یورپ کو متاثر کیا۔ علم و فنون، تعمیرات، اور زراعت کے میدان میں اندلس نے شاندار ترقی کی۔</p>
+                <p>طارق بن زیاد کی یہ فتح تاریخ اسلام کا ایک سنہری باب ہے، لیکن افسوس کہ فاتح کو خود اپنے ہی لوگوں کی طرف سے نظر انداز کیا گیا۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    طارق بن زیاد کی قیادت میں اندلس پر فتح ہوئی۔ علم، تہذیب اور فنون کی زمین مسلمانوں کے زیر اثر آ گئیں۔ قرطبہ، غرناطہ اور الحمراء کی تاریخ آج بھی اس عظیم فتوحات کی گواہ ہیں۔
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="600">
+                <h2>دمشق کی طرف سفر</h2>
+                <p>طارق بن زیاد کو جب اندلس فتح کرنے کے بعد دمشق بلایا گیا تو یہ ایک عجیب المیے کی شروعات تھی۔ وہ فاتح جو پورے یورپ کو ہلا دینے والی فوج کی قیادت کر چکا تھا، اب اپنے ہی لوگوں کے ہاتھوں نظر انداز ہونے والا تھا۔</p>
+                <p>جب طارق بن زیاد موسیٰ بن نصیر کے ساتھ دمشق کیلئے نکلے تو ان کا ہر شہر میں شاندار استقبال کیا گیا۔ شہر کے باہر امیروں نے انہیں خوش آمدید کہا، لوگوں نے راستوں میں کھڑے ہو کر انہیں دیکھا اور ان پر پھول برسائے۔ لیکن دمشق میں حالات مختلف نظر آئے۔ خلیفہ ولید بن عبد الملک ان دونوں کو پسند کرتا تھا۔لیکن جب یہ کمانڈر پہنچے خلیفہ ولید بن عبد الملک اپنی آخری سانسیں لے رہا تھا۔ خلیفہ کی وفات کے بعد نئے بننے والے بادشاہ سلیمان بن عبد الملک وہ انکو پسند نہیں کرتا تھا۔ اس کے حسد کیوجہ کہ جب ان دونوں کمانڈروں کی دمشق کی طرف پیشقدمی کا اس نے سنا۔ اور جب موسیٰ بن نصیر اور طارق بن زیاد دمشق کے مضافات میں پہنچے سلیمان نے پیغام پہنچایا کہ یہی ٹھرو اور نئے پیغام کا انتظار کرو۔ یہ وہ اس لیے کہہ رہا تھا کہ بادشاہ وقت ولید بن عبد الملک کا وقت قریب تھا۔ سلیمان چاہتا تھا کہ اسکے بادشاہ بننے کے بعد یہ لوگ دمشق پہنچے۔ لیکن اس پر دونوں کمانڈروں نے انکار کیا۔ سلیمان بن عبد الملک نے بادشاہ بننے کے بعد یہ بات اپنے دل میں رکھی۔ اسی لیے بادشاہ بننے کے بعد پہلا کام اس نے ان دونوں کمانڈروں کے خلاف ہی کیا۔ ان پے غنیمت کا مال چھپانے کا الزام عائد کیا۔ اسی جرم میں مقدمہ چلا کر اسلام کے یہ دونوں عظیم کمانڈروں کو بھاری جرمانہ اور قید کی سزا سنا دی گئی۔</p>
+                <p>پھر اچانک سب کچھ بدل گیا۔ طارق اور موسی کو قید کر دیا گیا۔ نہ کوئی بڑا مقدمہ، نہ کوئی واضح وجہ۔ بس اچانک ہی وہ عظیم جرنیل ایک قیدی بن گیئے۔ قید خانے میں انکے دن اکیلے گزرتے تھے۔ طارق زیادہ تر خاموش رہتا، نماز پڑھتا، قرآن کی تلاوت کرتا۔ کبھی کبھار ہی بات کرتا۔</p>
+                <p>آخرکار اس عظیم فاتح کا خاتمہ بڑا دردناک ہوا۔ غربت اور تنہائی میں دمشق ہی میں اسکی وفات ہوئ۔ نہ کوئی شاندار جنازہ، نہ کوئی یادگار۔ بس ایک گمنام موت، جیسے تاریخ نے اس کے ساتھ بہت بڑی ناانصافی کی ہو۔</p>
+                <p>یہ المیہ صرف ایک شخص کا نہیں تھا، بلکہ پوری تاریخ کا المیہ تھا۔ جب ایک قوم اپنے ہیرو کو پہچاننے سے انکار کر دیتی ہے۔ طارق بن زیاد کی یہ کہانی ہمیں بتاتی ہے کہ کامیابی کے بعد بھی انسان کو مصائب کا سامنا ہو سکتا ہے، اور بعض اوقات سب سے بڑی جنگ میدانِ جنگ نہیں بلکہ زندگی کے آخری دن ہوتے ہیں۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="700">
+                <h2>عظیم فاتح کا دردناک انجام</h2>
+                <p>طارق بن زیاد کی موت ایک اداس اور تکلیف دہ انجام تھی۔ تاریخ بتاتی ہے، کہ جب ان کا انتقال ہوا تو وہ تقریباً 50 سال کی عمر کے تھے۔ طارق بن زیاد رحمہ اللہ اپنے آخری ایام میں غربت اور تنہائی کا شکار تھے۔ دمشق کی گلیوں میں ایک گمنامی کی زندگی گزارتے ہوئے، جس شخص نے پورے سپین کو فتح کیا تھا۔</p>
+                <p>اسکی کی وفات کے وقت نہ تو کوئی شاہی اعزاز تھا، نہ کوئی سرکاری سوگوار۔ بس ایک خاموشی سے انتقال ہوا، جیسے تاریخ نے بھی اس عظیم فاتح کو بھلا دیا ہو۔ انہیں دمشق ہی میں ایک سادہ سے قبرستان میں دفن کیا گیا، جس کا صحیح مقام آج تک نامعلوم ہے۔</p>
+                <p>یہ المیہ دیکھ کر حیرت ہوتی ہے کہ جس شخص نے یورپ کے دروازے پر اسلامی پرچم کا پھریرا لہرایا، جس کی بہادری کی داستانیں پورے عالم اسلام میں مشہور تھیں، وہ اپنے ہی لوگوں کے ہاتھوں اتنا نظر انداز ہوا کہ مرتے وقت اس کے پاس کفن تک کا مناسب انتظام نہ تھا۔ طارق بن زیاد کی یہ کہانی ہمیں باور کرواتی ہے۔ کہ کبھی کبھار تاریخ اپنے ہیروز کے ساتھ بہت بے رحم ہو جاتی ہے۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    تاریخی روایات کے مطابق، طارق بن زیاد کی وفات *720 عیسوی (101 ہجری)*میں دمشق میں ہوئی۔ اس وقت ان کی عمر تقریباً 50 یا 55 سال تھی۔
+                </div>
+            </div>
         </div>
-    </nav>
 
-    <!-- مین کونٹینٹ -->
-    <div class="container">
-        <!-- تعارف سیکشن -->
-        <section id="introduction">
-            <h2>طارق بن زیاد کا تعارف</h2>
-            <p>طارق بن زیاد بن عبداللہ البربری اسلامی تاریخ کے عظیم جرنیلوں میں سے ایک ہیں جنہوں نے 711 عیسوی میں اندلس
-                (موجودہ اسپین) کی فتح کی قیادت کی۔ ان کا نام آج بھی جبل الطارق (جبرالٹر) کے نام سے زندہ ہے جو ان کی
-                بہادری اور حکمت عملی کی علامت ہے۔</p>
-
-            <div class="grid">
-                <div class="card">
-                    <img src="jabl.png" alt="جبل الطارق" class="card-img">
-                    <div class="card-content">
-                        <h3>جبل الطارق</h3>
-                        <p>
-                            یہ پہاڑ آج بھی گواہ ہے طارق کے عزم کی،
-                            کشتیاں جلا کر جس نے تاریخ بدل دی،
-                            پیچھے سمندر، آگے دشمن - یہ تھا اس کا پیغام،
-                            ہمت اور جذبہ جس نے سلطنتوں کو جھکا دیا۔</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="islami.png" alt="اسلامی اندلس" class="card-img">
-                    <div class="card-content">
-                        <h3>اسلامی اندلس</h3>
-                        <p>
-                            علم و فن کا روشن چراغ تھا، جہاں ہر سو تہذیب کی رونق تھی،
-                            قرطبہ کی عظمت، غرناطہ کی حُسن کاری، آٹھ سو سال کی شاندار داستان تھی،
-                            مسیحی بادشاہوں نے مٹایا تو بھی، اس کی روح آج بھی زندہ ہے تاریخ کے اوراق میں۔</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="mujasma.png" alt="طارق بن زیاد کا مجسمہ" class="card-img">
-                    <div class="card-content">
-                        <h3>یادگاریں</h3>
-                        <p>جبل الطارق کی چٹانیں آج بھی گواہ ہیں
-                            طارق کے لشکر کے حوصلوں کی داستاں
-
-                            ۲۔ قرطبہ کی جامع مسجد کے مینار
-                            علم و حکمت کی شہادت دیتے ہیں
-
-                            ۳۔ غرناطہ میں الحمراء کی دیواریں
-                            فن تعمیر کے شاہکار کی گواہی دیتی ہیں
-
-                            ۴۔ اشبیلیہ کی الجیرالدا مینار
-                            فاتحین کے عزم کی علامت ہے۔</p>
-                    </div>
-                </div>
+        <!-- Image Gallery -->
+        <div class="content-card" data-aos="fade-up">
+            <h2>طارق بن زیاد کی تصاویر</h2>
+            <div class="image-gallery">
+                <img src="pic1.png.jpg" alt="طارق بن زیاد" class="gallery-img" data-aos="zoom-in">
+                <img src="pic2.png.jpg" alt="طارق بن زیاد کی فوج" class="gallery-img" data-aos="zoom-in" data-aos-delay="100">
+                <img src="pic3.png.jpg" alt="جبل الطارق" class="gallery-img" data-aos="zoom-in" data-aos-delay="200">
             </div>
-        </section>
-
-        <!-- ابتدائی زندگی -->
-        <section id="early-life">
-            <h2>ابتدائی زندگی</h2>
-            <p>طارق بن زیاد کی پیدائش 670 عیسوی کے قریب شمالی افریقہ (موجودہ مراکش) میں ہوئی۔ وہ بربر نسل سے تعلق رکھتے
-                تھے جو شمالی افریقہ کی اہم قوم تھی۔</p>
-
-            <div class="quote">
-                "طارق بن زیاد نے اپنی زندگی کا بیشتر حصہ فوجی تربیت اور اسلامی علوم کی تحصیل میں گزارا جو بعد میں ان کی
-                کامیابی کی بنیاد بنا۔"
-            </div>
-
-            <p>انہوں نے موسیٰ بن نصیر کے زیر انتظام فوج میں شمولیت اختیار کی جو اس وقت شمالی افریقہ کے گورنر تھے۔ طارق
-                کی صلاحیتوں کو دیکھتے ہوئے موسیٰ بن نصیر نے انہیں ٹینجر (موجودہ مراکش) کا گورنر مقرر کیا۔</p>
-        </section>
-
-        <!-- فتح اندلس کا ٹائم لائن -->
-        <section id="conquest">
-            <h2>فتح اندلس کا تاریخی سفر</h2>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>710 عیسوی</h3>
-                        <p>طارق بن زیاد نے پہلی بار اندلس کے ساحل پر چھوٹی سی فوج کے ساتھ چھاپہ مارا تاکہ علاقے کی طاقت
-                            کا اندازہ لگایا جا سکے۔</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>اپریل 711 عیسوی</h3>
-                        <p>طارق بن زیاد نے 7,000 فوجیوں کے ساتھ جبل الطارق پر لینڈنگ کی اور اس پہاڑی کو اپنا فوجی اڈہ
-                            بنایا۔</p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <h3>جولائی 711 عیسوی</h3>
-                        <p> Roderick  کی فوج کے خلاف فیصلہ کن جنگ جس میں طارق بن زیاد نے اپنا مشہور خطبہ دیا اور کشتیاں جلا
-                            دیں۔</p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <h3>712 عیسوی</h3>
-                        <p>طارق اور موسیٰ بن نصیر کی مشترکہ فوجوں نے پورے اندلس پر قبضہ مکمل کیا۔</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3>طارق بن زیاد کا مشہور خطبہ</h3>
-            <div class="quote">
-                "اے میرے ساتھیو! پیچھے سمندر ہے اور آگے دشمن۔ تمہارے پاس صرف دو ہی راستے ہیں: یا تو شہادت کی بلندیوں کو
-                چھو لو، یا پھر فتح و کامرانی حاصل کرو۔"
-            </div>
-            <p>یہ تاریخی خطبہ اسلامی فوج کے حوصلے کو بلند کرنے کے لیے دیا گیا تھا جب انہوں نے کشتیاں جلانے کا فیصلہ کیا
-                تاکہ فوج میں پیچھے ہٹنے کا کوئی راستہ نہ رہے۔</p>
-        </section>
-
-        <!-- میراث -->
-        <section id="legacy">
-            <h2>طارق بن زیاد کی میراث</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-content">
-                        <h3>جبل الطارق</h3>
-                        <p>
-                            یہ پہاڑ نہیں، تاریخ کا سبق ہے،
-                            ہر پتھر میں طارق کی داستاں چھپی ہے،
-
-                            کشتیاں جلائیں، راستے مٹائے،
-                            عزم کی دیوار یوں کھڑی کر دی،
-                            سات ہزار نے سات لاکھ کو،
-                            منہ کے بل گرا دیا!
-
-                            آج بھی جب چلتی ہے ہوا یہاں،
-                            لہروں کی زبان سے سنائی دیتا ہے،
-                            وہ نعرۂ حق "اللہ اکبر"،
-                            جو فتح کا پیغام لایا تھا!</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h3>اندلس کی اسلامی تہذیب</h3>
-                        <p>
-                            علم کی روشنی سے جگمگاتا وہ سنہرا دور تھا،
-                            جہاں مسجد و مدرسہ میں گونجتا تھا قرآن کا نور تھا،
-                            فنِ تعمیر کے شاہکار، ادب و فلسفے کے گہوارے،
-                            ہر سو امن و آشتی کا راج، یہ تھا اسلام کا اثاثہ،
-                            آج بھی الحمرا کی دیواریں سناتی ہیں وہ فسانہ!</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3>تاریخی اہمیت</h3>
-            <p>طارق بن زیاد کی فتح اندلس نے نہ صرف یورپ کے نقشے کو بدل دیا بلکہ اسلامی تہذیب اور یورپی تہذیب کے درمیان
-                ایک پل کا کام کیا۔ قرطبہ کی عظیم یونیورسٹی، غرناطہ کی الحمراء جیسی عمارتیں اور سائنسی ترقی کا یہ سلسلہ
-                طارق بن زیاد کی فتح کے بغیر ممکن نہ تھا۔</p>
-        </section>
-
-        <!-- سبق آموز واقعات -->
-        <section id="lessons">
-            <h2>طارق بن زیاد کی زندگی سے سبق</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-content">
-                        <h3>عزم و ہمت</h3>
-                        <p>
-                            کشتیوں کو آگ لگا دی، پیچھے راستہ ہی مٹا دیا،
-                            سمندر پیچھے، دشمن سامنے - یہ تھا وہ تاریخی فیصلہ،
-                            سات ہزار کے لشکر نے سلطنتوں کو جھکا دیا،
-                            تاریخ کے اوراق میں یہ داستاں ہمیشہ زندہ رہے گی،
-                            طارق کا عظم آج بھی دلوں میں شوقِ جہاد جگاتا ہے!</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h3>حکمت عملی</h3>
-                        <p>طارق بن زیاد نے نہ صرف بہادری بلکہ زبردست حکمت عملی سے کام لیا جو قیادت کے لیے ضروری ہے۔</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <h3>انصاف پسندی</h3>
-                        <p>فتح کے بعد انہوں نے مقامی آبادی کے ساتھ رواداری اور انصاف کا سلوک کیا جو آج بھی قابل تقلید
-                            ہے۔</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3>دلچسپ تاریخی حقائق</h3>
-            <ul>
-                <li>طارق بن زیاد کا نام "طارق" ستارے کے راستے یا صبح کے آنے والے کے معنی میں آتا ہے۔</li>
-                <li>جبل الطارق (جبرالٹر) کا نام انہی کے نام پر رکھا گیا ہے۔</li>
-                <li>ان کی فوج میں زیادہ تر بربر سپاہی شامل تھے جنہیں انہوں نے بہترین طریقے سے منظم کیا۔</li>
-                <li>انہوں نے فتح کے بعد مقامی عیسائیوں کو مذہبی آزادی دی جس کی وجہ سے بہت سے لوگوں نے اسلام قبول کیا۔
-                </li>
-            </ul>
-        </section>
+        </div>
     </div>
 
-    <footer>
-        <p style="margin-top: 1rem;">© 2025 اسلامی تاریخ کے عظیم ہیرو | تمام حقوق محفوظ ہیں</p>
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="footer-content">
+            <h3 class="footer-title">اسلامی تاریخ</h3>
+            <p>ہماری ویب سائٹ اسلامی تاریخ کے اہم واقعات اور شخصیات کے بارے میں معلومات فراہم کرتی ہے۔</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 اسلامی تاریخ. تمام حقوق محفوظ ہیں.</p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // سموتھ سکرولنگ کے لیے جاوا اسکرپٹ
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Back to top button functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
-
-        // نیویگیشن بار پر اسکرول ایفیکٹ
-        window.addEventListener('scroll', function () {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-                nav.style.background = 'rgba(26, 46, 13, 0.95)';
-            } else {
-                nav.style.boxShadow = 'none';
-                nav.style.background = 'var(--dark)';
-            }
-        });
-
-        // کارڈز پر ہوور ایفیکٹ
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
-            });
-            card.addEventListener('mouseleave', function () {
-                this.style.boxShadow = 'var(--shadow)';
-            });
+        
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFD700"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FFD700",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
         });
     </script>
 </body>
 
 </html>
-
-
-
-
-
-
