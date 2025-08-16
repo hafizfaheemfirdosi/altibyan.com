@@ -26,100 +26,1207 @@
 <meta property="og:type" content="article" />
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-</head>
-<style>
-    body {
-        background-color: #1E1E1E;
-        color: #D4AF37;
-        font-family: 'Times New Roman', serif;
-        padding: 20px 15px;
-    }
-    a {
-        color: #D4AF37;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-        color: #B8860B;
-    }
-    h1 {
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-shadow: 1px 1px 3px black;
-    }
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #ccc;
-        margin-bottom: 20px;
-    }
-    .back-link {
-        margin-top: 30px;
-        display: inline-block;
-        font-weight: bold;
-    }
-    .header-img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6);
-    }
-    @media (max-width: 576px) {
-        p {
-            font-size: 1rem;
+  gtag('config', 'G-B0JL7L429B');
+</script>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #2F4F4F;
+            --light-bg: #f8f1e5;
+            --dark-bg: #1a0d0d;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         body {
-            padding: 15px 10px;
+            font-family: 'Jameel Noori Nastaleeq', 'Urdu Typesetting', 'Noto Nastaliq Urdu', serif;
+            line-height: 2;
+            color: #333;
+            background-color: var(--light-bg);
+            direction: rtl;
+            overflow-x: hidden;
+            padding-top: 0;
+            text-align: justify;
+            word-spacing: normal;
+            letter-spacing: normal;
         }
-    }
-</style>
+.hero-title {
+            font-weight: bold;
+            font-size: 3rem;
+            text-align: center;
+            background: linear-gradient(90deg, #008080, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 198, 255, 0.6),
+                0 0 20px rgba(0, 198, 255, 0.4);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .hero-title:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 15px rgba(0, 198, 255, 0.9),
+                0 0 30px rgba(0, 198, 255, 0.7);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1580077873521-dc86339ef022?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 0%, rgba(139, 0, 0, 0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            line-height: 1.3;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid var(--gold-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            color: var(--gold-color);
+            background: transparent;
+            animation: fadeIn 1s ease 0.6s both;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-btn:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gold-color);
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding: 15px 25px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+            background: linear-gradient(to right, rgba(47, 79, 79, 0.1), transparent);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-color), var(--primary-color));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        h2:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2.2;
+            text-align: justify;
+            word-spacing: normal;
+        }
+
+        /* Card Style Sections */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(47, 79, 79, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .content-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .quote {
+            font-style: italic;
+            border-right: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background-color: rgba(47, 79, 79, 0.1);
+            position: relative;
+            font-size: 1.2rem;
+            line-height: 2.3;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.3;
+        }
+
+        .quote::after {
+            content: '\201D';
+            font-size: 4rem;
+            color: var(--secondary-color);
+            position: absolute;
+            bottom: -40px;
+            left: 10px;
+            opacity: 0.3;
+        }
+
+        /* Timeline Effect */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50px;
+            width: 3px;
+            height: 100%;
+            background: var(--gold-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-right: 80px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 42px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--gold-color);
+            z-index: 1;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--card-shadow);
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            border: 1px dashed var(--gold-color);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .cta-btn {
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .highlight {
+            background: var(--gold-color);
+            color: var(--dark-bg);
+            font-weight: bold;
+        }
+
+        .highlight:hover {
+            background: transparent;
+            color: var(--gold-color);
+            border-color: var(--gold-color);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #300000 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+            position: relative;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-color), transparent);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .footer-title {
+            color: var(--gold-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+
+        .social-icon {
+            color: white;
+            background: rgba(255, 215, 0, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background: var(--gold-color);
+            color: var(--dark-bg);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gold-color);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: none;
+            outline: none;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            opacity: 0.7;
+            z-index: 1;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        /* Related Content */
+        .related-content {
+            margin: 50px 0;
+            padding: 30px 0;
+            border-top: 1px solid rgba(47, 79, 79, 0.2);
+            border-bottom: 1px solid rgba(47, 79, 79, 0.2);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .related-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+                min-height: 500px;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 2;
+            }
+
+            .quote {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+
+            .timeline::before {
+                right: 30px;
+            }
+
+            .timeline-item {
+                padding-right: 60px;
+            }
+
+            .timeline-item::before {
+                right: 22px;
+            }
+
+            .content-card {
+                padding: 20px;
+            }
+
+            footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+                padding: 3rem 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 70vh;
+                min-height: 400px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .quote {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        @keyframes shadowPulse {
+            0% {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .shadow-animate {
+            animation: shadowPulse 5s infinite ease-in-out;
+        }
+
+        /* Particles Animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* ٹائم لائن کنٹینر */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            height: 70vh;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ٹائم لائن سکرول ایبل ایریا */
+        .timeline-scroll {
+            overflow-y: auto;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* ٹائم لائن ڈیٹیلز سیکشن */
+        .timeline-details {
+            display: none;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        /* ٹائم لائن آئٹمز */
+        .timeline-item {
+            display: flex;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .timeline-item:hover {
+            background: rgba(139, 0, 0, 0.1);
+        }
+
+        .timeline-year {
+            width: 100px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-right: 15px;
+        }
+
+        /* موبائل ریسپانسیو */
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-year {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="container">
-    <div class="text-center h-51">
-        <img src="slah.png.jpg" alt="Salahuddin Ayyubi" class="header-img" />
-        <h1>Salahuddin Ayyubi: The Warrior With a Tear-Stained Sword</h1>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="particles" id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">صلاح الدین ایوبی</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">یروشلم کے فاتح اور اسلامی تاریخ کے عظیم ہیرو کی
+                مکمل داستان</p>
+            <div class="animate__animated animate__pulse animate__infinite animate__slower">
+                <a href="#article-start" class="hero-btn animate__animated animate__fadeIn">مزید پڑھیں <i
+                        class="fas fa-arrow-down ms-2"></i></a>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="floating-element" style="top:20%; right:15%; animation-delay:0s;">
+            <i class="fas fa-mosque" style="font-size:3rem; color:rgba(255,215,0,0.6);"></i>
+        </div>
+        <div class="floating-element" style="top:60%; right:80%; animation-delay:2s;">
+            <i class="fas fa-sword" style="font-size:2.5rem; color:rgba(255,215,0,0.5);"></i>
+        </div>
+        <div class="floating-element" style="top:70%; right:20%; animation-delay:4s;">
+            <i class="fas fa-quran" style="font-size:3rem; color:rgba(255,215,0,0.4);"></i>
+        </div>
+    </section>
+
+    <!-- Main Article Content -->
+    <div class="article-container" id="article-start">
+        <div class="" data-aos="fade-up">
+            <h1>صلاح الدین ایوبی</h1>
+            <p>یہ وہ نام ہے جو صلیبی جنگوں کے دور میں مسلمانوں کے لیے امید کی کرن بنا۔ ایک ایسا حکمران جس نے نہ صرف
+                یروشلم کو آزاد کرایا بلکہ انصاف، رواداری اور انسانیت کی ایسی مثالیں قائم کیں جو آج بھی تاریخ کا حصہ ہیں۔
+                اس کی زندگی کا ہر لمحہ عزم، ہمت اور انصاف کی داستان ہے۔</p>
+        </div>
+
+        <div class="timeline">
+            <div class="" data-aos="fade-up" data-aos-delay="100">
+                <h2>ابتدائی زندگی</h2>
+                <p>صلاح الدین ایوبی 1137 یا 1138 عیسوی میں موجودہ عراق کے شہر تکریت میں پیدا ہوئے۔ ان کا پورا نام یوسف
+                    بن ایوب تھا۔ ان کے والد نجم الدین ایوب اور چچا شیرکوہ دونوں ہی زنگی سلطنت میں اہم عہدوں پر فائز تھے۔
+                    صلاح الدین کا خاندان کرد النسل تھا۔</p>
+                <p>بچپن سے ہی صلاح الدین میں قیادت کی صلاحیتیں نمایاں تھیں۔ انہوں نے ابتدائی تعلیم اپنے گھر پر ہی حاصل
+                    کی جہاں انہیں قرآن، حدیث، عربی ادب اور فقہ کی تعلیم دی گئی۔ ساتھ ہی انہوں نے جنگی فنون اور گھڑسواری
+                    کی تربیت بھی حاصل کی۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "صلاح الدین کے بچپن کی تربیت نے ان میں وہ تمام خوبیاں پیدا کیں جو بعد میں انہیں ایک عظیم حکمران اور
+                    سپہ سالار بنائیں۔"
+                </div>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="200">
+                <h2>نور الدین زنگی کے دربار میں</h2>
+                <p>1152 میں صلاح الدین کا خاندان حلب چلا گیا جہاں ان کے والد نجم الدین ایوب نے نور الدین زنگی کی فوج میں
+                    اہم عہدہ سنبھالا۔ صلاح الدین نے نور الدین زنگی کے دربار میں تربیت حاصل کی اور اپنی صلاحیتوں کا لوہا
+                    منوایا۔</p>
+                <p>1164 میں صلاح الدین اپنے چچا شیرکوہ کے ساتھ مصر گئے جہاں فاطمی خلافت کے وزیر شاور نے انہیں مدد کے لیے
+                    بلایا تھا۔ مصر میں صلاح الدین نے اپنی جنگی مہارت اور سیاسی بصیرت کا مظاہرہ کیا۔ 1169 میں جب شیرکوہ
+                    کا انتقال ہوا تو صلاح الدین کو مصر کا وزیر مقرر کیا گیا۔</p>
+                <p>صلاح الدین نے مصر میں اپنی حکومت کو مستحکم کیا اور فاطمی خلافت کے خاتمے کے بعد ایوبی سلطنت کی بنیاد
+                    رکھی۔ انہوں نے مصر میں تعلیم، صحت اور دفاع کے شعبوں میں بڑے پیمانے پر اصلاحات نافذ کیں۔</p>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="300">
+                <h2>یروشلم کی آزادی</h2>
+                <p>صلاح الدین کا سب سے بڑا کارنامہ یروشلم کو صلیبیوں سے آزاد کرانا تھا۔ 1187 میں حطین کی جنگ میں انہوں
+                    نے صلیبیوں کو فیصلہ کن شکست دی۔ اس جنگ میں صلیبیوں کا بادشاہ گائے آف لوزیگنان بھی قیدی بنا لیا گیا۔
+                </p>
+                <p>2 اکتوبر 1187 کو صلاح الدین نے یروشلم پر قبضہ کر لیا۔ یہ وہی شہر تھا جسے صلیبیوں نے 1099 میں فتح کیا
+                    تھا اور مسلمانوں اور یہودیوں کا قتل عام کیا تھا۔ لیکن صلاح الدین نے یروشلم فتح کرنے کے بعد انتقام
+                    لینے کے بجائے رواداری اور انسانیت کا مظاہرہ کیا۔</p>
+                <p>انہوں نے شہر کے عیسائیوں کو تحفظ دیا اور انہیں تاوان ادا کرنے پر آزادانہ طور پر شہر چھوڑنے کی اجازت
+                    دی۔ یہ رویہ صلیبیوں کے برعکس تھا جنہوں نے یروشلم فتح کرنے کے بعد بے پناہ خونریزی کی تھی۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "صلاح الدین نے یروشلم فتح کرنے کے بعد کہا: 'میں وہی کروں گا جو ہمارے نبی صلی اللہ علیہ وسلم نے مکہ
+                    فتح کرنے کے بعد کیا تھا - درگزر اور رحم۔'"
+                </div>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="400">
+                <h2>تیسری صلیبی جنگ</h2>
+                <p>یروشلم کی آزادی کے بعد یورپ میں ہلچل مچ گئی۔ انگلینڈ کے رچرڈ اول (رچرڈ دی لائن ہارٹ)، فرانس کے فلپ
+                    دوم اور جرمنی کے فریڈرک باربروسا نے تیسری صلیبی جنگ کا اعلان کیا۔</p>
+                <p>1191 میں رچرڈ اول اور فلپ دوم عکہ پہنچے اور شہر پر قبضہ کر لیا۔ صلاح الدین اور رچرڈ کے درمیان کئی
+                    جنگیں ہوئیں جن میں دونوں طرف سے بہادری کے کارنامے دکھائے گئے۔ آرصور کی جنگ میں صلاح الدین نے رچرڈ کو
+                    شکست دی لیکن یافا کی جنگ میں رچرڈ نے صلاح الدین کی فوجوں کو پسپا کر دیا۔</p>
+                <p>آخرکار 2 ستمبر 1192 کو صلاح الدین اور رچرڈ اول کے درمیان معاہدہ راملا ہوا جس کے تحت یروشلم مسلمانوں
+                    کے پاس رہا لیکن عیسائی زائرین کو شہر میں آنے کی اجازت دی گئی۔</p>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="500">
+                <h2>صلاح الدین کی شخصیت</h2>
+                <p>صلاح الدین ایک عظیم سپہ سالار ہونے کے ساتھ ساتھ ایک عادل حکمران اور رحمدل انسان بھی تھے۔ ان کی شخصیت
+                    کے چند نمایاں پہلو:</p>
+                <ul>
+                    <li><strong>عدل و انصاف:</strong> صلاح الدین ہمیشہ انصاف کو ترجیح دیتے تھے۔ وہ عام لوگوں کے لیے بھی
+                        اور اپنے قریبی رشتہ داروں کے لیے بھی یکساں انصاف کرتے تھے۔</li>
+                    <li><strong>رواداری:</strong> انہوں نے اپنی سلطنت میں عیسائیوں اور یہودیوں کو مکمل مذہبی آزادی دی۔
+                    </li>
+                    <li><strong>سادگی:</strong> باوجود حکمران ہونے کے وہ سادہ زندگی گزارتے تھے۔ ان کے پاس ذاتی خزانہ
+                        نہیں تھا اور وہ اپنی ذاتی ضروریات کے لیے بھی بیت المال کا پیسہ استعمال نہیں کرتے تھے۔</li>
+                    <li><strong>علم دوستی:</strong> انہوں نے مصر اور شام میں کئی مدارس، لائبریریاں اور ہسپتال تعمیر
+                        کروائے۔</li>
+                </ul>
+
+                <div class="quote" data-aos="zoom-in">
+                    "صلاح الدین کی عظمت صرف ان کی فتوحات میں نہیں بلکہ ان کے اخلاق، انصاف اور رواداری میں تھی۔ وہ ایک
+                    ایسا حکمران تھا جس نے طاقت کو انسانی خدمت کے لیے استعمال کیا۔"
+                </div>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="600">
+                <h2>آخری ایام اور وفات</h2>
+                <p>صلاح الدین نے اپنی زندگی کے آخری سال دمشق میں گزارے۔ تیسری صلیبی جنگ کے بعد ان کی صحت بتدریج خراب
+                    ہوتی گئی۔ 4 مارچ 1193 کو وہ بخار میں مبتلا ہوئے جو روز بروز بڑھتا گیا۔</p>
+                <p>19 مارچ 1193 کو صلاح الدین ایوبی نے 55 یا 56 سال کی عمر میں دمشق میں وفات پائی۔ ان کے پاس کوئی ذاتی
+                    دولت نہیں تھی، حتیٰ کہ ان کے جنازے کے لیے بھی رقم بیت المال سے لی گئی۔</p>
+                <p>صلاح الدین کو دمشق میں امیہ مسجد کے قریب دفن کیا گیا۔ آج بھی ان کا مزار دمشق کے اہم تاریخی مقامات میں
+                    سے ایک ہے جہاں ہر سال ہزاروں زائرین آتے ہیں۔</p>
+                <p>ان کی وفات کے بعد ان کے بیٹوں میں سلطنت تقسیم ہو گئی جس سے ایوبی سلطنت کمزور پڑ گئی۔ لیکن صلاح الدین
+                    کی میراث آج بھی زندہ ہے اور وہ مسلمانوں کے لیے ایک مثالی حکمران کی حیثیت سے یاد کیے جاتے ہیں۔</p>
+            </div>
+
+            <div class="" data-aos="fade-up" data-aos-delay="700">
+                <h2>صلاح الدین کی میراث</h2>
+                <p>صلاح الدین ایوبی نے نہ صرف ایک عظیم سلطنت قائم کی بلکہ انہوں نے انسانی اقدار اور اسلامی اصولوں کی
+                    ایسی مثالیں قائم کیں جو آج بھی قابل تقلید ہیں:</p>
+                <ol>
+                    <li><strong>یروشلم کی آزادی:</strong> انہوں نے 88 سال بعد یروشلم کو صلیبیوں سے آزاد کرایا۔</li>
+                    <li><strong>رواداری کی مثال:</strong> انہوں نے مفتوحہ علاقوں میں عیسائیوں اور یہودیوں کے ساتھ حسن
+                        سلوک کیا۔</li>
+                    <li><strong>تعلیمی ادارے:</strong> انہوں نے مصر اور شام میں کئی مدارس اور لائبریریاں قائم کیں۔</li>
+                    <li><strong>عسکری نظا:</strong> انہوں نے ایک منظم اور مضبوط فوجی نظام قائم کیا۔</li>
+                    <li><strong>ثقافتی تبادلہ:</strong> ان کے دور میں مشرق و مغرب کے درمیان علمی اور ثقافتی تبادلہ ہوا۔
+                    </li>
+                </ol>
+                <p>آج بھی صلاح الدین کو مشرق و مغرب دونوں میں احترام کی نظر سے دیکھا جاتا ہے۔ یورپی مورخین بھی ان کی
+                    بہادری، انصاف پسندی اور انسان دوستی کے معترف ہیں۔</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section" data-aos="fade-up">
+            <h3>کیا آپ صلاح الدین ایوبی کے بارے میں مزید جاننا چاہتے ہیں؟</h3>
+            <div class="cta-buttons">
+                <a href="#timeline" class="cta-btn">زمانہ دیکھیں</a>
+                <a href="#gallery" class="cta-btn">تصاویر دیکھیں</a>
+                <a href="tariq-bin-ziyad.html" class="cta-btn highlight">طارق بن زیاد کی کہانی پڑھیں</a>
+            </div>
+        </div>
+        <div class="" data-aos="fade-up" id="timeline" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>صلاح الدین ایوبی کا زمانہ</h2>
+                <button class="btn btn-close" onclick="closeTimeline()"></button>
+            </div>
+<div class="" data-aos="fade-up" id="timeline" style="display: none;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>صلاح الدین ایوبی کا زمانہ</h2>
+        <button class="btn btn-close" onclick="closeTimeline()"></button>
     </div>
-    <h2>Salahuddin Ayyubi – The Warrior With a Tear-Stained Sword</h2>
-
-<p>
-Salahuddin Ayyubi, a name that echoes through the annals of Islamic history, was not just a fierce warrior but a leader whose heart was filled with compassion and mercy. Born in 1138 CE in Tikrit, Iraq, Salahuddin grew up in a time of conflict and crusades, yet he carried the vision of justice and unity for the Muslim world.  
-</p>
-
-<h3>Early Life and Background</h3>
-<p>
-Raised in a noble Kurdish family, Salahuddin was educated in the values of Islam, chivalry, and leadership. From a young age, he displayed exceptional intelligence and bravery. His early military career began under his uncle Shirkuh, serving the powerful ruler Nur ad-Din. Through dedication and skill, Salahuddin quickly rose in ranks, earning the respect of his peers and commanders alike.  
-</p>
-
-<h3>Defender of Islam and Leader of Armies</h3>
-<p>
-Salahuddin’s fame grew during the Crusades, when the Christian armies occupied Jerusalem and other key cities. Determined to restore Muslim control and unity, he led a series of campaigns across the Levant. His greatest achievement was the recapture of Jerusalem in 1187 CE — a moment that marked the turning tide against the Crusaders.  
-</p>
-
-<h3>A Heart Filled with Mercy</h3>
-<p>
-Despite his military prowess, Salahuddin was known for his extraordinary mercy and justice. After the conquest of Jerusalem, he spared the lives of many civilians and offered fair terms to the defeated — a rare act in the brutal wars of the time. His chivalry and respect for all human beings, even his enemies, earned him admiration across cultures.  
-</p>
-
-<h3>The Tear-Stained Sword</h3>
-<p>
-Salahuddin’s sword was not only a weapon of war but a symbol of deep emotion. Stories tell of a leader who wept for the mothers who lost their sons and the innocent lives affected by conflict. His leadership was a balance of strength and compassion, showing the world that true power lies in kindness and justice.  
-</p>
-
-<h3>Legacy and Lessons</h3>
-<p>
-Salahuddin’s legacy goes beyond battles won — it lies in his commitment to unity, faith, and humanity. He reminds us that even in times of war, a leader’s heart must remain open to mercy. His life teaches courage tempered by kindness, strength guided by wisdom, and the enduring power of faith.  
-</p>
-
-<h3>Inspiration for Generations</h3>
-<p>
-Today, Salahuddin Ayyubi’s story inspires millions to stand firm in their beliefs, lead with honor, and fight for justice without losing sight of humanity. His life is a beacon of hope and a reminder that even the toughest battles can be won with a compassionate heart.  
-</p>
-
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
+    
+    <div class="timeline-container">
+        <div class="timeline-scroll">
+            <div class="timeline">
+                <!-- ٹائم لائن آئٹمز -->
+                <div class="timeline-item" onclick="showTimelineDetail(1)">
+                    <div class="timeline-year">1137/1138</div>
+                    <div class="timeline-content">
+                        <h3>پیدائش</h3>
+                        <p>تکریت، موجودہ عراق میں پیدا ہوئے</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" onclick="showTimelineDetail(2)">
+                    <div class="timeline-year">1152</div>
+                    <div class="timeline-content">
+                        <h3>حلب منتقلی</h3>
+                        <p>نور الدین زنگی کے دربار میں تربیت</p>
+                    </div>
+                </div>
+                
+                <!-- دیگر ٹائم لائن آئٹمز -->
+            </div>
+        </div>
+        
+        <!-- ٹائم لائن ڈیٹیلز -->
+        <div class="timeline-details" id="timelineDetails">
+            <div class="detail-content" id="detail1">
+                <h3>1137/1138: پیدائش</h3>
+                <p>صلاح الدین ایوبی موجودہ عراق کے شہر تکریت میں پیدا ہوئے۔ ان کے والد نجم الدین ایوب اور چچا شیرکوہ دونوں زنگی سلطنت میں اہم عہدوں پر فائز تھے۔</p>
+                <button class="btn btn-primary" onclick="closeDetails()">واپس</button>
+            </div>
+            
+            <!-- دیگر تفصیلات -->
+        </div>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        </div>
+        <!-- Image Gallery -->
+        <div class="" data-aos="fade-up">
+            <h2 id="gallery">صلاح الدین ایوبی کی تصاویر</h2>
+            <div class="image-gallery">
+                <img src="slah.png.jpg" alt="صلاح الدین ایوبی" class="gallery-img" data-aos="zoom-in">
+                <img src="pic2.png.jpg" alt="حطین کی جنگ" class="gallery-img" data-aos="zoom-in"
+                    data-aos-delay="100">
+                <img src="qila.png.jpg" alt="یروشلم کی فتح" class="gallery-img" data-aos="zoom-in"
+                    data-aos-delay="200">
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h3>دیگر عظیم مسلمان فاتحین</h3>
+            <div class="related-grid">
+                <a href="tariq.html" class="related-card">
+                    <img src="tariq-bin-ziyad.png.jpg" alt="طارق بن زیاد">
+                    <h4>طارق بن زیاد</h4>
+                    <p>اندلس کے فاتح</p>
+                </a>
+                <a href="khalid.html" class="related-card">
+                    <img src="khali.ra.png.jpg" alt="خالد بن ولید">
+                    <h4>خالد بن ولید</h4>
+                    <p>سیف اللہ المسلول</p>
+                </a>
+                <a href="qasim.html" class="related-card">
+                    <img src="qasim.png.jpg" alt="محمد بن قاسم">
+                    <h4>محمد بن قاسم</h4>
+                    <p>سندھ کے فاتح</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="footer-content">
+            <h3 class="footer-title">اسلامی تاریخ</h3>
+            <p>ہماری ویب سائٹ اسلامی تاریخ کے اہم واقعات اور شخصیات کے بارے میں معلومات فراہم کرتی ہے۔</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i
+                        class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/19WpELWt1e" class="social-icon"><i
+                        class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 اسلامی تاریخ. تمام حقوق محفوظ ہیں.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // زمانہ دیکھیں سیکشن کھولنے کا فنکشن
+        function openTimeline() {
+            document.getElementById('timeline').style.display = 'block';
+            document.getElementById('timeline').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // زمانہ دیکھیں سیکشن بند کرنے کا فنکشن
+        function closeTimeline() {
+            document.getElementById('timeline').style.display = 'none';
+        }
+
+        // ٹائم لائن ڈیٹیلز دکھائیں
+        function showTimelineDetail(id) {
+            document.querySelectorAll('.timeline-scroll, .timeline-details').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.getElementById('timelineDetails').style.display = 'block';
+            document.getElementById('detail' + id).style.display = 'block';
+        }
+
+        // ڈیٹیلز بند کریں
+        function closeDetails() {
+            document.querySelectorAll('.timeline-scroll, .timeline-details').forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelectorAll('.detail-content').forEach(el => {
+                el.style.display = 'none';
+            });
+        }
+
+        // CTA بٹن پر کلک ایونٹ
+        document.querySelector('a[href="#timeline"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            openTimeline();
+        });
+    </script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Back to top button functionality
+        window.addEventListener('scroll', function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFD700"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#FFD700",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // Scroll animations for content cards
+        function checkVisibility() {
+            const cards = document.querySelectorAll('.content-card');
+            cards.forEach(card => {
+                const position = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+
+                if (position < screenPosition) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+    </script>
 </body>
+
 </html>
