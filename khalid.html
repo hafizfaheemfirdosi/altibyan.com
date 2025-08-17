@@ -24,104 +24,574 @@
   <meta property="og:url" content="https://hafizfaheemfirdosi.github.io/altibyan.com/khalid.html" />
   <meta property="og:type" content="article" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<style>
-    body {
-        background-color: #1E1E1E;
-        color: #D4AF37;
-        font-family: 'Times New Roman', serif;
-        padding: 20px 15px;
-    }
-    a {
-        color: #D4AF37;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-        color: #B8860B;
-    }
-    h1 {
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-shadow: 1px 1px 3px black;
-    }
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #ccc;
-        margin-bottom: 20px;
-    }
-    .back-link {
-        margin-top: 30px;
-        display: inline-block;
-        font-weight: bold;
-    }
-    .header-img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.6);
-    }
-    @media (max-width: 576px) {
-        p {
+    <style>
+        :root {
+            --main-bg: #f8f9fa;
+            --content-bg: #ffffff;
+            --header-bg: #f8f9fa;
+            --border-color: #a2a9b1;
+            --link-color: #0645ad;
+            --link-hover: #0b0080;
+            --text-color: #202122;
+            --sidebar-width: 220px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nastaliq', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
+            background-color: var(--main-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .search-box input {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px 0 0 3px;
+            width: 100%;
             font-size: 1rem;
         }
-        body {
-            padding: 15px 10px;
+
+        .search-box button {
+            padding: 8px 15px;
+            background-color: #3366cc;
+            color: white;
+            border: none;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
         }
-    }
-</style>
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            padding: 15px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .sidebar h3 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar a {
+            color: var(--link-color);
+            text-decoration: none;
+            display: block;
+            padding: 3px 0;
+        }
+
+        .sidebar a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+            background-color: var(--content-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .article-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .article-header h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: none;
+        }
+
+        .tab.active {
+            background-color: var(--content-bg);
+            border-color: var(--border-color);
+            border-bottom-color: var(--content-bg);
+            margin-bottom: -1px;
+        }
+
+        .article-body {
+            line-height: 1.8;
+        }
+
+        .article-body p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .infobox {
+            float: left;
+            margin: 0 20px 20px 0;
+            border: 1px solid var(--border-color);
+            background-color: #f8f9fa;
+            padding: 10px;
+            width: 280px;
+        }
+
+        .infobox-title {
+            text-align: center;
+            font-size: 1.2rem;
+            background-color: #e6e6e6;
+            padding: 5px;
+            margin: -10px -10px 10px -10px;
+        }
+
+        .infobox-image {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .infobox-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .infobox-data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .infobox-data th {
+            text-align: right;
+            padding: 5px;
+            vertical-align: top;
+            width: 40%;
+        }
+
+        .infobox-data td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        /* Table of Contents */
+        .toc {
+            display: table;
+            background-color: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 10px;
+            margin: 15px 0;
+            float: left;
+            width: 250px;
+        }
+
+        .toc-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            padding: 3px 0;
+        }
+
+        .toc a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* References */
+        .references {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .references h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .references ol {
+            padding-right: 20px;
+        }
+
+        .references li {
+            margin-bottom: 5px;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        .related-articles h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .related-card {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .related-card a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .related-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            width: 100%;
+            background-color: var(--header-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 100%;
+                margin-left: 0;
+                order: 2;
+            }
+            .main-content {
+                order: 1;
+            }
+            .infobox {
+                float: none;
+                margin: 0 auto 20px auto;
+            }
+            .toc {
+                float: none;
+                margin: 15px auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+            .infobox {
+                width: 100%;
+            }
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="text-center">
-        <img src="khali.ra.png.jpg" 
-             alt="Khalid bin Waleed (RA)" class="header-img" />
-        <h1>Khalid bin Waleed (RA) - The Sword of Allah</h1>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">اسلامی تاریخ</a>
+            <div class="search-box">
+                <input type="text" placeholder="تلاش کریں...">
+                <button>تلاش</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>متعلقہ مضامین</h3>
+            <ul>
+                <li><a href="salahuddin.html">صلاح الدین ایوبی</a></li>
+                <li><a href="tariq-bin-ziyad.html">طارق بن زیاد</a></li>
+                <li><a href="muhammad-bin-qasim.html">محمد بن قاسم</a></li>
+                <li><a href="abu-bakr.html">حضرت ابوبکر صدیق</a></li>
+                <li><a href="umar-farooq.html">حضرت عمر فاروق</a></li>
+            </ul>
+
+            <h3>حوالہ جات</h3>
+            <ul>
+                <li><a href="#references">کتب</a></li>
+                <li><a href="#references">مقالات</a></li>
+            </ul>
+        </aside>
+
+        <!-- Article Content -->
+        <main class="main-content">
+            <div class="article-header">
+                <h1>خالد بن ولید (سیف اللہ المسلول)</h1>
+                <div class="tabs">
+                    <div class="tab active">مضمون</div>
+                    <div class="tab">تاریخچہ</div>
+                </div>
+            </div>
+
+            <div class="article-body">
+                <!-- Infobox -->
+                <div class="infobox">
+                    <div class="infobox-title">خالد بن ولید</div>
+                    <div class="infobox-image">
+                        <img src="khali.ra.png.jpg" alt="خالد بن ولید">
+                    </div>
+                    <table class="infobox-data">
+                        <tr>
+                            <th>مکمل نام</th>
+                            <td>خالد بن ولید بن مغیرہ مخزومی</td>
+                        </tr>
+                        <tr>
+                            <th>لقب</th>
+                            <td>سیف اللہ المسلول</td>
+                        </tr>
+                        <tr>
+                            <th>پیدائش</th>
+                            <td>592ء<br>مکہ، حجاز</td>
+                        </tr>
+                        <tr>
+                            <th>وفات</th>
+                            <td>642ء (50 سال)<br>حمص، شام</td>
+                        </tr>
+                        <tr>
+                            <th>مدفن</th>
+                            <td>خالد بن ولید مسجد، حمص</td>
+                        </tr>
+                        <tr>
+                            <th>والد</th>
+                            <td>ولید بن مغیرہ</td>
+                        </tr>
+                        <tr>
+                            <th>مشہور جنگیں</th>
+                            <td>موتہ، یرموک، قادسیہ</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <div class="toc-title">فہرست</div>
+                    <ul>
+                        <li><a href="#early-life">ابتدائی زندگی</a></li>
+                        <li><a href="#before-islam">اسلام سے قبل</a></li>
+                        <li><a href="#conversion">اسلام قبول کرنا</a></li>
+                        <li><a href="#with-prophet">نبی کریم کے دور میں</a></li>
+                        <li><a href="#battles">مشہور جنگیں</a></li>
+                        <li><a href="#after-prophet">خلفاء راشدین کے دور میں</a></li>
+                        <li><a href="#death">وفات</a></li>
+                        <li><a href="#legacy">میراث</a></li>
+                    </ul>
+                </div>
+
+                <!-- Article Content -->
+                <p>خالد بن ولید بن مغیرہ مخزومی (592ء - 642ء) جنہیں رسول اللہ ﷺ نے "سیف اللہ المسلول" (خدا کی ننگی تلوار) کا لقب عطا فرمایا، اسلام کی عسکری تاریخ کے سب سے عظیم جرنیل تھے۔ انہوں نے 100 سے زائد جنگیں لڑیں اور کبھی شکست نہیں کھائی۔</p>
+
+                <h2 id="early-life">ابتدائی زندگی</h2>
+                <p>خالد بن ولید 592 عیسوی میں مکہ کے معزز قبیلہ بنو مخزوم میں پیدا ہوئے۔ ان کے والد ولید بن مغیرہ قریش کے سرداروں میں سے تھے جو بنو مخزوم کے سردار تھے۔ خالد کا تعلق مکہ کے اشرافیہ خاندان سے تھا۔</p>
+                <p>بچپن سے ہی خالد بن ولید میں جنگی مہارتیں نمایاں تھیں۔ انہوں نے ابتدائی عمر میں ہی گھڑسواری، تیراندازی اور تلوار بازی میں مہارت حاصل کر لی تھی۔ ان کی جسمانی طاقت اور جنگی مہارت نے انہیں مکہ کے بہترین جوانوں میں سے ایک بنا دیا تھا۔</p>
+
+                <h2 id="before-islam">اسلام سے قبل</h2>
+                <p>خالد بن ولید ابتدائی دور میں اسلام کے سخت مخالف تھے۔ غزوہ بدر میں تو وہ شامل نہ ہو سکے، لیکن غزوہ احد میں انہوں نے قریش کی فوج کی کمان کرتے ہوئے مسلمانوں کو سخت نقصان پہنچایا۔</p>
+                <p>احد کی جنگ میں خالد بن ولید کی جنگی حکمت عملی نے جنگ کا پانسہ پلٹ دیا۔ انہوں نے اپنی گھڑسوار فوج کو لے کر پہاڑی راستے سے مسلمانوں پر پیچھے سے حملہ کیا، جس کے نتیجے میں مسلمان فوج میں انتشار پھیل گیا۔</p>
+
+                <h2 id="conversion">اسلام قبول کرنا</h2>
+                <p>8 ہجری (629 عیسوی) میں خالد بن ولید نے اسلام قبول کیا۔ ان کے بھائی الولید بن ولید نے انہیں خط لکھا جس میں اسلام کی دعوت دی گئی تھی۔ خالد نے اپنے بھائی کے خط کا جواب دینے کی بجائے براہ راست مدینہ کا رخ کیا۔</p>
+                <p>رسول اللہ ﷺ نے ان کے اسلام لانے پر بہت خوشی کا اظہار فرمایا اور انہیں "سیف اللہ المسلول" (خدا کی ننگی تلوار) کا لقب عطا فرمایا۔ آپ ﷺ نے فرمایا: "خدا کا شکر ہے جس نے تمہیں ہدایت دی۔ میں تمہیں ہمیشہ سے عقلمند سمجھتا تھا۔"</p>
+
+                <h2 id="with-prophet">نبی کریم کے دور میں</h2>
+                <p>اسلام لانے کے بعد خالد بن ولید نے غزوہ موتہ میں تین کمانڈروں (زید بن حارثہ، جعفر بن ابی طالب اور عبداللہ بن رواحہ) کے شہید ہونے کے بعد فوج کی کمان سنبھالی۔ انہوں نے انتہائی مشکل حالات میں مسلمانوں کو شکست سے بچایا۔</p>
+                <p>فتح مکہ کے موقع پر خالد بن ولید نے ایک دستے کی قیادت کی۔ انہوں نے بنو جرہم کے کچھ لوگوں سے مقابلہ کیا جو مسلمانوں کے خلاف لڑنا چاہتے تھے۔ فتح مکہ کے بعد غزوہ حنین میں بھی انہوں نے اہم کردار ادا کیا۔</p>
+
+                <h2 id="battles">مشہور جنگیں</h2>
+                <p>خالد بن ولید نے متعدد اہم جنگیں لڑیں جن میں سے چند یہ ہیں:</p>
+                <ul>
+                    <li><strong>غزوہ موتہ (629ء):</strong> تین کمانڈروں کے شہید ہونے کے بعد کمان سنبھالی</li>
+                    <li><strong>فتح مکہ (630ء):</strong> ایک دستے کی قیادت کی</li>
+                    <li><strong>غزوہ حنین (630ء):</strong> ابتدائی شکست کے بعد فوج کو منظم کیا</li>
+                    <li><strong>جنگ یرموک (636ء):</strong> رومیوں کے خلاف فیصلہ کن فتح</li>
+                    <li><strong>فتح دمشق (634ء):</strong> شہر کو محاصرے میں لیا</li>
+                    <li><strong>جنگ ولاجہ (633ء):</strong> فارسیوں کے خلاف شاندار فتح</li>
+                    <li><strong>جنگ الیس (633ء):</strong> فارسی فوج کو شکست دی</li>
+                </ul>
+
+                <h2 id="after-prophet">خلفاء راشدین کے دور میں</h2>
+                <p>رسول اللہ ﷺ کی وفات کے بعد جب متعدد قبائل مرتد ہو گئے تو خالد بن ولید نے حضرت ابوبکر صدیقؓ کے حکم پر مرتدین کے خلاف مہم چلائی۔ انہوں نے طلیحہ اسدی، مسیلمہ کذاب اور دیگر جھوٹے نبیوں کے خلاف کامیاب جنگیں لڑیں۔</p>
+                <p>حضرت عمر فاروقؓ کے دور میں خالد بن ولید کو سپہ سالاری سے معزول کر دیا گیا تاکہ لوگ یہ نہ سمجھیں کہ فتوحات کسی انسان کی وجہ سے ہوتی ہیں۔ خالد نے اس فیصلے کو خندہ پیشانی سے قبول کیا اور ایک عام سپاہی کی طرح لڑتے رہے۔</p>
+
+                <h2 id="death">وفات</h2>
+                <p>21 ہجری (642 عیسوی) میں خالد بن ولید نے حمص میں وفات پائی۔ ان کے آخری الفاظ تھے:</p>
+                <blockquote>"میں نے اتنے جنگی میدانوں میں لڑا ہے کہ میرے جسم کا کوئی حصہ زخموں سے خالی نہیں۔ پھر بھی میں بستر پر مر رہا ہوں جیسے ایک بوڑھا اونٹ مرتا ہے۔ بزدلوں کی آنکھیں کبھی نہ سوئیں!"</blockquote>
+                <p>انہیں حمص میں دفن کیا گیا۔ ان کی قبر پر بعد میں خالد بن ولید مسجد تعمیر کی گئی جو آج بھی زائرین کے لیے ایک مقدس مقام ہے۔</p>
+
+                <h2 id="legacy">میراث</h2>
+                <p>خالد بن ولید کی عسکری حکمت عملیاں آج بھی فوجی کالجوں میں پڑھائی جاتی ہیں۔ ان کی جنگی مہارت اور قیادت کے جوہر نے اسلامی فتوحات کو نئی راہیں دکھائیں۔</p>
+                <p>ان کی زندگی سے ہمیں یہ سبق ملتا ہے کہ ایمان اور عزم کے ساتھ کوئی بھی مقصد حاصل کیا جا سکتا ہے۔ ان کی وفاداری، بہادری اور جنگی مہارت اسلامی تاریخ کا ایک روشن باب ہے۔</p>
+
+                <!-- References -->
+                <div class="references" id="references">
+                    <h2>حوالہ جات</h2>
+                    <ol>
+                        <li>البدایہ والنہایہ - ابن کثیر</li>
+                        <li>سیرت ابن ہشام</li>
+                        <li>الکامل فی التاریخ - ابن اثیر</li>
+                        <li>تاریخ طبری</li>
+                        <li>سیر اعلام النبلاء - الذہبی</li>
+                    </ol>
+                </div>
+
+                <!-- Related Articles -->
+                <div class="related-articles">
+                    <h2>متعلقہ مضامین</h2>
+                    <div class="related-grid">
+                        <div class="related-card">
+                            <a href="salah.html">
+                                <h3>صلاح الدین ایوبی</h3>
+                                <p>یروشلم کے فاتح</p>
+                            </a>
+                        </div>
+                        <div class="related-card">
+                            <a href="tariq.html">
+                                <h3>طارق بن زیاد</h3>
+                                <p>اندلس کے فاتح</p>
+                            </a>
+                        </div>
+                        <div class="related-card">
+                            <a href="qasim.html">
+                                <h3>محمد بن قاسم</h3>
+                                <p>سندھ کے فاتح</p>
+                            </a>
+                        </div>
+                        <div class="related-card">
+                            <a href="abu-bakr.html">
+                                <h3>حضرت ابوبکر صدیق</h3>
+                                <p>پہلے خلیفہ راشد</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-    
-    <h2>Hazrat Khalid bin Waleed (RA) – The Sword of Allah</h2>
 
-<p>
-Hazrat Khalid bin Waleed (RA) was one of the greatest military commanders in Islamic history — a fearless warrior whose faith and determination earned him the title <em>"Saifullah" (The Sword of Allah)</em>. Born into the powerful Quraysh tribe of Mecca around 592 CE, Khalid’s life was a journey marked by unmatched bravery and unwavering loyalty to Islam.  
-</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>یہ صفحہ آخری بار 15 اگست 2023 کو ترمیم کیا گیا تھا۔</p>
+            <p>تمام متن Creative Commons Attribution/Share-Alike License کے تحت دستیاب ہے۔</p>
+        </div>
+    </footer>
 
-<h3>Early Life and Background</h3>
-<p>
-Before embracing Islam, Khalid was a formidable opponent of the Muslim community. However, after his conversion, his exceptional skills became a powerful asset to the Prophet Muhammad (PBUH) and the nascent Muslim state. Known for his strategic mind and unparalleled courage, Khalid rapidly rose to become a key leader in the Muslim armies.  
-</p>
+    <script>
+        // Simple tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelector('.tab.active').classList.remove('active');
+                tab.classList.add('active');
+            });
+        });
 
-<h3>The Great Commander</h3>
-<p>
-Khalid bin Waleed’s military genius was demonstrated in numerous battles — from the Battle of Mu’tah to the conquest of Mecca. His strategies combined boldness with tactical brilliance, often turning the tide in seemingly impossible situations. He was undefeated in battle, a rare feat that earned him legendary status among his companions and foes alike.  
-</p>
-
-<h3>The Sword of Allah</h3>
-<p>
-The Prophet Muhammad (PBUH) himself honored Khalid with the title “Saifullah,” recognizing his vital role in defending and expanding the Muslim community. Khalid wielded his sword not only in war but as a symbol of faith, justice, and divine support. His leadership inspired countless soldiers to fight with courage and conviction.  
-</p>
-
-<h3>Legacy of Faith and Valor</h3>
-<p>
-Hazrat Khalid’s story is not just about conquest but about faith in Allah and steadfastness in the face of adversity. His disciplined approach and respect for his troops set an example for future generations. Even after the Prophet’s passing, Khalid continued to serve Islam with loyalty and humility.  
-</p>
-
-<h3>Lessons for Today</h3>
-<p>
-Khalid bin Waleed (RA) teaches us that true strength is rooted in faith and courage. His life reminds us to lead with honor, to stand firm in our beliefs, and to face challenges boldly while keeping our hearts humble and sincere.  
-</p>
-
-<h3>An Eternal Inspiration</h3>
-<p>
-Today, the legacy of “The Sword of Allah” lives on in the hearts of millions. His story inspires Muslims and others worldwide to pursue justice, courage, and unwavering dedication to their principles. Khalid bin Waleed (RA) remains a timeless symbol of bravery and faith.  
-</p>
- 
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        // Make all external links open in new tab
+        document.querySelectorAll('a').forEach(link => {
+            if(link.href && !link.href.startsWith(window.location.origin)) {
+                link.target = '_blank';
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
