@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سلطان محمود غزنوی - ہندوستان کا عظیم فاتح | اسلامی تاریخ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Urdu Support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A3D62;
+            --secondary: #F8C471;
+            --accent: #1E8449;
+            --dark: #0A1929;
+            --light: #F9F7F1;
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+        }
+        
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.8;
+            direction: rtl;
+            text-align: justify;
+            padding-top: 0;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(209, 182, 62, 0.299), rgba(13, 12, 6, 0.9));
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(10, 61, 98, 0.8) 0%, rgba(248, 196, 113, 0.2) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+        
+        .hero-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid var(--secondary);
+            font-weight: 600;
+            padding: 12px 30px;
+            color: var(--secondary);
+            background: transparent;
+            border-radius: 0px;
+            box-shadow: 0 5px 15px rgba(207, 176, 62, 0.434);
+        }
+        
+        .hero-btn:hover {
+            background-color: rgba(219, 138, 9, 0.974);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding: 15px 25px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            background: linear-gradient(to right, rgba(30, 132, 73, 0.1), transparent);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+        
+        h2:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            line-height: 2.2;
+            text-align: justify;
+        }
+        
+        /* Card Style Sections */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .content-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .quote {
+            font-style: italic;
+            border-right: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background-color: rgba(30, 132, 73, 0.1);
+            position: relative;
+            font-size: 1.3rem;
+            line-height: 2.3;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.3;
+        }
+        
+        .quote::after {
+            content: '\201D';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            bottom: -40px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        /* Timeline Effect */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50px;
+            width: 3px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-right: 80px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 42px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--secondary);
+            z-index: 1;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+            position: relative;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        .footer-title {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            background: rgba(248, 196, 113, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(248, 196, 113, 0.4);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: none;
+            outline: none;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* Related Content */
+        .related-content {
+            margin: 50px 0;
+            padding: 30px 0;
+            border-top: 1px solid rgba(139, 69, 19, 0.2);
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .related-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-10px);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .related-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .related-card-content {
+            padding: 15px;
+        }
+        
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .related-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                min-height: 400px;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+                line-height: 2;
+            }
+            
+            .quote {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+            
+            .timeline::before {
+                right: 30px;
+            }
+            
+            .timeline-item {
+                padding-right: 60px;
+            }
+            
+            .timeline-item::before {
+                right: 22px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+                padding: 3rem 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 60vh;
+                min-height: 350px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .quote {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes shadowPulse {
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        }
+        
+        .shadow-animate {
+            animation: shadowPulse 5s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body>   
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">سلطان محمود غزنوی</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">ہندوستان فتح کرنے والے عظیم مسلمان حکمران کی مکمل داستان</p>
+            <a href="#article-start" class="hero-btn animate__animated animate__fadeIn" style="text-decoration: none;font-weight: bold;">مزید پڑھیں <i class="fas fa-arrow-down ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Article Content -->
+    <div class="article-container" id="article-start">
+        <div class="content-card" data-aos="fade-up">
+            <h1>سلطان محمود غزنوی</h1>
+            <p>یہ وہ نام ہے جو تاریخ کے اوراق پر ہمیشہ زندہ رہے گا۔ ایک ایسا حکمران جس نے اپنی زندگی کی ہر دھڑکن کو فتح اور بہادری کے لئے وقف کر دیا۔ اس کی داستان صرف فتوحات نہیں بلکہ انسانی جذبے، عزم، اور ایمان کی عکاس ہے۔</p>
+        </div>
+
+        <div class="timeline">
+            <div class="content-card" data-aos="fade-up" data-aos-delay="100">
+                <h2>ابتدائی زندگی</h2>
+                <p>محمود غزنوی 2 نومبر 971ء کو موجودہ افغانستان کے شہر غزنی میں پیدا ہوئے۔ آپ کے والد سبکتگین غزنوی سلطنت کے بانی تھے۔ محمود نے اپنی ابتدائی تعلیم غزنی میں حاصل کی اور جوانی میں ہی فوجی مہارت میں کمال حاصل کر لیا۔</p>
+                <p>ان کے بچپن میں ہی ان کی ذہانت اور قیادت کی صلاحیتیں واضح ہو گئی تھیں۔ انہوں نے چھوٹی عمر میں ہی فوجی تربیت حاصل کی اور اپنے والد کے ساتھ جنگی مہمات میں حصہ لیا۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "کامیابی کے بیج بچپن میں بوتے ہیں، اور محمود نے اپنے بیج عزم، حوصلہ اور ایمان کے ساتھ بوئے۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="200">
+                <h2>تخت نشینی</h2>
+                <p>997ء میں اپنے والد کی وفات کے بعد محمود غزنوی تخت نشین ہوئے۔ ابتدا میں انہیں اپنے بھائی اسماعیل سے تخت کے لیے مقابلہ کرنا پڑا، لیکن بالآخر وہ کامیاب رہے اور پوری غزنوی سلطنت کے حکمران بن گئے۔</p>
+                <p>تخت نشین ہوتے ہی انہوں نے اپنی سلطنت کو مضبوط بنانے کے لیے اصلاحات کا سلسلہ شروع کیا۔ انہوں نے فوج کو جدید خطوط پر استوار کیا اور انتظامیہ میں بہتری لائی۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="300">
+                <h2>ہندوستان پر حملے</h2>
+                <p>سلطان محمود غزنوی نے ہندوستان پر 17 مرتبہ حملہ کیا۔ ان حملوں کا بنیادی مقصد ہندوستان کی دولت لوٹنا نہیں بلکہ اسلام کی اشاعت اور کفر کے مراکز کو ختم کرنا تھا۔</p>
+                <p>1001ء میں پہلی ہندوستان مہم میں انہوں نے ہندو راجہ جے پال کو شکست دی۔ اس کے بعد انہوں نے ملتان، قنوج، تھanesر اور سومنات جیسے اہم شہروں پر حملے کیے۔</p>
+                <p>یہ وقت تھا جب اس نے پہلی بار فیصلہ کن لڑائیوں کا سامنا کیا۔ خوف، اضطراب اور پیچھے ہٹنے کا خطرہ ہمیشہ موجود تھا، لیکن محمود نے کبھی ہمت نہیں ہاری۔ ہر قدم، ہر منصوبہ، ہر حملہ اس کے دل کی ہمت کا عکاس تھا۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="400">
+                <h2>سومنات کی فتح</h2>
+                <p>1025ء میں سومنات کے مشہور مندر کو فتح کیا جو ہندوؤں کا سب سے مقدس مقام سمجھا جاتا تھا۔ اس فتح نے خطے میں اسلامی حکومت کی طاقت کا لوہا منوایا۔</p>
+                <p>تاریخ کے اس لمحے میں، اس نے اپنی فوج کو حوصلہ دیا اور مندر کے بت کو توڑ کر اسلام کی برتری ثابت کی۔ یہ ایک ایسا فیصلہ تھا جس نے نہ صرف فتح کی راہیں کھولیں بلکہ مسلمانوں کے دلوں میں ہمت اور عزم کی نئی روشنی بھری۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "میں نے ہندوستان پر صرف اس لیے حملے کیے تاکہ کفر کی جڑیں کاٹ سکوں اور اسلام کی عظمت کو قائم کر سکوں۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="500">
+                <h2>علم و ادب کی سرپرستی</h2>
+                <p>محمود غزنوی صرف ایک فاتح ہی نہیں بلکہ علم و ادب کے سرپرست بھی تھے۔ انہوں نے غزنی کو علمی و ثقافتی مرکز بنایا اور علماء، شاعروں اور فنکاروں کی سرپرستی کی۔</p>
+                <p>ان کے دور میں غزنی میں دارالعلم قائم کیا گیا، جہاں دنیا بھر سے علماء آکر علم کا تبادلہ کرتے تھے۔ انہوں نے فردوسی، البیرونی، اور فرخی جیسے عظیم علماء و ادباء کی سرپرستی کی۔</p>
+                <p>فتح کے بعد اس نے مقامی لوگوں کے ساتھ انصاف کیا اور رواداری کا مظاہرہ کیا۔ اس کا مقصد صرف زمین کا قبضہ نہیں بلکہ ایک ایسی تہذیب قائم کرنا تھا جو علم اور امن کی علامت ہو۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    محمود غزنوی کی سرپرستی میں غزنی علم و ادب کا مرکز بنا۔ فردوسی، البیرونی اور فرخی جیسے عظیم علما و ادبا نے ان کے دور میں شہرت پائی۔
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="600">
+                <h2>آخری ایام اور وفات</h2>
+                <p>سلطان محمود غزنوی نے 30 اپریل 1030ء کو غزنی میں وفات پائی۔ ان کی وفات کے بعد ان کا بیٹا مسعود غزنوی تخت نشین ہوا۔</p>
+                <p>ان کی وفات کے وقت غزنوی سلطنت اپنے عروج پر تھی اور دنیا کی سب سے طاقتور سلطنتوں میں سے ایک تھی۔ محمود غزنوی کی قبر غزنی میں واقع ہے جو آج بھی سیاحوں اور تاریخ دانوں کے لیے ایک اہم مقام ہے۔</p>
+                <p>ان کی وفات اسلامی دنیا کے لیے ایک بڑا صدمہ تھی۔ انہوں نے اپنی زندگی کے 33 سال حکومت کی اور اس دوران انہوں نے سلطنت غزنویہ کو ایک عظیم سلطنت میں تبدیل کر دیا۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="700">
+                <h2>عظیم فاتح کا ورثہ</h2>
+                <p>سلطان محمود غزنوی کی موت ایک عظیم حکمران کے انتقال کا اعلان تھی۔ تاریخ بتاتی ہے، کہ جب ان کا انتقال ہوا تو وہ تقریباً 59 سال کی عمر کے تھے۔</p>
+                <p>ان کی وفات کے وقت نہ صرف غزنی بلکہ پورے اسلامی دنیا میں سوگ کا atmosphere تھا۔ انہیں غزنی میں ہی دفن کیا گیا، جہاں آج بھی ان کا مزار موجود ہے۔</p>
+                <p>یہ المیہ دیکھ کر حیرت ہوتی ہے کہ جس شخص نے ہندوستان کے دروازے پر اسلامی پرچم کا پھریرا لہرایا، جس کی بہادری کی داستانیں پورے عالم اسلام میں مشہور تھیں، وہ تاریخ کے اوراق میں ہمیشہ کے لیے امر ہو گیا۔ سلطان محمود غزنوی کی یہ کہانی ہمیں باور کرواتی ہے کہ عظیم لوگ اپنے کارناموں سے ہمیشہ زندہ رہتے ہیں۔</p>
+                
+                <div class="quote" data-aos="zoom-in">
+                    "فاتح ہندوستان کا ورثہ ہمیں یہ سبق دیتا ہے کہ عزم و ہمت سے ناممکن کو ممکن بنایا جا سکتا ہے۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="800">
+                <h2>سلطان محمود غزنوی کی میراث</h2>
+                <p>سلطان محمود غزنوی کو اپنی زندگی میں وہ مقام ملا جو اس کا حق تھا۔ تاریخ نے اس کے کارناموں کو کبھی فراموش نہیں کیا۔ آج بھی ہندوستان اور پاکستان میں ان کی فتوحات کے نشانات موجود ہیں۔</p>
+                <p>ہندوستان میں مسلمانوں کی حکومت کا آغاز اسی بہادر حکمران کی وجہ سے ہوا۔ دہلی سلطنت اور مغلیہ سلطنت جیسی عظیم سلطنتیں انہی کی فتوحات کا نتیجہ تھیں۔</p>
+                <p>سلطان محمود غزنوی کی زندگی سے ہمیں تین اہم سبق ملتے ہیں:</p>
+                <ol>
+                    <li>عزم و ہمت سے ناممکن کو ممکن بنایا جا سکتا ہے</li>
+                    <li>کامیابی کے بعد بھی انسان کو عاجزی اور انصاف پسندی کو برقرار رکھنا چاہیے</li>
+                    <li>حقیقی کامیابی دنیاوی فتوحات نہیں بلکہ اپنے اصولوں پر قائم رہنا ہے</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h3>دیگر عظیم مسلمان فاتحین</h3>
+            <div class="related-grid">
+                <a href="khalid.html" class="related-card">
+                    <img src="images/khaliiiid.png.jpg" alt="خالد بن ولید">
+                    <div class="related-card-content">
+                        <h4>خالد بن ولید</h4>
+                        <p>سیف اللہ المسلول</p>
+                    </div>
+                </a>
+                <a href="tariq.html" class="related-card">
+                    <img src="images/gaznavi.png" alt="طارق بن زیاد">
+                    <div class="related-card-content">
+                        <h4>طارق بن زیاد</h4>
+                        <p>اندلس کے فاتح</p>
+                    </div>
+                </a>
+                <a href="qasim.html" class="related-card">
+                    <img src="images/qasiiiim.png.jpg" alt="محمد بن قاسم">
+                    <div class="related-card-content">
+                        <h4>محمد بن قاسم</h4>
+                        <p>سندھ کے فاتح</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="footer-content">
+            <h3 class="footer-title">اسلامی تاریخ</h3>
+            <p>ہماری ویب سائٹ اسلامی تاریخ کے اہم واقعات اور شخصیات کے بارے میں معلومات فراہم کرتی ہے۔</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 اسلامی تاریخ. تمام حقوق محفوظ ہیں.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Back to top button functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for content cards
+        function checkVisibility() {
+            const cards = document.querySelectorAll('.content-card');
+            cards.forEach(card => {
+                const position = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(position < screenPosition) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+    </script>
+</body>
+</html>

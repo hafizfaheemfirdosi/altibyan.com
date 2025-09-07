@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسیٰ بن نصیر | عظیم مسلمان فاتح | اسلامی تاریخ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Urdu Support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A5F7A;
+            --secondary: #57C5B6;
+            --accent: #159895;
+            --dark: #002B5B;
+            --light: #F5F5F0;
+            --gold: #FFD700;
+            --dark-gold: #D4AF37;
+            --maroon: #800000;
+            --light-maroon: #A52A2A;
+        }
+        
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: #333;
+            line-height: 1.8;
+            direction: rtl;
+            text-align: justify;
+            padding-top: 0;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(26, 95, 122, 0.85), rgba(0, 43, 91, 0.9)), url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 50px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(26, 95, 122, 0.8) 0%, rgba(87, 197, 182, 0.2) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.6;
+        }
+        
+        .hero-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            border: 2px solid var(--gold);
+            font-weight: 600;
+            padding: 12px 30px;
+            color: var(--gold);
+            background: transparent;
+            border-radius: 0px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hero-btn:hover {
+            background-color: var(--gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* Main Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding: 15px 25px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            background: linear-gradient(to right, rgba(21, 152, 149, 0.1), transparent);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+        
+        h2:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            line-height: 2.2;
+            text-align: justify;
+        }
+        
+        /* Card Style Sections */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(21, 152, 149, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .content-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .quote {
+            font-style: italic;
+            border-right: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            background-color: rgba(21, 152, 149, 0.1);
+            position: relative;
+            font-size: 1.3rem;
+            line-height: 2.3;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            opacity: 0.3;
+        }
+        
+        .quote::after {
+            content: '\201D';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            bottom: -40px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        /* Timeline Effect */
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50px;
+            width: 3px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-right: 80px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 42px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--secondary);
+            z-index: 1;
+        }
+        
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 3rem 0;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+            position: relative;
+            clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        .footer-title {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-icons {
+            margin: 1.5rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            background: rgba(87, 197, 182, 0.2);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(87, 197, 182, 0.4);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border: none;
+            outline: none;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        
+        /* Related Content */
+        .related-content {
+            margin: 50px 0;
+            padding: 30px 0;
+            border-top: 1px solid rgba(21, 152, 149, 0.2);
+            border-bottom: 1px solid rgba(21, 152, 149, 0.2);
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .related-card {
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-10px);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .related-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .related-card-content {
+            padding: 15px;
+        }
+        
+        .related-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .related-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-section {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 70vh;
+                min-height: 400px;
+                clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+                line-height: 2;
+            }
+            
+            .quote {
+                font-size: 1.1rem;
+                padding: 1rem;
+            }
+            
+            .timeline::before {
+                right: 30px;
+            }
+            
+            .timeline-item {
+                padding-right: 60px;
+            }
+            
+            .timeline-item::before {
+                right: 22px;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            footer {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+                padding: 3rem 1rem;
+            }
+            
+            /* Mobile Navigation */
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.5s ease;
+                padding: 0;
+            }
+            
+            .nav-links.active {
+                right: 0;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.2);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 1001;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-section {
+                height: 60vh;
+                min-height: 350px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .quote {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                left: 20px;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            footer {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes shadowPulse {
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            50% { box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        }
+        
+        .shadow-animate {
+            animation: shadowPulse 5s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body>   
+   
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">موسیٰ بن نصیر</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">عظیم مسلمان فاتح، اندلس کے فاتح</p>
+            <a href="#article-start" class="hero-btn animate__animated animate__fadeIn" style="text-decoration: none;">مزید پڑھیں <i class="fas fa-arrow-down ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Article Content -->
+    <div class="article-container" id="article-start">
+        <div class="content-card" data-aos="fade-up">
+            <h1>موسیٰ بن نصیر</h1>
+            <p>موسیٰ بن نصیر ایک عظیم مسلمان فاتح اور منتظم تھے جنہوں نے اسلامی تاریخ میں شمالی افریقہ اور اندلس کی فتوحات میں اہم کردار ادا کیا۔ وہ اموی خلافت کے دور میں ایک قابل جرنیل اور منتظم کے طور پر مشہور ہوئے۔</p>
+        </div>
+
+        <div class="timeline">
+            <div class="content-card" data-aos="fade-up" data-aos-delay="100">
+                <h2>ابتدائی زندگی</h2>
+                <p>موسیٰ بن نصیر 640ء میں موجودہ فلسطین کے علاقے میں پیدا ہوئے۔ ان کے والد نصیر ایک عرب قبیلے سے تعلق رکھتے تھے اور ابتدائی اسلامی فتوحات میں حصہ لیا تھا۔ موسیٰ بن نصیر نے اپنی جوانی میں علم و ادب کی تعلیم حاصل کی اور فوجی تربیت بھی حاصل کی۔</p>
+                <p>انہوں نے اموی خلافت کے دور میں اپنی خدمات کا آغاز کیا اور جلد ہی اپنی قابلیت کی بدولت ترقی کی منازل طے کیں۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "فتح صرف تلوار سے نہیں ہوتی، بلکہ حکمت اور تدبیر سے ہوتی ہے۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="200">
+                <h2>شمالی افریقہ کی گورنری</h2>
+                <p>703ء میں خلیفہ عبدالملک بن مروان نے موسیٰ بن نصیر کو شمالی افریقہ کا گورنر مقرر کیا۔ انہوں نے اس علاقے میں اسلامی حکومت کو مضبوط کیا اور مقامی قبائل کو اسلام کی دعوت دی۔</p>
+                <p>موسیٰ بن نصیر نے بربر قبیلوں کو منظم کیا اور انہیں اسلامی فوج میں شامل کیا۔ ان کی انتظامی صلاحیتوں کی بدولت شمالی افریقہ میں امن و امان قائم ہوا اور علاقے کی معیشت میں بہتری آئی۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="300">
+                <h2>اندلس کی فتح</h2>
+                <p>موسیٰ بن نصیر کی سب سے بڑی کامیابی اندلس (ہسپانیہ) کی فتح تھی۔ 711ء میں انہوں نے اپنے غلام طارق بن زیاد کو سات ہزار فوجیوں کے ساتھ اندلس پر حملے کے لیے بھیجا۔ طارق بن زیاد نے جنگ گوادلیٹ میں ویزی گوتھوں کو شکست دے کر اندلس میں اسلامی حکومت کی بنیاد رکھی۔</p>
+                <p>اس کے بعد موسیٰ بن نصیر خود اٹھارہ ہزار فوجیوں کے ساتھ اندلس پہنچے اور مختلف شہروں کو فتح کیا۔ انہوں نے طلیطلہ، اشبیلیہ، مرسیہ اور دیگر اہم شہروں پر اسلامی پرچم لہرایا۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="400">
+                <h2>انتظامی اصلاحات</h2>
+                <p>موسیٰ بن نصیر نہ صرف ایک عظیم فاتح تھے بلکہ ایک قابل منتظم بھی تھے۔ انہوں نے فتح شدہ علاقوں میں منصفانہ نظام حکومت قائم کیا۔ مقامی آبادی کو مذہبی آزادی دی اور ان کے حقوق کا تحفظ کیا۔</p>
+                <p>انہوں نے زمینوں کی تقسیم، محصولات کے نظام اور عدالتی اداروں میں اصلاحات نافذ کیں۔ ان کی انصاف پسندی کی بدولت مقامی آبادی نے دل سے اسلام کو قبول کیا۔</p>
+                <div class="quote" data-aos="zoom-in">
+                    "حکمرانی عوام کی خدمت ہے، نہ کہ عوام پر حکمرانی۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="500">
+                <h2>خلیفہ کے دربار میں حاضر ہونا</h2>
+                <p>715ء میں موسیٰ بن نصیر کو خلیفہ ولید بن عبدالملک نے دمشق بلایا۔ وہ اپنے ساتھ اندلس سے بے تحاشہ مال غنیمت اور قیدی لے کر گئے۔ انہوں نے خلیفہ کے سامنے اپنی فتوحات اور کارنامے پیش کیے۔</p>
+                <p>تاہم، خلیفہ کے بعض مشیروں نے موسیٰ بن نصیر کے خلاف سازش کی اور ان پر بغاوت کے الزامات لگائے۔ اس کے نتیجے میں خلیفہ نے موسیٰ بن نصیر کو معزول کر دیا اور ان کے مال کو ضبط کر لیا۔</p>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="600">
+                <h2>آخری ایام اور وفات</h2>
+                <p>معزولی کے بعد موسیٰ بن نصیر نے اپنی زندگی کے آخری دن عبادت و ریاضت میں گزارے۔ وہ 716ء یا 717ء میں وفات پا گئے۔ بعض روایات کے مطابق انہیں مکہ مکرمہ میں دفنایا گیا، جبکہ بعض کے مطابق وہ شام میں دفن ہوئے۔</p>
+                <p>ان کی وفات اسلامی دنیا کے لیے ایک بڑا نقصان تھی۔ وہ نہ صرف ایک عظیم فاتح تھے بلکہ ایک عادل حکمران اور منتظم بھی تھے۔</p>
+                
+                <div class="quote" data-aos="zoom-in">
+                    "حقیقی فتح دلوں کو جیتنا ہے، نہ کہ صرف زمینیں۔"
+                </div>
+            </div>
+
+            <div class="content-card" data-aos="fade-up" data-aos-delay="700">
+                <h2>موسیٰ بن نصیر کی میراث</h2>
+                <p>موسیٰ بن نصیر نے اسلامی تاریخ میں ایک عظیم فاتح کی حیثیت سے اپنا نام روشن کیا۔ ان کی فتوحات کے نتیجے میں اسلام یورپ میں پھیلا اور اندلس میں آٹھ سو سال تک اسلامی تہذیب قائم رہی۔</p>
+                <p>انہوں نے انتظامی صلاحیتوں کا مظاہرہ کرتے ہوئے فتح شدہ علاقوں میں منصفانہ نظام قائم کیا۔ ان کی شخصیت فاتح، منتظم اور مصلح تینوں کی حیثیت سے ممتاز ہے۔</p>
+                <p>موسیٰ بن نصیر کی زندگی سے ہمیں تین اہم سبق ملتے ہیں:</p>
+                <ol>
+                    <li>عدل و انصاف حکمرانی کی بنیاد ہے</li>
+                    <li>عوام کی خدمت حکمران کا اولین فرض ہے</li>
+                    <li>فتح کے بعد مصالحت اور تعمیر نو ضروری ہے</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="related-content">
+            <h3>دیگر عظیم مسلمان فاتحین</h3>
+            <div class="related-grid">
+                <a href="tariq.html" class="related-card">
+                    <img src="images/gaznavi.png" alt="طارق بن زیاد">
+                    <div class="related-card-content">
+                        <h4>طارق بن زیاد</h4>
+                        <p>اندلس کے فاتح</p>
+                    </div>
+                </a>
+                <a href="khalid.html" class="related-card">
+                    <img src="images/khaliiiid.png.jpg" alt="خالد بن ولید">
+                    <div class="related-card-content">
+                        <h4>خالد بن ولید</h4>
+                        <p>سیف اللہ</p>
+                    </div>
+                </a>
+                <a href="salah.html" class="related-card">
+                    <img src="images/salh.png.jpg" alt="صلاح الدین ایوبی">
+                    <div class="related-card-content">
+                        <h4>صلاح الدین ایوبی</h4>
+                        <p>بیت المقدس کے فاتح</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <div class="footer-content">
+            <h3 class="footer-title">اسلامی تاریخ کے عظیم فاتحین</h3>
+            <p>ہماری ویب سائٹ اسلامی تاریخ کے اہم واقعات اور شخصیات کے بارے میں معلومات فراہم کرتی ہے۔</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>&copy; 2025 اسلامی تاریخ کے عظیم فاتحین. تمام حقوق محفوظ ہیں.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Back to top button functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for content cards
+        function checkVisibility() {
+            const cards = document.querySelectorAll('.content-card');
+            cards.forEach(card => {
+                const position = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(position < screenPosition) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+        
+        // Mobile navigation toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile nav when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    </script>
+</body>
+</html>

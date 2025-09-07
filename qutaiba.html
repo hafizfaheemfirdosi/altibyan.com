@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قتیبہ بن مسلم بہری | عظیم اسلامی فاتح</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2C5E9E;
+            --secondary-color: #4A8B58;
+            --accent-color: #D4B483;
+            --light-bg: #F8F5F0;
+            --dark-text: #333333;
+            --light-text: #4A5568;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Jameel Noori Nastaleeq', 'Roboto', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Jameel Noori Nastaleeq', serif;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ہیڈر اسٹائلز */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000000" fill-opacity="0.05"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23FFFFFF" stroke-width="1" stroke-opacity="0.1"/></svg>');
+            z-index: 0;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* نیویگیشن */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+        }
+
+        .nav-links li {
+            padding: 0;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 1.2rem 1.8rem;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: bold;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: var(--transition);
+            transform: translateX(50%);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        /* مین سیکشن */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 1.8rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .section-icon {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .section-content {
+            padding: 2.5rem;
+        }
+
+        /* کارڈ ڈیزائن */
+        .card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        /* ٹائم لائن ڈیزائن */
+        .timeline {
+            position: relative;
+            padding: 2.5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            width: 85%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 12px solid var(--white);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            right: auto;
+            left: -10px;
+            border-right: none;
+            border-left: 12px solid var(--white);
+        }
+
+        /* نقشہ ڈیزائن */
+        .map-container {
+            height: 400px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2.5rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(44, 94, 158, 0.2), rgba(74, 139, 88, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        /* کمانڈرز سیکشن */
+        .commanders-section {
+            padding: 3rem 0;
+        }
+
+        .commander-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            margin-bottom: 2rem;
+            border: none;
+        }
+
+        .commander-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .commander-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .commander-body {
+            padding: 1.5rem;
+        }
+
+        .commander-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .commander-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .commander-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* فٹر */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+            font-size: 1.5rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* ریسپانسیو ڈیزائن */
+        @media (max-width: 992px) {
+            .timeline::before {
+                right: 31px;
+            }
+
+            .timeline-item {
+                padding-right: 0;
+                justify-content: flex-start;
+                padding-left: 80px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-content::after {
+                right: auto;
+                left: -10px;
+                border-right: none;
+                border-left: 12px solid var(--white);
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 80px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links a {
+                padding: 1rem 1.2rem;
+            }
+
+            .title {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* یوٹیلیٹی کلاسیں */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 2rem;
+            background: linear-gradient(to right, rgba(44, 94, 158, 0.1), transparent);
+            border-right: 4px solid var(--primary-color);
+            margin: 2rem 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            top: 0;
+            right: 1rem;
+            font-size: 4rem;
+            color: rgba(44, 94, 158, 0.2);
+            font-family: Georgia, serif;
+        }
+
+        /* اسکرول بار اسٹائلنگ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ہیڈر سیکشن -->
+    <header>
+        <div class="container header-content">
+            <div class="logo" style="color: rgb(228, 224, 224);font-weight: bold;">قتیبہ بن مسلم</div>
+            <h1 class="title">فاتح ماوراء النہر اور وسط ایشیا</h1>
+            <p class="subtitle"
+                style="color: #1b1b1b;font: 1em sans-serif; font-weight: bold;background-color: rgba(250, 235, 215, 0);">
+                خلافت امویہ کے عظیم سپہ سالار جنہوں نے اسلام کو چین کی سرحدوں تک پہنچایا۔ ایک ایسے جرنیل
+                کی داستان جو تاریخ کے صفحات میں ہمیشہ زندہ رہے گا۔</p>
+        </div>
+    </header>
+
+    <!-- نیویگیشن -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#introduction">تعارف</a></li>
+                <li><a href="#early-life">ابتدائی زندگی</a></li>
+                <li><a href="#conquests">فتوحات</a></li>
+                <li><a href="#timeline">تاریخی جدول</a></li>
+                <li><a href="#legacy">ورثہ</a></li>
+                <li><a href="#commanders">دیگر کمانڈر</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- مین مواد -->
+    <main class="container main-content">
+        <!-- تعارف سیکشن -->
+        <section id="introduction" class="section">
+            <div class="section-header">
+                <span class="section-icon">📜</span>
+                <h2 class="section-title">قتیبہ بن مسلم الباہلی کا تعارف</h2>
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <h3 class="card-title">ایک عظیم سپہ سالار</h3>
+                    <p>قتیبہ بن مسلم بہری اسلام کی تاریخ کے عظیم ترین فاتحین میں سے ہیں۔ آپ نے خلافت امویہ کے دور میں
+                        وسط ایشیا کی جانب تاریخی فتوحات حاصل کیں اور اسلام کو چین کی سرحدوں تک پہنچایا۔ آپ کی فتوحات نے
+                        نہ صرف اسلامی دنیا کو وسعت دی بلکہ علاقے کے ثقافتی اور تہذیبی نقشے کو ہمیشہ کے لیے بدل دیا۔</p>
+                    <p>قتیبہ بن مسلم* 669ء میں پیدا ہوئے اور بنو امیہ کے دورِ خلافت میں نمایاں جرنیل کے طور پر اُبھرے۔
+                        انہیں حجاج بن یوسف نے خراسان کا گورنر مقرر کیا۔
+
+                        انہوں نے بخارا، سمرقند، خوارزم اور دیگر وسطی ایشیائی علاقوں کو فتح کیا اور وہاں اسلامی تعلیمات
+                        کو متعارف کروایا۔ ان کی جرأت مندی، عسکری حکمت عملی اور قیادت نے اسلام کی سرحدوں کو وسعت دی۔
+
+                        قتیبہ کو تاریخ میں ایک نڈر، مدبر اور باصلاحیت سپہ سالار مانا جاتا ہے۔
+                        715ء میں ان کا انتقال ہوا، مگر ان کی فتوحات نے صدیوں تک اسلامی تہذیب کی بنیاد کو وسطی ایشیا میں
+                        مضبوطی سے قائم رکھا۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">خاندانی پس منظر</h3>
+                    <p>قتیبہ بن مسلم الباہلی قبیلہ باہلہ سے تعلق رکھتے تھے، جو عرب کے معزز قبائل میں شمار ہوتا ہے۔ آپ کی
+                        پیدائش <span class="highlight">49 ہجری (669 عیسوی)</span> میں موجودہ عراق کے علاقے میں ہوئی۔ ان
+                        کے والد مسلم بن عمرو الباہلی ایک معزز اور بہادر شخص تھے، جو اپنے بیٹے کی ابتدائی تربیت میں
+                        نمایاں کردار رکھتے تھے۔</p>
+                    <p>یہ خاندان فروغِ اسلام، شجاعت اور عسکری خدمات کے حوالے سے معروف تھا۔ قتیبہ نے اپنے قبیلے کی روایات
+                        کو برقرار رکھتے ہوئے نہ صرف فوجی مہارت دکھائی بلکہ عرب اور اسلامی تاریخ میں ایک ناقابلِ فراموش
+                        کردار ادا کیا۔ ان کا خاندانی پس منظر ہی ان کے اعلیٰ اخلاق، قیادت کی صلاحیت، اور دینی جذبے کی
+                        بنیاد بنا۔</p>
+                </div>
+
+                <div class="quote"
+                    style="color: #950b0b;font: 1em sans-serif; font-weight: bold;background-color: rgba(250, 235, 215, 0);">
+                    "قتیبہ بن مسلم وہ پہلے مسلمان کمانڈر تھے جنہوں نے دریائے جیحون کو پار کر کے وسط ایشیا میں اسلام کی
+                    بنیاد رکھی۔"
+                </div>
+            </div>
+        </section>
+
+        <!-- ابتدائی زندگی سیکشن -->
+        <section id="early-life" class="section">
+            <div class="section-header">
+                <span class="section-icon">👶</span>
+                <h2 class="section-title">ابتدائی زندگی</h2>
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <h3 class="card-title">فوجی تربیت</h3>
+                    <p style="color: #111010;font: 1em sans-serif;background-color: rgba(250, 235, 215, 0);">قتیبہ بن مسلم نے کم عمری میں ہی عسکری تربیت حاصل کرنا شروع کی۔
+                        ان کا رجحان گھڑ سواری، تیر اندازی، تلوار بازی اور میدانِ جنگ کی حکمت عملیوں کی طرف تھا۔
+                        انہوں نے اموی خلافت کے دور میں کئی اہم معرکوں میں شرکت کی اور جلد ہی اپنی بہادری اور سوجھ بوجھ
+                        سے سپہ سالاروں کی توجہ حاصل کی۔
+                        اموی خلیفہ عبدالملک بن مروان کے دور میں ان کی عسکری صلاحیتوں کو پہچانا گیا اور بعد ازاں حجاج بن
+                        یوسف جیسے بااثر گورنر نے انہیں خراسان کا گورنر مقرر کیا۔
+                        فوجی نظم و ضبط، جنگی منصوبہ بندی، اور سپاہیوں سے حسنِ سلوک قتیبہ کی خاص پہچان بن گئی۔
+                        انہوں نے اپنے فوجی کیریئر میں ہر معرکے کو نہایت حکمت، جرأت اور دینی جذبے سے لڑا، جو ان کی تربیت
+                        اور فطری صلاحیتوں کا منہ بولتا ثبوت ہے۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">ترقی</h3>
+                    <p>قتیبہ بن مسلم کی صلاحیتوں کو دیکھتے ہوئے اموی گورنر حجاج بن یوسف نے انہیں خراسان کی گورنری سونپ
+                        دی۔ یہاں سے ان کی عظیم فتوحات کا سفر شروع ہوا۔</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- فتوحات سیکشن -->
+        <section id="conquests" class="section">
+            <div class="section-header">
+                <span class="section-icon">⚔️</span>
+                <h2 class="section-title">قتیبہ بن مسلم کی عظیم فتوحات</h2>
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <h3 class="card-title">بخارا کی فتح</h3>
+                    <p><span class="highlight">86 ہجری (705 عیسوی)</span> میں قتیبہ بن مسلم نے بخارا پر قبضہ کیا۔ یہ فتح
+                        نہ صرف فوجی اعتبار سے اہم تھی بلکہ اس نے خطے میں اسلام کے پھیلاؤ میں کلیدی کردار ادا کیا۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">سمرقند کی فتح</h3>
+                    <p><span class="highlight">87 ہجری (706 عیسوی)</span> میں سمرقند کی فتح نے خلافت امویہ کے لیے وسط
+                        ایشیا کے دروازے کھول دیے۔ قتیبہ بن مسلم نے شہر کے باشندوں کے ساتھ نرمی کا سلوک کیا جو ان کی دور
+                        اندیشی کی علامت تھی۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">خوارزم اور فرغانہ کی فتوحات</h3>
+                    <p>ان فتوحات نے اسلامی سلطنت کی حدود کو مزید وسیع کیا۔ قتیبہ بن مسلم نے <span class="highlight">90
+                            ہجری (709 عیسوی)</span> میں خوارزم اور <span class="highlight">93 ہجری (712 عیسوی)</span>
+                        میں فرغانہ فتح کیا۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">کاشغر کی مہم</h3>
+                    <p><span class="highlight">94 ہجری (713 عیسوی)</span> میں قتیبہ بن مسلم نے کاشغر تک پیش قدمی کی جو
+                        اب چین کا حصہ ہے۔ یہ اسلامی تاریخ میں پہلی بار تھا کہ کوئی مسلمان فوج چین کی سرحدوں تک پہنچی
+                        تھی۔</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- تاریخی جدول -->
+        <section id="timeline" class="section">
+            <div class="section-header">
+                <span class="section-icon">📅</span>
+                <h2 class="section-title">قتیبہ بن مسلم کی زندگی کا تاریخی جدول</h2>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">49 ہجری / 669 عیسوی</div>
+                            <p>قتیبہ بن مسلم کی پیدائش موجودہ عراق کے علاقے میں ہوئی۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">86 ہجری / 705 عیسوی</div>
+                            <p>بخارا کی فتح۔ قتیبہ بن مسلم نے بخارا پر قبضہ کیا۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">87 ہجری / 706 عیسوی</div>
+                            <p>سمرقند کی فتح۔ شہر کے باشندوں کے ساتھ نرمی کا سلوک۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">90 ہجری / 709 عیسوی</div>
+                            <p>خوارزم کی فتح۔ اسلامی سلطنت کی حدود میں اضافہ۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">93 ہجری / 712 عیسوی</div>
+                            <p>فرغانہ کی فتح۔ خطے میں اسلامی حکومت کا مضبوط ہونا۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">94 ہجری / 713 عیسوی</div>
+                            <p>کاشغر کی مہم۔ چین کی سرحدوں تک پہنچنے والی پہلی مسلمان فوج۔</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">96 ہجری / 715 عیسوی</div>
+                            <p>قتیبہ بن مسلم کی وفات۔ ایک عظیم سپہ سالار کا انتقال۔</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ورثہ سیکشن -->
+        <section id="legacy" class="section">
+            <div class="section-header">
+                <span class="section-icon">🏛️</span>
+                <h2 class="section-title">قتیبہ بن مسلم کا ورثہ</h2>
+            </div>
+            <div class="section-content">
+                <div class="card">
+                    <h3 class="card-title">ثقافتی اور مذہبی اثرات</h3>
+                    <p>قتیبہ بن مسلم کی فتوحات نے وسط ایشیا کے ثقافتی اور مذہبی نقشے کو ہمیشہ کے لیے بدل دیا۔ ان کی
+                        کوششوں سے اسلام اس خطے میں پھیلا اور یہاں کی مقامی آبادیوں نے اسلام قبول کیا۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">انتظامی اصلاحات</h3>
+                    <p>قتیبہ بن مسلم نے مفتوحہ علاقوں میں منصفانہ انتظامیہ قائم کی، مقامی آبادی کے ساتھ رواداری کا سلوک
+                        کیا، اسلامی تعلیمات کی تبلیغ کی، اور تجارت کو فروغ دیا۔</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">عسکری حکمت عملی</h3>
+                    <p>قتیبہ بن مسلم کی عسکری حکمت عملیاں بعد میں آنے والے مسلمان commanders کے لیے مشعل راہ ثابت ہوئیں۔
+                        ان کی فوجی مہمات کو آج بھی فوجی اسکولوں میں پڑھایا جاتا ہے۔</p>
+                </div>
+
+                <div class="quote">
+                    "قتیبہ بن مسلم نے نہ صرف زمینیں فتح کیں بلکہ دلوں کو بھی فتح کیا۔ ان کی رواداری اور انصاف پسندی نے
+                    مقامی آبادیوں کے دلوں میں اسلام کے لیے محبت پیدا کی۔"
+                </div>
+            </div>
+        </section>
+
+        <!-- دیگر کمانڈرز سیکشن -->
+        <section id="commanders" class="section">
+            <div class="section-header">
+                <span class="section-icon">👑</span>
+                <h2 class="section-title">دوسرے عظیم اسلامی فاتحین</h2>
+            </div>
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="commander-card">
+                            <div class="commander-img">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="commander-body">
+                                <h3 class="commander-title">محمد بن قاسم</h3>
+                                <p>سندھ کے فاتح جنہوں نے برصغیر میں اسلام کی بنیاد رکھی۔</p>
+                                <a href="qasim.html" class="commander-link">مزید پڑھیں →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="commander-card">
+                            <div class="commander-img">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="commander-body">
+                                <h3 class="commander-title">طارق بن زیاد</h3>
+                                <p>اندلس کے فاتح جنہوں نے جبل الطارق کو فتح کیا۔</p>
+                                <a href="tariq.html" class="commander-link">مزید پڑھیں →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="commander-card">
+                            <div class="commander-img">
+                                <i class="fas fa-flag"></i>
+                            </div>
+                            <div class="commander-body">
+                                <h3 class="commander-title">صلاح الدین ایوبی</h3>
+                                <p>بیت المقدس کے فاتح اور صلیبی جنگوں کے ہیرو۔</p>
+                                <a href="salah.html" class="commander-link">مزید پڑھیں →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فٹر -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">قتیبہ بن مسلم</div>
+            <p>فاتح ماوراء النہر اور وسط ایشیا</p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            <p class="copyright">© 2023 قتیبہ بن مسلم بہری - تمام حقوق محفوظ ہیں</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ہموار سکرولنگ کے لیے جاوا اسکرپٹ
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // سیکشنز میں animation شامل کرنا
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
