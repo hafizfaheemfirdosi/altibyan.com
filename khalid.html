@@ -13,16 +13,21 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="خالد بن ولید رضی اللہ عنہ | سیف اللہ | اسلامی تاریخ">
     <meta property="og:description" content="خالد بن ولید رضی اللہ عنہ کی سیرت اور فتوحات۔ سیف اللہ کے لقب سے مشہور عظیم مسلمان فاتح کی مکمل داستان">
-    <meta property="og:image" content="https://www.example.com/khaliiiid.png.jpg">
-    <meta property="og:url" content="https://www.example.com/khalid.html">
+    <meta property="og:image" content="https://www.example.com/images/khalid-bin-walid.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:url" content="https://www.example.com/khalid-bin-walid">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="ur_PK">
+    <meta property="og:site_name" content="Islamic Legacy">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="خالد بن ولید رضی اللہ عنہ | سیف اللہ | اسلامی تاریخ">
     <meta name="twitter:description" content="خالد بن ولید رضی اللہ عنہ کی سیرت اور فتوحات۔ سیف اللہ کے لقب سے مشہور عظیم مسلمان فاتح کی مکمل داستان">
-    <meta name="twitter:image" content="https://www.example.com/khaliiiid.png.jpg">
+    <meta name="twitter:image" content="https://www.example.com/images/khalid-bin-walid.jpg">
+    <meta name="twitter:site" content="@IslamicLegacy">
     
     <!-- Additional Meta Tags -->
     <meta name="author" content="Islamic Legacy">
@@ -37,7 +42,7 @@
       "@type": "Article",
       "headline": "خالد بن ولید رضی اللہ عنہ | سیف اللہ | اسلامی تاریخ",
       "description": "خالد بن ولید رضی اللہ عنہ کی سیرت اور فتوحات۔ سیف اللہ کے لقب سے مشہور عظیم مسلمان فاتح کی مکمل داستان",
-      "image": "https://www.example.com/khaliiiid.png.jpg",
+      "image": "https://www.example.com/images/khalid-bin-walid.jpg",
       "author": {
         "@type": "Organization",
         "name": "Islamic Legacy"
@@ -55,14 +60,21 @@
     }
     </script>
     
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <!-- Google Fonts - Urdu Support -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Scheherazade+New&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <!-- AOS (Animate On Scroll) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0JL7L429B"></script>
     <script>
@@ -71,6 +83,7 @@
       gtag('js', new Date());
       gtag('config', 'G-B0JL7L429B');
     </script>
+    
     <style>
         :root {
             --primary: #1A5F7A;
@@ -410,6 +423,7 @@
             color: var(--gold);
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
+            direction: rtl;
         }
         
         .social-icons {
@@ -696,6 +710,16 @@
         .shadow-animate {
             animation: shadowPulse 5s infinite ease-in-out;
         }
+        
+        /* Lazy loading styles */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazy-load.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -784,21 +808,21 @@
             <h3>دیگر عظیم مسلمان فاتحین</h3>
             <div class="related-grid">
                 <a href="salah.html" class="related-card">
-                    <img src="salh.png.jpg" alt="صلاح الدین ایوبی">
+                    <img class="lazy-load" data-src="slah.1.png" alt="صلاح الدین ایوبی" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
                     <div class="related-card-content">
                         <h4>صلاح الدین ایوبی</h4>
                         <p>بیت المقدس کے فاتح</p>
                     </div>
                 </a>
                 <a href="tariq.html" class="related-card">
-                    <img src="gaznavi.png" alt="طارق بن زیاد">
+                    <img class="lazy-load" data-src="gaznavi.png" alt="طارق بن زیاد" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
                     <div class="related-card-content">
                         <h4>طارق بن زیاد</h4>
                         <p>اندلس کے فاتح</p>
                     </div>
                 </a>
                 <a href="qasim.html" class="related-card">
-                    <img src="qasiiiim.png.jpg" alt="محمد بن قاسم">
+                    <img class="lazy-load" data-src="qasiiiim.png.jpg" alt="محمد بن قاسم" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
                     <div class="related-card-content">
                         <h4>محمد بن قاسم</h4>
                         <p>سندھ کے فاتح</p>
@@ -825,16 +849,58 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Deferred JavaScript loading -->
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
+        // Function to load scripts dynamically
+        function loadScript(src, onload) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.onload = onload;
+            document.body.appendChild(script);
+        }
+        
+        // Load non-critical scripts after page load
+        window.addEventListener('load', function() {
+            // Load Bootstrap
+            loadScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', function() {
+                console.log('Bootstrap loaded');
+            });
+            
+            // Load AOS
+            loadScript('https://unpkg.com/aos@2.3.1/dist/aos.js', function() {
+                // Initialize AOS
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-in-out',
+                    once: true
+                });
+            });
+            
+            // Lazy loading implementation
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy-load"));
+            
+            if ("IntersectionObserver" in window) {
+                var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers without Intersection Observer
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.add("loaded");
+                });
+            }
         });
         
         // Back to top button functionality
@@ -878,22 +944,21 @@
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? 
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
             });
-        });
+            
+            // Close mobile nav when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
     </script>
 </body>
 </html>
-
-
-
