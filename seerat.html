@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سیرت النبی ﷺ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts for Urdu -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c5364;
+            --secondary-color: #f9dd04;
+            --accent-color: #f90439;
+            --light-bg: #fff8f0;
+            --dark-bg: #1a3a48;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            font-family: 'Noto Nastaliq Urdu', serif;
+            color: #333;
+            font-size: 18px;
+            line-height: 2.2;
+        }
+
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2, h3, h4 {
+            font-weight: 600;
+        }
+
+        .accordion-button {
+            font-size: 22px;
+            font-weight: 600;
+            padding: 15px 20px;
+            background-color: #e2d7d0;
+            transition: var(--transition);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #e2d7d0;
+            color: #000;
+            box-shadow: inset 0 -2px 0 var(--accent-color);
+        }
+
+        .accordion-button:hover {
+            background-color: #d4c6bc;
+        }
+
+        .accordion-body {
+            background-color: var(--light-bg);
+            font-size: 18px;
+            padding: 25px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 2px;
+            display: none;
+            background-color: #7d6349;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 0px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .back-to-top:hover {
+            background-color: #b9b950;
+            transform: translateY(-3px);
+        }
+
+        .main-back-btn {
+            display: block;
+            width: 30%;
+            margin: 30px auto;
+            padding: 12px;
+            background-color: #060606;
+            color: #ecd211;
+            text-align: center;
+            border-radius: 0px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .main-back-btn:hover {
+            background-color: #f8f7f8;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        /* Section Links */
+        .section-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .section-link {
+            padding: 8px 15px;
+            background-color: var(--dark-bg);
+            color: var(--secondary-color);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 16px;
+        }
+
+        .section-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Divider Lines */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            margin: 25px 0;
+            width: 100%;
+            border: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 3s ease forwards;
+        }
+
+        .accordion-collapse {
+            transition: all 0.4s ease;
+        }
+
+        /* Internal Links */
+        .internal-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .internal-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .internal-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .accordion-button {
+                font-size: 18px;
+                padding: 12px 15px;
+            }
+            
+            .section-links {
+                gap: 8px;
+            }
+            
+            .section-link {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-link {
+                width: 80%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            
+            .internal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center" style="padding-bottom: 34px; color: #f9dd04;">سیرت النبی ﷺ</h1>
+
+        <!-- Section Links -->
+        <div class="section-links fade-in">
+            <a href="#headingOne" class="section-link">بچپن</a>
+            <a href="#headingTwo" class="section-link">جوانی</a>
+            <a href="#headingThree" class="section-link">نبوت</a>
+            <a href="#headingFour" class="section-link">ہجرت</a>
+            <a href="#headingFive" class="section-link">جنگیں</a>
+            <a href="#headingSix" class="section-link">آخری سال</a>
+            <a href="#headingSeven" class="section-link">وصیت</a>
+        </div>
+
+        <div class="accordion" id="seeratAccordion">
+            <!-- Section 1: بچپن -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne">
+                        بچپن
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <br>
+                        <h4 style="color: #f90439;">نبی کریم صلی اللہ علیہ وسلم کا بچپن</h4>
+                        <hr class="divider">
+                        نبی کریم صلی اللہ علیہ وسلم کی ولادت ایک ایسے دور میں ہوئی جب عرب معاشرہ جہالت، ظلم، بت پرستی،
+                        اور اخلاقی گراوٹ کی انتہاؤں پر تھا۔ آپؐ کی ولادت 12 ربیع الاول عام الفیل کو مکہ مکرمہ میں ہوئی،
+                        اور پیدائش سے چند ماہ پہلے ہی آپؐ کے والد محترم حضرت عبداللہ کا انتقال ہو چکا تھا۔ یتیمی کی پہلی
+                        چوٹ آپؐ نے اپنی زندگی کے آغاز میں ہی محسوس کی۔ <br>
+
+                        <br>
+                        <h4 style="color: #f90439;">روشنیوں کی صبح کا ابتدائی وقت</h4>
+                        <hr class="divider">
+                        آپؐ کی پرورش والدہ حضرت آمنہ کے زیرِ سایہ ہوئی، مگر صرف چھ سال کی عمر میں وہ بھی وفات پا گئیں۔
+                        اس کے بعد آپؐ اپنے دادا عبدالمطلب کے زیرِ کفالت آ گئے، لیکن دو سال بعد دادا کا سایہ بھی سر سے
+                        اٹھ گیا۔ پھر آپؐ کی دیکھ بھال چچا ابوطالب نے کی۔ <br>
+
+                        <br>
+                        <h4 style="color: #f90439;">ماں کا سایہ بھی چھن گیا</h4>
+                        <hr class="divider">
+                        نبی کریم صلی اللہ علیہ وسلم نے بچپن میں یتیمی، غربت، اور محرومی دیکھی، لیکن ان تمام مشکلات نے
+                        آپؐ کے صبر، شکر، اور وقار کو مزید مضبوط کیا۔ آپؐ نے کبھی سوال نہ کیا، ہاتھ نہ پھیلایا، بلکہ
+                        سچائی، امانت، اور صبر کا پیکر بنے رہے۔ آپؐ بکریاں چرایا کرتے تھے، لیکن بچپن ہی سے آپؐ میں ایسی
+                        وقار اور تمکنت تھی جو عام بچوں میں نہ تھی۔ <br>
+
+                        <br>
+                        <h4 style="color: #f90439;">یتمی، غربت، اور عزتِ نفس</h4>
+                        <hr class="divider">
+                        بچپن ہی سے لوگ آپؐ کو "صادق" اور "امین" کہہ کر پکارتے تھے۔ کھیل کود سے دور، ہمیشہ سچ بولنے والے،
+                        جھوٹ، چوری، یا کسی بھی برائی سے نفرت کرنے والے، آپؐ کا بچپن اللہ تعالیٰ کی خاص نگرانی میں ایک
+                        ایسی شخصیت کی تیاری کا عمل تھا جو بعد میں دنیا کا سب سے عظیم انسان بننے والا تھا۔
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingTwo" class="internal-link">→ جوانی</a>
+                            <a href="#headingThree" class="internal-link">نبوت →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: جوانی -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo">
+                        جوانی
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">نبی کریم صلی اللہ علیہ وسلم کی جوانی
+                            پاکیزگی، دیانت اور کردار کی عظیم مثال</h4>
+                        <hr class="divider">
+                        <p>نبی کریم صلی اللہ علیہ وسلم نے اپنی جوانی ایک ایسے ماحول میں گزاری جہاں ہر طرف فحاشی، شراب
+                            نوشی، بے راہ روی، اور اخلاقی انحطاط عام تھا۔ لیکن آپؐ کا دامن ہمیشہ ان آلائشوں سے پاک رہا۔
+                            آپؐ نے اپنی زندگی کا ہر لمحہ پاکیزگی، سچائی، اور دیانت داری سے گزارا۔
+                        </p>
+                        <h4 style="color: #f90439;">محنت اور خودداری</h4>
+                        <hr class="divider">
+                        <p>نبی کریم صلی اللہ علیہ وسلم نے کم عمری سے ہی محنت کو شعار بنایا۔ بکریاں چرائیں، تجارت کی، اور
+                            کبھی کسی پر بوجھ نہیں بنے۔ آپؐ کا یہ فرمان بعد میں دنیا کے لیے اصول بنا: </p>
+                        <span>"محنت کرنے والا اللہ کا دوست ہے۔"</span><br>
+                        <br>
+                        <h4 style="color: #f90439;">تجارت میں دیانت</h4>
+                        <hr class="divider">
+                        <p>جب آپؐ جوان ہوئے، تو مکہ کی مشہور تاجر خاتون حضرت خدیجہ رضی اللہ عنہا نے آپؐ کو تجارت کے لیے
+                            منتخب کیا۔ آپؐ نے ان کا مال اس طرح دیانتداری سے تجارت میں لگایا کہ حضرت خدیجہ رضی اللہ عنہا
+                            آپؐ کے اخلاق اور کردار سے اتنی متاثر ہوئیں کہ بعد میں آپؐ سے نکاح کر لیا۔</p>
+                        <h4 style="color: #f90439;">اخلاقِ محمدی کی جھلک</h4>
+                        <hr class="divider">
+                        <p>جوانی وہ وقت ہوتا ہے جب انسان جذبات میں بہہ سکتا ہے، لیکن نبی کریم صلی اللہ علیہ وسلم نے اپنی
+                            جوانی کو بھی عبادت، سچائی، خاموشی، اور حسنِ اخلاق کا آئینہ بنا دیا۔
+                            نہ کبھی کسی عورت پر نظرِ بد، نہ جھوٹ، نہ فریب — حتیٰ کہ دشمن بھی آپؐ کو "امین"
+                            کہہ کر پکارتے تھے۔</p>
+                        <h4 style="color: #f90439;">فتنوں سے بچاؤ</h4>
+                        <hr class="divider">
+                        <p>جہاں قریش کے نوجوان لہو و لعب میں مشغول تھے، آپؐ ان سے الگ رہتے۔ روایات کے مطابق جب آپؐ نے
+                            کبھی کسی شادی یا موسیقی کی محفل میں جانے کا ارادہ کیا، اللہ تعالیٰ نے نیند طاری کر دی تاکہ
+                            آپؐ کو ان فتنوں سے محفوظ رکھا جا سکے۔</p>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingOne" class="internal-link">← بچپن</a>
+                            <a href="#headingThree" class="internal-link">نبوت →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: نبوت -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree">
+                        نبوت
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">بعثتِ نبوی ﷺ — درد و قربانی کا آغاز</h4>
+                        <hr class="divider">
+                        <p>چالیس سال کی عمر، مکہ کی سنگلاخ وادیوں میں ایک ایسا لمحہ آیا جس نے تاریخِ انسانیت کا رُخ موڑ
+                            دیا۔ غارِ حرا کی تنہائی میں، ایک سچا، پاکیزہ، تنہا انسان اپنی امت کے لیے آنسو بہا رہا تھا۔
+                            ظلم، فحاشی، قتل، غرور اور گمراہی کا اندھیرا ہر طرف چھایا ہوا تھا۔ ایسے میں اللہ کی طرف سے
+                            آواز آئی:
+                            "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ"
+                            (پڑھ اپنے رب کے نام سے جس نے پیدا کیا)</p>
+                        <span>یہ وہ لمحہ تھا جب محمد بن عبداللہ صلی اللہ علیہ وسلم نبی آخرالزماں بنائے گئے۔</span><br>
+                        <br>
+                        <h4 style="color: #f90439;">پہاڑوں کا مشورہ اور آنکھوں کے آنسو</h4>
+                        <hr class="divider">
+                        <p>جب پہلی وحی نازل ہوئی، تو خوف سے آپ صلی اللہ علیہ وسلم کانپتے ہوئے گھر آئے اور فرمایا:
+                            "زَمِّلُونِي زَمِّلُونِي"
+                            (مجھے کمبل اُوڑھاؤ...)
+                            حضرت خدیجہؓ نے تسلی دی، لیکن یہ لمحہ صرف گھبراہٹ کا نہیں تھا، بلکہ نبوت کا بوجھ محسوس ہونے
+                            کا لمحہ تھا۔</p>
+                        <h4 style="color: #f90439;">تنہا نبی، تنہا راستہ</h4>
+                        <hr class="divider">
+                        <p>مکہ کی گلیوں میں وہی شخص جسے سب "صادق و امین" کہتے تھے، جب کہتا کہ اللہ ایک ہے، بت جھوٹے ہیں
+                            — تو وہی لوگ پتھر مارنے لگے، گالیاں دینے لگے، راستے بند کر دیے۔ — لیکن آپؐ نے صبر کیا،
+                            آنکھوں سے آنسو بہائے، اور بار بار یہی کہا:
+                            <span> "صبر کرو، جنت قریب ہے۔</span>
+                            نبوت کے ساتھ ہی درد، طعنہ، فاقہ، اور ظلم کی ایک طویل رات شروع ہو گئی۔
+                        </p>
+                        <h4 style="color: #f90439;">اسلام کی ابتدائی راہ میں مصائب و آزمائشیں</h4>
+                        <hr class="divider">
+                        <p>ابتدائے اسلام میں مسلمانوں پر ظلم و ستم کی ایسی دردناک تاریخ رقم ہوئی جسے سن کر دل لرز اٹھتا
+                            ہے۔ مکہ کے گرم صحراؤں میں بلالؓ جیسے غلاموں کو دھوپ میں لٹایا گیا، سمیہؓ کو نیزے سے شہید کیا
+                            گیا، یاسرؓ کے سامنے ان کے بیٹے کو مارا گیا۔ صرف "اللہ ایک ہے" کہنے پر مسلمان بےگھر، بھوکے,
+                            قید اور تشدد کا نشانہ بنتے رہے۔ لیکن ان سب نے صبر کیا، کیونکہ ان کے دل میں ایمان کی روشنی
+                            تھی اور زبان پر نبی کریم ﷺ کی محبت۔</p>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingTwo" class="internal-link">← جوانی</a>
+                            <a href="#headingFour" class="internal-link">ہجرت →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: ہجرت -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour">
+                        ہجرت
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">ابتدائی دور میں مسلمانوں کی ہجرتیں –</h4>
+                        <hr class="divider">
+                        <p>
+                            جب نبی کریم صلی اللہ علیہ وسلم نے مکہ مکرمہ میں دعوتِ اسلام کا آغاز فرمایا، تو ابتدا میں چند
+                            افراد ہی ایمان لائے۔ لیکن جیسے جیسے دینِ حق کا پیغام پھیلنے لگا، ویسے ویسے مشرکینِ مکہ کا
+                            ظلم و ستم بھی بڑھتا گیا۔ مسلمانوں کو صرف "اللہ ایک ہے" کہنے کی پاداش میں ستایا جانے لگا۔ بعض
+                            کو مارا گیا، بعض کو قید کیا گیا، اور بعض کو سماجی و معاشی بائیکاٹ کا سامنا کرنا پڑا۔ ایسی
+                            گھٹن زدہ فضا میں نبی کریم صلی اللہ علیہ وسلم نے اپنے صحابہ کے لیے ہجرت کا راستہ کھولا۔</p>
+                        <h4 style="color: #f90439;">پہلی ہجرت: حبشہ کی جانب</h4>
+                        <hr class="divider">
+                        <p>اسلام کی تاریخ میں سب سے پہلی ہجرت سن 5 نبوی میں حبشہ (موجودہ ایتھوپیا) کی طرف ہوئی۔ نبی کریم
+                            ﷺ نے فرمایا کہ وہاں ایک عادل بادشاہ "نجاشی" حکومت کرتا ہے، جو کسی پر ظلم نہیں کرتا۔ چنانچہ
+                            گیارہ مرد اور چار خواتین وہاں روانہ ہوئے۔ کچھ عرصہ بعد ایک دوسرا قافلہ بھی گیا جس میں حضرت
+                            جعفر طیار رضی اللہ عنہ بھی شامل تھے۔ نجاشی نے ان مظلوم مسلمانوں کو پناہ دی اور ان کے مذہب کا
+                            احترام کیا۔</p>
+                        <h4 style="color: #f90439;">دوسری اور سب سے بڑی ہجرت: مدینہ منورہ</h4>
+                        <hr class="divider">
+                        <p>جب مکہ مکرمہ میں ظلم حد سے بڑھ گیا اور کفار نے نبی کریم ﷺ کو قتل کرنے کا منصوبہ بنایا، تو
+                            اللہ تعالیٰ کے حکم سے آپ ﷺ نے مدینہ منورہ کی طرف ہجرت فرمائی۔ اس وقت مدینہ کے لوگ، جنہیں
+                            انصار کہا جاتا ہے، اسلام کی طرف مائل ہو چکے تھے اور انہوں نے وعدہ کیا تھا کہ وہ نبی پاک ﷺ
+                            اور ان کے ساتھیوں کی جان، مال اور عزت کی حفاظت کریں گے۔</p>
+                        <p>یہ ہجرت محض شہر یا وطن کی تبدیلی نہ تھی، بلکہ یہ ایک عظیم مقصد کے لیے، دین کی بقا کے لیے,
+                            اللہ کی رضا کے لیے کی گئی قربانی تھی۔ نبی ﷺ اور صحابہ نے اپنے گھر، کاروبار، اور عزیز رشتہ
+                            دار سب کچھ اللہ کے دین کے لیے چھوڑ دیا۔</p><br>
+                        <h4 style="color: #f90439;">ہجرت کی اہمیت</h4>
+                        <hr class="divider">
+                        <p>ہجرت اسلامی تاریخ کا سنگِ میل ہے۔ اسی ہجرت کے بعد مدینہ میں اسلامی ریاست کی بنیاد رکھی گئی،
+                            جہاں عدل، امن، بھائی چارہ اور دینِ اسلام کے اصولوں پر مبنی معاشرہ قائم ہوا۔</p>
+                        <p>مسلمانوں کی یہ قربانیاں ہمیں یاد دلاتی ہیں کہ دین کے لیے اگر کچھ چھوڑنا پڑے تو وہ قربانی
+                            رائیگاں نہیں جاتی۔ اللہ تعالیٰ نے ان مہاجرین کے درجات بلند کیے اور ان کا ذکر قرآن مجید میں
+                            فرمایا:
+                            "والذین ہاجروا فی اللہ من بعد ما ظلموا لَنُبوئنّہم فی الدنیا حسنۃ، و لاجر الآخرة أکبر..."
+                            (سورہ نحل: 41)</p>
+                        <p>یہ ہجرتیں ہمیں صبر، قربانی، اتحاد اور اللہ پر توکل کا درس دیتی ہیں، جو آج بھی ہماری زندگیوں
+                            میں کامیابی کی کنجی ہیں۔</p>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingThree" class="internal-link">← نبوت</a>
+                            <a href="#headingFive" class="internal-link">جنگیں →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: جنگیں اور اہم واقعات -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive">
+                        جنگیں اور اہم واقعات
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">غزوہ بدر (2 ہجری): </h4>
+                        <hr class="divider">
+                        <p>یہ اسلام کی پہلی بڑی جنگ تھی جو 2 ہجری میں ہوئی۔ مسلمانوں کی تعداد صرف 313 تھی جبکہ دشمن کی
+                            تعداد ہزار سے زائد تھی۔ اللہ تعالیٰ کی مدد سے مسلمانوں کو فتح حاصل ہوئی۔ اس جنگ نے مسلمانوں
+                            کا حوصلہ بڑھایا اور اسلام کو ایک نئی طاقت دی۔ 14 صحابہ شہید ہوئے جنہیں "بدری" کہا جاتا ہے۔
+                            یہ جنگ حق و باطل کی واضح مثال بنی۔</p>
+                        <h4 style="color: #f90439;">غزوہ اُحد: </h4>
+                        <hr class="divider">
+                        <p>یہ جنگ 3 ہجری میں ہوئی جب مکہ والوں نے بدلہ لینے کے لیے حملہ کیا۔ ابتدائی کامیابی کے باوجود
+                            تیر اندازوں کی نافرمانی سے نقصان ہوا۔ حضرت حمزہ رضی اللہ عنہ سمیت 70 صحابہ شہید ہوئے۔
+                            مسلمانوں نے اپنی غلطیوں سے سبق سیکھا۔ یہ جنگ صبر اور حکمت کی اہمیت بتاتی ہے۔ مسلمانوں کے لیے
+                            ایک کٹھن امتحان تھا۔</p>
+                        <h4 style="color: #f90439;">غزوہ خندق: </h4>
+                        <hr class="divider">
+                        <p>یہ جنگ 5 ہجری میں ہوئی جب مکہ اور دوسرے قبائل نے مدینہ پر حملہ کیا۔ نبی ﷺ نے خندق کھود کر
+                            مدینہ کی حفاظت کی۔ شدید سردی اور بھوک کے باوجود مسلمانوں نے مزاحمت کی۔ اللہ تعالیٰ کی مدد سے
+                            دشمنوں کو شکست ہوئی۔ یہ دفاعی حکمت عملی بہت کامیاب رہی۔ مدینہ محفوظ رہا اور مسلمانوں کا
+                            اتحاد مضبوط ہوا۔</p>
+                        <h4 style="color: #f90439;">صلح حدیبیہ: </h4>
+                        <hr class="divider">
+                        <p>یہ معاہدہ 6 ہجری میں ہوا جب نبی ﷺ عمرہ کی نیت سے مکہ گئے مگر روکے گئے۔ صلح کے باعث سالوں کی
+                            لڑائی ختم ہوئی۔ مسلمانوں کو مکہ میں زیارت کی اجازت ملی۔ اس معاہدے نے اسلام کی ترویج کو
+                            بڑھایا۔ دشمنوں کے دلوں میں اسلام کا خوف پیدا ہوا۔ یہ صلح فتح مکہ کی بنیاد بنی۔</p>
+                        <h4 style="color: #f90439;">غزوہ خیبر:</h4>
+                        <hr class="divider">
+                        <p>یہ جنگ 7 ہجری میں ہوئی جب یہودی قبائل نے مسلمانوں کو نقصان پہنچایا۔ نبی ﷺ نے قلعہ خیبر پر
+                            حملہ کیا۔ حضرت علی رضی اللہ عنہ نے بہادری دکھائی۔ خیبر کا قلعہ فتح ہوا اور دشمن پسپا ہوئے۔
+                            یہ فتح مسلمانوں کی طاقت کا ثبوت تھی۔ دشمنوں کی سازشیں ناکام ہو گئیں۔</p>
+                        <h4 style="color: #f90439;">فتح مکہ: </h4>
+                        <hr class="divider">
+                        <p>یہ جنگ 8 ہجری میں بغیر لڑائی کے مکہ فتح ہوئی۔ نبی ﷺ نے معافی اور رحم کا مظاہرہ کیا۔ کفار کو
+                            معاف کیا اور امن کا پیغام دیا۔ اسلام کی طاقت عروج پر پہنچ گئی۔ یہ فتح اسلام کی تاریخ کا سنگ
+                            میل ہے۔ محبت اور اتحاد کا درس دیا گیا۔</p>
+                        <h4 style="color: #f90439;">غزوہ حنین اور طائف: </h4>
+                        <hr class="divider">
+                        <p>یہ جنگ فتح مکہ کے بعد 8 ہجری میں ہوئی۔ حوازن اور ثقیف قبائل نے مسلمانوں پر حملہ کیا۔ ابتدا
+                            میں نقصان ہوا لیکن آخر کار مسلمانوں کو فتح نصیب ہوئی۔ نبی ﷺ نے لشکر کو منظم کیا اور دشمن کو
+                            شکست دی۔ یہ مسلمانوں کی مضبوطی کی علامت تھی۔ دشمنوں کی سازشیں ناکام ہوئیں۔</p>
+                        <br>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingFour" class="internal-link">← ہجرت</a>
+                            <a href="#headingSix" class="internal-link">آخری سال →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: آخری سال -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix">
+                        آخری سال
+                    </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">نبی کریم ﷺ کا آخری سالِ حیات –</h4>
+                        <hr class="divider">
+                        <p>نبی کریم صلی اللہ علیہ وسلم کی حیاتِ طیبہ کا آخری سال تاریخ اسلام کا نہایت اہم، دردناک اور
+                            سبق آموز دور تھا۔ یہ سال، جہاں ایک طرف دینِ اسلام کی تکمیل اور اس کا غلبہ ظاہر ہو چکا تھا،
+                            وہیں یہ آپ ﷺ کے وصال کا سال بھی ثابت ہوا۔ آپ ﷺ نے اپنی امت کے لیے وہ تمام نصیحتیں اور ہدایات
+                            اس ایک سال میں عطا فرما دیں جو قیامت تک آنے والے مسلمانوں کے لیے رہنمائی کا ذریعہ بنیں گی۔
+                        </p>
+                        <h4 style="color: #f90439;">حجۃ الوداع — آخری سفرِ محبت</h4>
+                        <hr class="divider">
+                        <p>
+                            10 ہجری میں نبی کریم ﷺ نے زندگی کا پہلا اور آخری حج کیا، جو تاریخ میں حجۃ الوداع کے نام سے
+                            جانا جاتا ہے۔ اس سفر میں تقریباً ایک لاکھ سے زائد صحابہ شریک تھے۔ عرفات کے میدان میں آپ ﷺ نے
+                            جو خطبہ دیا، وہ ایک مکمل انسانی منشور تھا — اس میں عدل، مساوات، خواتین کے حقوق، جان و مال کی
+                            حرمت، نسل و قوم کی برتری کا انکار اور قرآن و سنت کی پیروی جیسے بنیادی اصول بیان کیے گئے۔
+
+                            آپ ﷺ نے فرمایا:
+                            "لوگو! سنو، میں نہیں جانتا کہ آئندہ سال تمہارے درمیان رہوں یا نہ رہوں..."
+                            یہ الفاظ جیسے امت کے دل میں اتر گئے، ایک غم کی لہر دوڑ گئی، اور صحابہ کی آنکھیں نم ہو گئیں۔
+
+                            نزولِ آیتِ اکمالِ دین
+
+                            اسی حج میں اللہ تعالیٰ کی طرف سے یہ آیت نازل ہوئی:
+                            "آج میں نے تمہارے لیے تمہارا دین مکمل کر دیا، اور اپنی نعمت تم پر تمام کر دی..."
+                            (سورۃ المائدہ: 3)</p>
+                        <p>یہ وحی، خوشخبری بھی تھی اور وداع کا پیغام بھی۔ حضرت عمر رضی اللہ عنہ نے اسی وقت فرمایا کہ "یہ
+                            آیت اعلانِ وصال ہے۔"</p>
+                        <h4 style="color: #f90439;">بیماری کا آغاز</h4>
+                        <hr class="divider">
+                        <p>آپ ﷺ کی بیماری کا آغاز 29 صفر 11 ہجری کو ہوا۔ بخار بہت تیز تھا، جسم پر کمزوری طاری ہو گئی،
+                            مگر اس حالت میں بھی آپ ﷺ نے نمازوں کی امامت جاری رکھی۔ جب جسم نے اجازت نہ دی، تو حضرت ابوبکر
+                            صدیق رضی اللہ عنہ کو نماز کی امامت کا حکم دیا — یہ فیصلہ امت کی قیادت کے لیے بھی ایک اشارہ
+                            تھا</p>
+                        <h4 style="color: #f90439;">امت کی فکر</h4>
+                        <hr class="divider">
+                        <p>
+                            مرض کی شدت کے باوجود زبان پر ہر وقت امت کا ذکر تھا۔ بار بار فرماتے:
+
+                            "میری امت، میری امت..."
+
+                            آپ ﷺ کی فکر یہ نہ تھی کہ آپ کا درد کتنا شدید ہے، بلکہ یہ تھی کہ کہیں امت گمراہی میں نہ پڑ
+                            جائے۔ آپ ﷺ نے نماز کی تاکید بار بار کی، فرمایا:
+
+                            "الصلاة، الصلاة وما ملکت أيمانكم"
+                            (نماز کا خیال رکھو، اور غلاموں کے حقوق ادا کرو)</p>
+                        <h4 style="color: #f90439;">آخری لمحات</h4>
+                        <hr class="divider">
+                        <p>آپ ﷺ حضرت عائشہ رضی اللہ عنہا کے حجرے میں تھے۔ سر مبارک ان کی گود میں تھا۔ آپ ﷺ نے مسواک
+                            مانگی، خود نہ چلا سکے تو حضرت عائشہ رضی اللہ عنہا نے نرم کر کے دی۔ پھر آپ ﷺ نے آسمان کی طرف
+                            دیکھا اور فرمایا:</p>
+                        <span>"اللہم فی ھذا الحین رضیت عنی، و رضیت عنک، فاغفرلی، فاغفرلی"
+                            (اے اللہ! اس وقت تو مجھ سے راضی ہو گیا، اور میں تجھ سے راضی ہوں، تو مجھے معاف
+                            فرما)</span><br>
+                        <span>"اللهم الرفیق الأعلى"
+                            (اے اللہ! مجھے اپنے اعلیٰ رفیق کے ساتھ ملا لے)</span>
+                        <p>یہ آخری الفاظ تھے جو آپ ﷺ نے ادا کیے۔ پھر آنکھیں بند کر لیں اور 12 ربیع الاول 11 ہجری کو
+                            دنیا سے رخصت ہو گئے۔ آپ ﷺ کی عمر مبارک 63 سال تھی</p>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingFive" class="internal-link">← جنگیں</a>
+                            <a href="#headingSeven" class="internal-link">وصیت →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 7: وصیت اور میراث -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseSeven">
+                        وصیت اور میراث
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#seeratAccordion">
+                    <div class="accordion-body">
+                        <h4 style="color: #f90439;">نبی کریم ﷺ کی وصیت اور میراث</h4>
+                        <hr class="divider">
+                        <p>نبی کریم صلی اللہ علیہ وسلم نے اپنی زندگی کے آخری ایام میں امت مسلمہ کے لیے قیمتی وصیتیں فرمائیں جو ہمارے لیے مشعل راہ ہیں۔ آپ ﷺ نے اپنی میراث میں مادی مال و دولت کے بجائے علم، ہدایت اور رحمت چھوڑی جو قیامت تک آنے والے تمام مسلمانوں کے لیے رہنمائی کا ذریعہ ہے۔</p>
+                        
+                        <h4 style="color: #f90439;">آخری وصیتیں</h4>
+                        <hr class="divider">
+                        <p>نبی کریم ﷺ نے اپنے آخری خطاب میں فرمایا: "میں تمہارے درمیان دو چیزیں چھوڑے جا رہا ہوں، اگر تم انہیں مضبوطی سے تھامے رہو گے تو ہرگز گمراہ نہ ہو گے: اللہ کی کتاب اور میری سنت۔" یہ وصیت درحقیقت آپ ﷺ کی سب سے بڑی میراث ہے جو ہمیشہ قائم رہے گی۔</p>
+                        
+                        <h4 style="color: #f90439;">علم کی میراث</h4>
+                        <hr class="divider">
+                        <p>نبی کریم ﷺ نے فرمایا: "علماء انبیاء کے وارث ہیں۔" آپ ﷺ نے علم کو سب سے بڑی میراث قرار دیا اور امت کو علم حاصل کرنے کی ترغیب دی۔ آپ ﷺ کی تعلیمات آج بھی ہمارے لیے روشنی کا مینار ہیں۔</p>
+                        
+                        <h4 style="color: #f90439;">اخلاقی میراث</h4>
+                        <hr class="divider">
+                        <p>نبی کریم ﷺ نے اپنے عمل سے جو اعلیٰ اخلاقی اقدار ہمیں دیں، وہ آپ ﷺ کی سب سے قیمتی میراث ہیں۔ صداقت، امانت، رحم دلی، عدل اور انصاف جیسے اوصاف آپ ﷺ کی زندگی کے روشن پہلو تھے۔</p>
+                        
+                        <h4 style="color: #f90439;">امت کے لیے آخری پیغام</h4>
+                        <hr class="divider">
+                        <p>نبی کریم ﷺ کا آخری پیغام تھا: "نماز کا خیال رکھنا، اپنے غلاموں کے ساتھ اچھا سلوک کرنا۔" یہ مختصر مگر جامع وصیت ہمارے لیے ہدایت کا سرچشمہ ہے۔</p>
+                        
+                        <p>نبی کریم ﷺ کی میراث کوئی مادی دولت نہیں تھی بلکہ وہ علم، ہدایت اور رحمت تھی جو آج بھی پوری انسانیت کے لیے روشنی کا ذریعہ ہے۔</p>
+                        
+                        <!-- Internal Links -->
+                        <div class="internal-links">
+                            <a href="#headingSix" class="internal-link">← آخری سال</a>
+                            <a href="#headingOne" class="internal-link">بچپن →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Back to Main Page Button -->
+        <a href="index.html" class="main-back-btn"> Back - to - main - page </a>
+    </div>
+
+    <div class="back-to-top" id="backToTop">اوپر جائیں</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.onscroll = () => {
+            if (document.documentElement.scrollTop > 200) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        };
+        backToTop.onclick = () => {
+            document.documentElement.scrollTop = 0;
+        };
+
+        // Smooth scrolling for section links
+        document.querySelectorAll('.section-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const accordionButton = targetElement.querySelector('.accordion-button');
+                
+                // If the accordion is closed, open it first
+                if (accordionButton.classList.contains('collapsed')) {
+                    accordionButton.click();
+                }
+                
+                // Scroll to the section
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            });
+        });
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('.internal-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const accordionButton = targetElement.querySelector('.accordion-button');
+                
+                // If the accordion is closed, open it first
+                if (accordionButton.classList.contains('collapsed')) {
+                    accordionButton.click();
+                }
+                
+                // Scroll to the section
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            });
+        });
+
+        // Add animation to accordion when opened
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.getAttribute('data-bs-target');
+                const collapseElement = document.querySelector(target);
+                collapseElement.classList.add('fade-in');
+            });
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.section-links, h1').forEach(element => {
+                element.classList.add('fade-in');
+            });
+        });
+    </script>
+</body>
+
+</html>
