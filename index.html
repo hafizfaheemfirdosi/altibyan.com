@@ -120,7 +120,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1561768039-5a3e8a4a6f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(Kaaba_Sharif.png);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -146,10 +146,14 @@
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             max-width: 700px;
             color: var(--text-light);
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
         }
 
         .btn-premium {
@@ -157,7 +161,7 @@
             color: var(--primary-black);
             font-weight: 600;
             padding: 15px 35px;
-            border: none;
+            border: oklab(from color l a b);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -519,13 +523,13 @@
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#commanders">Commanders</a>
+                        <a class="nav-link" href="Seerat.html">Seerat</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="Commanders.html">Commanders</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog">Blog</a>
+                        <a class="nav-link" href="#blog">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="privacy.html">Privacy Policy</a>
@@ -542,7 +546,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" style="text-align: center; padding: 80px;">
         <div class="container">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                 <h1 class="hero-title">Discover Islamic Legacy</h1>
